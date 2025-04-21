@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JER - 3D Print Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header-wrapper">
+        <header>
+            <button class="menu-toggle">
+                <img src="nav_menu_menu.svg" alt="Menu" class="menu-icon">
+            </button>
+            <div class="header-center">
+                <a href="#" class="logo">JER</a>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/jer_folio" target="_blank" class="social-link">
+                    <img src="nav_icon_instagram.svg" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.threads.net/@jer_folio" target="_blank" class="social-link">
+                    <img src="nav_icon_threads.svg" alt="Threads" class="social-icon">
+                </a>
+            </div>
+        </header>
+    </div>
+
+    <div class="container">
+        <main class="row">
+            <div class="col-12">
+                <div class="hero-image">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <div class="words-container">
+                                <img src="words.svg" alt="Hero Words" class="words-svg">
+                            </div>
+                            <div class="tag-container">
+                                <img src="tag.svg" alt="Tag" class="tag-svg">
+                                <img src="3D.svg" alt="3D" class="threed-svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Marquee Section -->
+        <div class="marquee-container">
+            <div class="marquee">
+                <div class="marquee-content">
+                    <span><a href="https://cults3d.com/en/users/JerH/3d-models" target="_blank">CHECK OUT MY LATEST 3D PRINT FILE</a></span>
+                    <span><a href="https://cults3d.com/en/users/JerH/3d-models" target="_blank">CHECK OUT MY LATEST 3D PRINT FILE</a></span>
+                    <span><a href="https://cults3d.com/en/users/JerH/3d-models" target="_blank">CHECK OUT MY LATEST 3D PRINT FILE</a></span>
+                    <span><a href="https://cults3d.com/en/users/JerH/3d-models" target="_blank">CHECK OUT MY LATEST 3D PRINT FILE</a></span>
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <span><a href="https://cults3d.com/en/users/JerH/3d-models" target="_blank">CHECK OUT MY LATEST 3D PRINT FILE</a></span>
+                    <span><a href="https://cults3d.com/en/users/JerH/3d-models" target="_blank">CHECK OUT MY LATEST 3D PRINT FILE</a></span>
+                    <span><a href="https://cults3d.com/en/users/JerH/3d-models" target="_blank">CHECK OUT MY LATEST 3D PRINT FILE</a></span>
+                    <span><a href="https://cults3d.com/en/users/JerH/3d-models" target="_blank">CHECK OUT MY LATEST 3D PRINT FILE</a></span>
+                </div>
+            </div>
+        </div>
+
+        <section class="row card-grid">
+            <div class="col-4">
+                <a href="https://cults3d.com/en/users/JerH/3d-models" target="_blank" class="catalog-card">
+                    <div class="card-image" style="background-image: url('Homepage_image_1.png');"></div>
+                    <div class="card-content">
+                        <div class="card-number">1</div>
+                        <h3>CULTS 3D</h3>
+                        <p>Personal use 3D print file</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="https://thangs.com/designer/Jer_Ho" target="_blank" class="catalog-card">
+                    <div class="card-image" style="background-image: url('Homepage_image_2.png');"></div>
+                    <div class="card-content">
+                        <div class="card-number">2</div>
+                        <h3>THANGS</h3>
+                        <p>Commercial licensed 3D print model</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="https://jerfolio.gumroad.com/" target="_blank" class="catalog-card">
+                    <div class="card-image" style="background-image: url('Homepage_image_3.png');"></div>
+                    <div class="card-content">
+                        <div class="card-number">3</div>
+                        <h3>BUY ME A COFFEE</h3>
+                        <p>Support a poor designer</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="https://jerfolio.gumroad.com/" target="_blank" class="catalog-card">
+                    <div class="card-image" style="background-image: url('Homepage_image_4.png');"></div>
+                    <div class="card-content">
+                        <div class="card-number">4</div>
+                        <h3>GUMROAD</h3>
+                        <p>Design Materials Store</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="https://www.behance.net/holokyin" target="_blank" class="catalog-card">
+                    <div class="card-image" style="background-image: url('Homepage_image_5.png');"></div>
+                    <div class="card-content">
+                        <div class="card-number">5</div>
+                        <h3>BEHANCE</h3>
+                        <p>UI UX Design Reference</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>All rights reserved - © 2025 Jerry Ho</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.marquee-swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            loop: true,
+            speed: 5000,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 4,
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
