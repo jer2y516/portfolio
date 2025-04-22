@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JER - Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header-wrapper">
+        <header>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <a href="index.html" class="logo">JER</a>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="catalog.html">Catalog</a>
+                <a href="contact.html" class="active">Contact Us</a>
+            </nav>
+            <div class="social-links">
+                <a href="https://instagram.com/jer_folio" target="_blank" class="social-link">
+                    <img src="Image/Homepage/nav_icon_instagram.svg" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.threads.net/@jer_folio" target="_blank" class="social-link">
+                    <img src="Image/Homepage/nav_icon_threads.svg" alt="Threads" class="social-icon">
+                </a>
+            </div>
+        </header>
+    </div>
+
+    <div class="container contact-container">
+        <div class="contact-grid">
+            <div class="profile-card">
+                <img src="Image/Contactus/profile.png" alt="Jerry Ho Profile">
+            </div>
+            <div class="info-card">
+                <span class="location">Hong Kong Based Designer</span>
+                <h1>Jerry Ho</h1>
+                <div class="tags">
+                    <span class="tag">UI UX Designer</span>
+                    <span class="tag">3D Print Creator</span>
+                    <span class="tag">Content Creator</span>
+                </div>
+                <p class="bio">
+                    Hey there! I'm Jerry Ho – a Hong Kong-based designer who's all about turning cool ideas into real stuff. Whether it's crafting 3D prints, designing smooth UI/UX experiences, or diving into the latest AI tools, I love mixing tech and creativity. I'm also big on social media, content creation, and building smart marketing strategies that actually work.
+                </p>
+                <p class="collaboration">Let's make awesome things together!</p>
+                <a href="mailto:516.jerry.ho@gmail.com" class="contact-button">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <nav class="mobile-menu-nav">
+            <a href="index.html">Home</a>
+            <a href="catalog.html">Catalog</a>
+            <a href="contact.html" class="active">Contact Us</a>
+        </nav>
+        <div class="mobile-social-links">
+            <a href="https://instagram.com/jer_folio" target="_blank" class="mobile-social-link">
+                <img src="Image/Homepage/nav_icon_instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://www.threads.net/@jer_folio" target="_blank" class="mobile-social-link">
+                <img src="Image/Homepage/nav_icon_threads.svg" alt="Threads">
+            </a>
+            <a href="https://www.youtube.com/@jer_folio" target="_blank" class="mobile-social-link">
+                <img src="Image/Homepage/nav_icon_youtube.svg" alt="YouTube">
+            </a>
+            <a href="https://www.tiktok.com/@jerfolio?_t=ZS-8vkZr7sSdrs&_r=1" target="_blank" class="mobile-social-link">
+                <img src="Image/Homepage/nav_icon_tiktok.svg" alt="TikTok">
+            </a>
+        </div>
+        <button class="close-menu" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+
+    <footer class="footer">
+        <p>All rights reserved - © 2025 Jerry Ho</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const closeMenu = document.querySelector('.close-menu');
+            const body = document.body;
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('active');
+                body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            }
+
+            menuToggle.addEventListener('click', toggleMenu);
+            closeMenu.addEventListener('click', toggleMenu);
+        });
+    </script>
+</body>
+</html> 

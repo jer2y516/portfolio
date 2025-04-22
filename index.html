@@ -11,21 +11,55 @@
 <body>
     <div class="header-wrapper">
         <header>
-            <button class="menu-toggle">
-                <img src="nav_menu_menu.svg" alt="Menu" class="menu-icon">
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
             </button>
-            <div class="header-center">
-                <a href="#" class="logo">JER</a>
-            </div>
+            <a href="index.html" class="logo">JER</a>
+            <nav class="main-nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="catalog.html">Catalog</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
             <div class="social-links">
                 <a href="https://instagram.com/jer_folio" target="_blank" class="social-link">
-                    <img src="nav_icon_instagram.svg" alt="Instagram" class="social-icon">
+                    <img src="Image/Homepage/nav_icon_instagram.svg" alt="Instagram" class="social-icon">
                 </a>
                 <a href="https://www.threads.net/@jer_folio" target="_blank" class="social-link">
-                    <img src="nav_icon_threads.svg" alt="Threads" class="social-icon">
+                    <img src="Image/Homepage/nav_icon_threads.svg" alt="Threads" class="social-icon">
                 </a>
             </div>
         </header>
+    </div>
+
+    <div class="mobile-menu">
+        <nav class="mobile-menu-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="catalog.html">Catalog</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="mobile-social-links">
+            <a href="https://instagram.com/jer_folio" target="_blank" class="mobile-social-link">
+                <img src="Image/Homepage/nav_icon_instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://www.threads.net/@jer_folio" target="_blank" class="mobile-social-link">
+                <img src="Image/Homepage/nav_icon_threads.svg" alt="Threads">
+            </a>
+            <a href="https://www.youtube.com/@jer_folio" target="_blank" class="mobile-social-link">
+                <img src="Image/Homepage/nav_icon_youtube.svg" alt="YouTube">
+            </a>
+            <a href="https://www.tiktok.com/@jerfolio?_t=ZS-8vkZr7sSdrs&_r=1" target="_blank" class="mobile-social-link">
+                <img src="Image/Homepage/nav_icon_tiktok.svg" alt="TikTok">
+            </a>
+        </div>
+        <button class="close-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
     </div>
 
     <div class="container">
@@ -35,11 +69,11 @@
                     <div class="hero-content">
                         <div class="hero-text">
                             <div class="words-container">
-                                <img src="words.svg" alt="Hero Words" class="words-svg">
+                                <img src="Image/Homepage/words.svg" alt="Hero Words" class="words-svg">
                             </div>
                             <div class="tag-container">
-                                <img src="tag.svg" alt="Tag" class="tag-svg">
-                                <img src="3D.svg" alt="3D" class="threed-svg">
+                                <img src="Image/Homepage/tag.svg" alt="Tag" class="tag-svg">
+                                <img src="Image/Homepage/3D.svg" alt="3D" class="threed-svg">
                             </div>
                         </div>
                     </div>
@@ -68,7 +102,7 @@
         <section class="row card-grid">
             <div class="col-4">
                 <a href="https://cults3d.com/en/users/JerH/3d-models" target="_blank" class="catalog-card">
-                    <div class="card-image" style="background-image: url('Homepage_image_1.png');"></div>
+                    <div class="card-image" style="background-image: url('Image/Homepage/Homepage_image_1.png');"></div>
                     <div class="card-content">
                         <div class="card-number">1</div>
                         <h3>CULTS 3D</h3>
@@ -78,7 +112,7 @@
             </div>
             <div class="col-4">
                 <a href="https://thangs.com/designer/Jer_Ho" target="_blank" class="catalog-card">
-                    <div class="card-image" style="background-image: url('Homepage_image_2.png');"></div>
+                    <div class="card-image" style="background-image: url('Image/Homepage/Homepage_image_2.png');"></div>
                     <div class="card-content">
                         <div class="card-number">2</div>
                         <h3>THANGS</h3>
@@ -88,7 +122,7 @@
             </div>
             <div class="col-4">
                 <a href="https://jerfolio.gumroad.com/" target="_blank" class="catalog-card">
-                    <div class="card-image" style="background-image: url('Homepage_image_3.png');"></div>
+                    <div class="card-image" style="background-image: url('Image/Homepage/Homepage_image_3.png');"></div>
                     <div class="card-content">
                         <div class="card-number">3</div>
                         <h3>BUY ME A COFFEE</h3>
@@ -98,7 +132,7 @@
             </div>
             <div class="col-4">
                 <a href="https://jerfolio.gumroad.com/" target="_blank" class="catalog-card">
-                    <div class="card-image" style="background-image: url('Homepage_image_4.png');"></div>
+                    <div class="card-image" style="background-image: url('Image/Homepage/Homepage_image_4.png');"></div>
                     <div class="card-content">
                         <div class="card-number">4</div>
                         <h3>GUMROAD</h3>
@@ -108,7 +142,7 @@
             </div>
             <div class="col-4">
                 <a href="https://www.behance.net/holokyin" target="_blank" class="catalog-card">
-                    <div class="card-image" style="background-image: url('Homepage_image_5.png');"></div>
+                    <div class="card-image" style="background-image: url('Image/Homepage/Homepage_image_5.png');"></div>
                     <div class="card-content">
                         <div class="card-number">5</div>
                         <h3>BEHANCE</h3>
@@ -145,6 +179,21 @@
                     slidesPerView: 4,
                 }
             }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const closeMenu = document.querySelector('.close-menu');
+            const body = document.body;
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('active');
+                body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            }
+
+            menuToggle.addEventListener('click', toggleMenu);
+            closeMenu.addEventListener('click', toggleMenu);
         });
     </script>
 </body>
