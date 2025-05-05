@@ -876,6 +876,17 @@ footer {
     gap: 12px;
 }
 
+.product-actions .btn:only-child {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+@supports(selector(.product-actions:has(.btn):not(:has(.btn + .btn)))) {
+  .product-actions:has(.btn):not(:has(.btn + .btn)) {
+    justify-content: flex-start;
+  }
+}
+
 .btn {
     padding: 8px 24px;
     border-radius: 100px;
