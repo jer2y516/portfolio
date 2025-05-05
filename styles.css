@@ -897,12 +897,19 @@ footer {
 }
 
 .btn-secondary {
-    background-color: #F5F5F5;
-    color: #333;
+    background-color: #666;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
 }
 
 .btn-secondary:hover {
-    background-color: #E0E0E0;
+    background-color: #555;
 }
 
 /* Responsive Styles */
