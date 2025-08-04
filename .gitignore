@@ -7,3 +7,5 @@ node_modules/
 .idea/
 *.swp
 *~ 
+# Local Netlify folder
+.netlify
