@@ -79,6 +79,14 @@ header {
     font-weight: 700;
     color: #333;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 24px;
+    height: 24px;
+    color: #333;
 }
 
 .main-nav {
@@ -185,6 +193,13 @@ header {
         top: 50%;
         transform: translate(-50%, -50%);
         font-size: 18px;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-icon {
+        width: 20px;
+        height: 20px;
     }
 
     .social-links {
@@ -246,6 +261,13 @@ header {
 
     .logo {
         font-size: 18px;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-icon {
+        width: 18px;
+        height: 18px;
     }
 
     .social-links {
