@@ -1318,3 +1318,24 @@ body:has(.mobile-menu.active) .header-wrapper {
         display: none !important;
     }
 } 
+
+/* Store icon styles */
+.store-icon-link {
+    display: inline-block;
+}
+.store-icon-img {
+    display: block;
+    height: 64px;
+    width: auto;
+    border: 1px solid #eaeaea;
+    border-radius: 9px; /* desktop default */
+    background: #fff;
+}
+@media (max-width: 767px) {
+    .store-icon-img {
+        height: 56px;
+        width: 56px; /* enforce circle */
+        border-radius: 9999px;
+        object-fit: cover;
+    }
+} 
