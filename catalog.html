@@ -45,7 +45,7 @@
         "name": "JER 3D Print Catalog",
         "description": "Complete collection of 3D printable designs including lamps, Apple accessories, IKEA SKADIS organizers, and space organizers.",
         "url": "https://jerfoli.netlify.app/catalog.html",
-        "numberOfItems": 76,
+        "numberOfItems": 77,
         "itemListElement": [
             {
                 "@type": "ListItem",
@@ -139,27 +139,27 @@
             <div class="row" style="gap: 16px; align-items: center; margin-bottom: 48px;">
                 <a href="https://thangs.com/designer/Jer_Ho" target="_blank" class="store-icon-link">
                     <img src="Image/Catalog/store_icon1.png" alt="Thangs" class="store-icon-img desktop-only" width="128" height="64">
-                    <img src="Image/Catalog/store_icon1_ mobile.png" alt="Thangs" class="store-icon-img mobile-only" width="56" height="56">
+                    <img src="Image/Catalog/store_icon1_mobile.png" alt="Thangs" class="store-icon-img mobile-only" width="56" height="56">
                 </a>
                 <a href="https://cults3d.com/en/users/JerH/3d-models" target="_blank" class="store-icon-link">
                     <img src="Image/Catalog/store_icon2.png" alt="Cults" class="store-icon-img desktop-only" width="128" height="64">
-                    <img src="Image/Catalog/store_icon2_ mobile.png" alt="Cults" class="store-icon-img mobile-only" width="56" height="56">
+                    <img src="Image/Catalog/store_icon2_mobile.png" alt="Cults" class="store-icon-img mobile-only" width="56" height="56">
                 </a>
                 <a href="https://pixup3d.com/en/p/516jerryho174409210058/posts" target="_blank" class="store-icon-link">
                     <img src="Image/Catalog/store_icon3.png" alt="Pixup" class="store-icon-img desktop-only" width="128" height="64">
-                    <img src="Image/Catalog/store_icon3_ mobile.png" alt="Pixup" class="store-icon-img mobile-only" width="56" height="56">
+                    <img src="Image/Catalog/store_icon3_mobile.png" alt="Pixup" class="store-icon-img mobile-only" width="56" height="56">
                 </a>
                 <!-- 4th icon temporarily hidden as requested -->
                 <a href="https://buymeacoffee.com/jer2yho" target="_blank" class="store-icon-link" style="display: none;">
                     <img src="Image/Catalog/store_icon4.png" alt="Buy Me a Coffee" class="store-icon-img desktop-only" width="128" height="64">
-                    <img src="Image/Catalog/store_icon4_ mobile.png" alt="Buy Me a Coffee" class="store-icon-img mobile-only" width="56" height="56">
+                    <img src="Image/Catalog/store_icon4_mobile.png" alt="Buy Me a Coffee" class="store-icon-img mobile-only" width="56" height="56">
                 </a>
             </div>
             <!-- Filter Section -->
             <div class="filter-section">
                 <div class="filter-controls">
                     <div class="items-sort-row">
-                        <h1 class="catalog-title">CATALOG <span class="items-count">76 items</span></h1>
+                        <h1 class="catalog-title"><span class="items-count">77 items</span></h1>
                         <div class="sort-control">
                             <select id="sortSelect">
                                 <option value="newest">Newest First</option>
@@ -173,6 +173,7 @@
                         <button class="filter-tag" data-filter="apple">Apple Accessories</button>
                         <button class="filter-tag" data-filter="skadis">IKEA SKADIS</button>
                         <button class="filter-tag" data-filter="organiser">Space Organiser</button>
+                        <button class="filter-tag" data-filter="kpop">K pop Idol</button>
                     </div>
                 </div>
             </div>
@@ -1287,6 +1288,19 @@
                         </div>
                     </div>
                 </div>
+                <!-- Product 77: Gdragon inspired minimal folding tray -->
+                <div class="product-card" data-category="organiser kpop">
+                    <div class="product-image">
+                        <img src="Image/Catalog/77.jpg" alt="Gdragon inspired minimal folding tray">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Gdragon inspired minimal folding tray</h3>
+                        <p class="product-date">Added: 2025-09-29</p>
+                        <div class="product-actions">
+                            <button class="btn" disabled style="background: #EAEAEA; color: #666; cursor: not-allowed;">coming soon</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
                 <!-- Product 76: GridStack Modular Shelf -->
@@ -1327,6 +1341,7 @@
             const filterTags = document.querySelectorAll('.filter-tag');
             const productCards = document.querySelectorAll('.product-card');
             const catalogTitle = document.querySelector('.catalog-title');
+            const itemsCount = document.querySelector('.items-count');
             const sortSelect = document.getElementById('sortSelect');
             const itemsPerPage = 12;
             let currentPage = 1;
@@ -1437,7 +1452,7 @@
                     filteredCards = sortProducts(filteredCards, sortSelect.value);
 
                     // Update count in title
-                    catalogTitle.textContent = `${filteredCards.length} items`;
+                    itemsCount.textContent = `${filteredCards.length} items`;
                     
                     // Reset to first page and display
                     currentPage = 1;
