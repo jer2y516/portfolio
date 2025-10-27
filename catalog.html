@@ -1349,11 +1349,11 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Loading indicator -->
-            <div id="loading-indicator" style="text-align: center; padding: 20px; display: none;">
-                <p>Loading more products...</p>
-            </div>
+        </div>
+        
+        <!-- Loading indicator (outside grid to ensure proper observation) -->
+        <div id="loading-indicator" style="text-align: center; padding: 20px; display: none;">
+            <p>Loading more products...</p>
         </div>
     </main>
 
@@ -1413,6 +1413,9 @@
                     
                     displayedCount = endIndex;
                     
+                    // Re-observe the loading indicator for next batch
+                    setupObserver();
+                    
                     // Hide loading indicator
                     loadingIndicator.style.display = 'none';
                     isLoading = false;
@@ -1436,21 +1439,31 @@
             }
 
             // Intersection Observer for lazy loading
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && displayedCount < filteredCards.length && !isLoading) {
-                        displayMoreProducts();
-                    }
+            let observer;
+            
+            function setupObserver() {
+                // Disconnect existing observer
+                if (observer) {
+                    observer.disconnect();
+                }
+                
+                observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && displayedCount < filteredCards.length && !isLoading) {
+                            displayMoreProducts();
+                        }
+                    });
+                }, {
+                    rootMargin: '200px'
                 });
-            }, {
-                rootMargin: '100px'
-            });
-
-            // Observe the loading indicator
-            observer.observe(loadingIndicator);
+                
+                // Observe the loading indicator
+                observer.observe(loadingIndicator);
+            }
 
             // Initial setup
             filteredCards = sortProducts(Array.from(productCards), 'newest');
+            setupObserver();
             resetAndDisplayProducts();
 
             // Handle sorting
@@ -1464,6 +1477,7 @@
                 
                 filteredCards = sortProducts(filteredProducts, this.value);
                 
+                setupObserver();
                 resetAndDisplayProducts();
             });
 
@@ -1483,6 +1497,7 @@
 
                     itemsCount.textContent = `${filteredCards.length} items`;
                     
+                    setupObserver();
                     resetAndDisplayProducts();
                 });
             });
