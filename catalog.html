@@ -9,7 +9,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jerfoli.netlify.app/catalog.html">
     <meta property="og:title" content="JER - 3D Print Catalog">
-    <meta property="og:description" content="Browse our complete collection of 3D printable designs including lamps, Apple accessories, IKEA SKADIS organizers, space organizers, and toy displays. 78+ high-quality STL files.">
+    <meta property="og:description" content="Browse our complete collection of 3D printable designs including lamps, Apple accessories, IKEA SKADIS organizers, space organizers, and toy displays. 79+ high-quality STL files.">
     <meta property="og:image" content="https://jerfoli.netlify.app/Image/Catalog/thumbnail.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -18,11 +18,11 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://jerfoli.netlify.app/catalog.html">
     <meta property="twitter:title" content="JER - 3D Print Catalog">
-    <meta property="twitter:description" content="Browse our complete collection of 3D printable designs including lamps, Apple accessories, IKEA SKADIS organizers, space organizers, and toy displays. 78+ high-quality STL files.">
+    <meta property="twitter:description" content="Browse our complete collection of 3D printable designs including lamps, Apple accessories, IKEA SKADIS organizers, space organizers, and toy displays. 79+ high-quality STL files.">
     <meta property="twitter:image" content="https://jerfoli.netlify.app/Image/Catalog/thumbnail.png">
     
     <!-- Additional SEO -->
-    <meta name="description" content="Browse our complete collection of 3D printable designs including lamps, Apple accessories, IKEA SKADIS organizers, space organizers, and toy displays. 78+ high-quality STL files.">
+    <meta name="description" content="Browse our complete collection of 3D printable designs including lamps, Apple accessories, IKEA SKADIS organizers, space organizers, and toy displays. 79+ high-quality STL files.">
     <meta name="keywords" content="3D print, STL files, lamps, Apple accessories, IKEA SKADIS, organizers, toy display, 3D models, catalog, 3D printing, STL download, free 3D models, 3D printer files, desk lamps, Apple watch accessories, IKEA organizers">
     <meta name="author" content="Jerry Ho">
     <meta name="robots" content="index, follow">
@@ -45,7 +45,7 @@
         "name": "JER 3D Print Catalog",
         "description": "Complete collection of 3D printable designs including lamps, Apple accessories, IKEA SKADIS organizers, space organizers, and toy displays.",
         "url": "https://jerfoli.netlify.app/catalog.html",
-        "numberOfItems": 78,
+        "numberOfItems": 79,
         "itemListElement": [
             {
                 "@type": "ListItem",
@@ -159,7 +159,7 @@
             <div class="filter-section">
                 <div class="filter-controls">
                     <div class="items-sort-row">
-                        <h1 class="catalog-title"><span class="items-count">78 items</span></h1>
+                        <h1 class="catalog-title"><span class="items-count">79 items</span></h1>
                         <div class="sort-control">
                             <select id="sortSelect">
                                 <option value="newest">Newest First</option>
@@ -1334,20 +1334,25 @@
                     </div>
                 </div>
 
-            <!-- Add Pagination -->
-            <div class="pagination">
-                <button class="pagination-btn" id="prev-page" aria-label="Previous page">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-                <div class="pagination-numbers" id="pagination-numbers">
+                <!-- Product 79: Jardine House Dice Lamp -->
+                <div class="product-card" data-category="lamp">
+                    <div class="product-image">
+                        <img src="Image/Catalog/79.jpg" alt="Jardine House Dice Lamp">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">JARDINE HOUSE DICE LAMP</h3>
+                        <p class="product-date">Added: 2025-10-27</p>
+                        <div class="product-actions">
+                            <a href="https://cults3d.com/en/3d-model/home/jardine-house-dice-lamp-jerh" class="btn btn-primary">Cults</a>
+                            <a href="https://thangs.com/designer/Jer_Ho/3d-model/%20Jardine%20House%20Dice%20Lamp-1456695" class="btn btn-secondary">Thangs</a>
+                        </div>
+                    </div>
                 </div>
-                <button class="pagination-btn" id="next-page" aria-label="Next page">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
+            </div>
+
+            <!-- Loading indicator -->
+            <div id="loading-indicator" style="text-align: center; padding: 20px; display: none;">
+                <p>Loading more products...</p>
             </div>
         </div>
     </main>
@@ -1359,9 +1364,13 @@
             const catalogTitle = document.querySelector('.catalog-title');
             const itemsCount = document.querySelector('.items-count');
             const sortSelect = document.getElementById('sortSelect');
+            const grid = document.querySelector('.catalog-grid');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            
             const itemsPerPage = 12;
-            let currentPage = 1;
+            let displayedCount = 0;
             let filteredCards = Array.from(productCards);
+            let allProductCards = Array.from(productCards);
 
             // Function to sort products
             function sortProducts(cards, order) {
@@ -1369,127 +1378,104 @@
                     const dateA = new Date(a.querySelector('.product-date').textContent.replace('Added: ', '')).getTime();
                     const dateB = new Date(b.querySelector('.product-date').textContent.replace('Added: ', '')).getTime();
                     
-                    // For newest first, we want larger timestamps at the start
                     return order === 'newest' ? (dateB - dateA) : (dateA - dateB);
                 });
             }
 
-            // Function to update pagination
-            function updatePagination() {
-                const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
-                const paginationNumbers = document.getElementById('pagination-numbers');
-                paginationNumbers.innerHTML = '';
-
-                // Add page numbers
-                for (let i = 1; i <= totalPages; i++) {
-                    const pageButton = document.createElement('button');
-                    pageButton.className = `pagination-number ${i === currentPage ? 'active' : ''}`;
-                    pageButton.textContent = i;
-                    pageButton.addEventListener('click', () => {
-                        currentPage = i;
-                        displayProducts();
-                    });
-                    paginationNumbers.appendChild(pageButton);
-                }
-
-                // Update prev/next buttons
-                document.getElementById('prev-page').disabled = currentPage === 1;
-                document.getElementById('next-page').disabled = currentPage === totalPages;
+            // Function to display products with lazy loading
+            function displayMoreProducts() {
+                const startIndex = displayedCount;
+                const endIndex = Math.min(displayedCount + itemsPerPage, filteredCards.length);
+                
+                // Show loading indicator
+                loadingIndicator.style.display = 'block';
+                
+                // Add a slight delay for better UX
+                setTimeout(() => {
+                    for (let i = startIndex; i < endIndex; i++) {
+                        const card = filteredCards[i];
+                        const cardClone = card.cloneNode(true);
+                        cardClone.style.display = 'block';
+                        grid.appendChild(cardClone);
+                    }
+                    
+                    displayedCount = endIndex;
+                    
+                    // Hide loading indicator
+                    loadingIndicator.style.display = 'none';
+                    
+                    // If all products are displayed, stop the observer
+                    if (displayedCount >= filteredCards.length) {
+                        loadingIndicator.style.display = 'none';
+                    }
+                }, 100);
             }
 
-            // Function to display products for current page
-            function displayProducts() {
-                const startIndex = (currentPage - 1) * itemsPerPage;
-                const endIndex = startIndex + itemsPerPage;
-                const grid = document.querySelector('.catalog-grid');
-
+            // Function to reset and display products
+            function resetAndDisplayProducts() {
                 // Clear the grid
                 grid.innerHTML = '';
-
-                // Get products for current page
-                const currentPageProducts = filteredCards.slice(startIndex, endIndex);
+                displayedCount = 0;
                 
-                // Add products to grid
-                currentPageProducts.forEach(card => {
-                    // Clone the card to avoid moving the original
-                    const cardClone = card.cloneNode(true);
-                    cardClone.style.display = 'block';
-                    grid.appendChild(cardClone);
+                // Hide original product cards
+                allProductCards.forEach(card => {
+                    card.style.display = 'none';
                 });
-
-                updatePagination();
+                
+                // Display first batch of products
+                displayMoreProducts();
             }
+
+            // Intersection Observer for lazy loading
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && displayedCount < filteredCards.length) {
+                        displayMoreProducts();
+                    }
+                });
+            }, {
+                rootMargin: '100px'
+            });
+
+            // Observe the loading indicator
+            observer.observe(loadingIndicator);
 
             // Initial setup
             filteredCards = sortProducts(Array.from(productCards), 'newest');
-            
-            // Hide original products
-            productCards.forEach(card => {
-                card.style.display = 'none';
-            });
-            
-            displayProducts();
+            resetAndDisplayProducts();
 
             // Handle sorting
             sortSelect.addEventListener('change', function() {
-                // Get current filter
                 const activeFilter = document.querySelector('.filter-tag.active');
                 const filterValue = activeFilter.getAttribute('data-filter');
                 
-                // Get all products that match the current filter
                 const filteredProducts = Array.from(productCards).filter(card => 
                     filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)
                 );
                 
-                // Sort the filtered products
                 filteredCards = sortProducts(filteredProducts, this.value);
                 
-                // Reset to first page and display
-                currentPage = 1;
-                displayProducts();
+                resetAndDisplayProducts();
             });
 
             // Handle filtering
             filterTags.forEach(tag => {
                 tag.addEventListener('click', function() {
-                    // Remove active class from all tags
                     filterTags.forEach(t => t.classList.remove('active'));
-                    // Add active class to clicked tag
                     this.classList.add('active');
 
                     const filter = this.getAttribute('data-filter');
                     
-                    // Filter products
                     filteredCards = Array.from(productCards).filter(card => 
                         filter === 'all' || card.getAttribute('data-category').includes(filter)
                     );
 
-                    // Sort filtered cards according to current sort order
                     filteredCards = sortProducts(filteredCards, sortSelect.value);
 
-                    // Update count in title
                     itemsCount.textContent = `${filteredCards.length} items`;
                     
-                    // Reset to first page and display
-                    currentPage = 1;
-                    displayProducts();
+                    resetAndDisplayProducts();
                 });
-            });
-
-            // Handle pagination navigation
-            document.getElementById('prev-page').addEventListener('click', () => {
-                if (currentPage > 1) {
-                    currentPage--;
-                    displayProducts();
-                }
-            });
-
-            document.getElementById('next-page').addEventListener('click', () => {
-                const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    displayProducts();
-                }
             });
 
             // Mobile menu toggle
