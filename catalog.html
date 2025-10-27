@@ -1233,7 +1233,7 @@
                 <!-- Product 71: HEADPHONE STAND WITH STORAGE TRAYS -->
                 <div class="product-card" data-category="apple organiser">
                     <div class="product-image">
-                        <img src="Image/Catalog/71.jpg" alt="HEADPHONE STAND WITH STORAGE TRAYS">
+                        <img src="Image/Catalog/72.jpg" alt="HEADPHONE STAND WITH STORAGE TRAYS">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">HEADPHONE STAND WITH STORAGE TRAYS</h3>
@@ -1371,6 +1371,7 @@
             let displayedCount = 0;
             let filteredCards = Array.from(productCards);
             let allProductCards = Array.from(productCards);
+            let isLoading = false;
 
             // Function to sort products
             function sortProducts(cards, order) {
@@ -1384,8 +1385,19 @@
 
             // Function to display products with lazy loading
             function displayMoreProducts() {
+                // Prevent multiple simultaneous loads
+                if (isLoading) return;
+                
                 const startIndex = displayedCount;
                 const endIndex = Math.min(displayedCount + itemsPerPage, filteredCards.length);
+                
+                // If nothing to load, hide indicator
+                if (startIndex >= filteredCards.length) {
+                    loadingIndicator.style.display = 'none';
+                    return;
+                }
+                
+                isLoading = true;
                 
                 // Show loading indicator
                 loadingIndicator.style.display = 'block';
@@ -1403,11 +1415,7 @@
                     
                     // Hide loading indicator
                     loadingIndicator.style.display = 'none';
-                    
-                    // If all products are displayed, stop the observer
-                    if (displayedCount >= filteredCards.length) {
-                        loadingIndicator.style.display = 'none';
-                    }
+                    isLoading = false;
                 }, 100);
             }
 
@@ -1416,6 +1424,7 @@
                 // Clear the grid
                 grid.innerHTML = '';
                 displayedCount = 0;
+                isLoading = false;
                 
                 // Hide original product cards
                 allProductCards.forEach(card => {
@@ -1429,7 +1438,7 @@
             // Intersection Observer for lazy loading
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting && displayedCount < filteredCards.length) {
+                    if (entry.isIntersecting && displayedCount < filteredCards.length && !isLoading) {
                         displayMoreProducts();
                     }
                 });
