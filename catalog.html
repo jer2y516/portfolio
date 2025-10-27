@@ -1377,6 +1377,7 @@
             const itemsPerPage = 12;
             let currentPage = 1;
             let filteredCards = Array.from(productCards);
+            let currentFilter = 'all';
 
             // Function to sort products
             function sortProducts(cards, order) {
@@ -1416,52 +1417,47 @@
             function displayProducts() {
                 const startIndex = (currentPage - 1) * itemsPerPage;
                 const endIndex = startIndex + itemsPerPage;
-                const grid = document.querySelector('.catalog-grid');
 
-                // Clear the grid
-                grid.innerHTML = '';
-
-                // Get products for current page
-                const currentPageProducts = filteredCards.slice(startIndex, endIndex);
-                
-                // Add products to grid
-                currentPageProducts.forEach(card => {
-                    // Clone the card to avoid moving the original
-                    const cardClone = card.cloneNode(true);
-                    cardClone.style.display = 'block';
-                    grid.appendChild(cardClone);
+                // Hide all product cards first
+                productCards.forEach(card => {
+                    card.style.display = 'none';
                 });
+
+                // Show only products for current page
+                for (let i = startIndex; i < endIndex && i < filteredCards.length; i++) {
+                    if (filteredCards[i]) {
+                        filteredCards[i].style.display = 'block';
+                    }
+                }
 
                 updatePagination();
             }
 
-            // Initial setup
-            filteredCards = sortProducts(Array.from(productCards), 'newest');
-            
-            // Hide original products
-            productCards.forEach(card => {
-                card.style.display = 'none';
-            });
-            
-            displayProducts();
-
-            // Handle sorting
-            sortSelect.addEventListener('change', function() {
-                // Get current filter
-                const activeFilter = document.querySelector('.filter-tag.active');
-                const filterValue = activeFilter.getAttribute('data-filter');
-                
-                // Get all products that match the current filter
-                const filteredProducts = Array.from(productCards).filter(card => 
-                    filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)
+            // Function to apply filter and sort
+            function applyFilterAndSort() {
+                // Filter products based on current filter
+                filteredCards = Array.from(productCards).filter(card => 
+                    currentFilter === 'all' || card.getAttribute('data-category').includes(currentFilter)
                 );
-                
-                // Sort the filtered products
-                filteredCards = sortProducts(filteredProducts, this.value);
+
+                // Sort the filtered products according to current sort order
+                filteredCards = sortProducts(filteredCards, sortSelect.value);
+
+                // Update count in title
+                itemsCount.textContent = `${filteredCards.length} items`;
                 
                 // Reset to first page and display
                 currentPage = 1;
                 displayProducts();
+            }
+
+            // Initial setup
+            filteredCards = sortProducts(Array.from(productCards), 'newest');
+            displayProducts();
+
+            // Handle sorting
+            sortSelect.addEventListener('change', function() {
+                applyFilterAndSort();
             });
 
             // Handle filtering
@@ -1472,22 +1468,8 @@
                     // Add active class to clicked tag
                     this.classList.add('active');
 
-                    const filter = this.getAttribute('data-filter');
-                    
-                    // Filter products
-                    filteredCards = Array.from(productCards).filter(card => 
-                        filter === 'all' || card.getAttribute('data-category').includes(filter)
-                    );
-
-                    // Sort filtered cards according to current sort order
-                    filteredCards = sortProducts(filteredCards, sortSelect.value);
-
-                    // Update count in title
-                    itemsCount.textContent = `${filteredCards.length} items`;
-                    
-                    // Reset to first page and display
-                    currentPage = 1;
-                    displayProducts();
+                    currentFilter = this.getAttribute('data-filter');
+                    applyFilterAndSort();
                 });
             });
 
