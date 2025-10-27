@@ -456,22 +456,7 @@
                         <img src="Image/Catalog/19.jpg" alt="MINIMAL DESK LAMP JELLY FISH">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">MINIMAL DESK LAMP JELLY FISH ?胯??/h3>
-                        <p class="product-date">Added: 2024-10-21</p>
-                        <div class="product-actions">
-                            <a href="https://cults3d.com/en/3d-model/home/minimal-desk-lamp-jelly-fish-jerh" class="btn btn-primary">Cults</a>
-                            <a href="https://thangs.com/designer/Jer_Ho/3d-model/Minimal%20Desk%20Lamp%20Jelly%20Fish%20%E3%82%AF%E3%83%A9%E3%82%B2-1118241" class="btn btn-secondary">Thangs</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 20: NOT CIGARETTE CIGARETTE BOX -->
-                <div class="product-card" data-category="organiser">
-                    <div class="product-image">
-                        <img src="Image/Catalog/20.jpg" alt="NOT CIGARETTE CIGARETTE BOX">
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">"NOT CIGARETTE" CIGARETTE BOX</h3>
+                        <h3 class="product-title">MINIMAL DESK LAMP JELLY FISH</h3>
                         <p class="product-date">Added: 2024-08-15</p>
                         <div class="product-actions">
                             <a href="https://cults3d.com/en/3d-model/tool/not-cigarette-cigarette-box" class="btn btn-primary">Cults</a>
@@ -501,37 +486,7 @@
                         <img src="Image/Catalog/22.jpg" alt="MINIMAL DESK LAMP VORTEX">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">MINIMAL DESK LAMP VORTEX 渦巻??/h3>
-                        <p class="product-date">Added: 2024-08-26</p>
-                        <div class="product-actions">
-                            <a href="https://cults3d.com/en/3d-model/home/minimal-desk-lamp-vortex" class="btn btn-primary">Cults</a>
-                            <a href="https://thangs.com/designer/Jer_Ho/3d-model/Minimal%20Desk%20Lamp%20Vortex%20%E6%B8%A6%E5%B7%BB%E3%81%8D-1128430" class="btn btn-secondary">Thangs</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 23: MINIMAL LANTERN BUBBLE TEA -->
-                <div class="product-card" data-category="lamp">
-                    <div class="product-image">
-                        <img src="Image/Catalog/23.jpg" alt="MINIMAL LANTERN BUBBLE TEA">
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">MINIMAL LANTERN BUBBLE TEA ?��???/h3>
-                        <p class="product-date">Added: 2024-09-02</p>
-                        <div class="product-actions">
-                            <a href="https://cults3d.com/en/3d-model/home/minimal-lantern-bubble-tea" class="btn btn-primary">Cults</a>
-                            <a href="#" class="btn btn-secondary" style="visibility: hidden;">Thangs</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 24: ROTATABLE MUSHROOM LAMP -->
-                <div class="product-card" data-category="lamp">
-                    <div class="product-image">
-                        <img src="Image/Catalog/24.jpg" alt="ROTATABLE MUSHROOM LAMP">
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">ROTATABLE MUSHROOM LAMP</h3>
+                        <h3 class="product-title">MINIMAL LANTERN BUBBLE TEA</h3>
                         <p class="product-date">Added: 2024-09-05</p>
                         <div class="product-actions">
                             <a href="https://cults3d.com/en/3d-model/home/rotatable-mushroom-lamp-jerh-2" class="btn btn-primary">Cults</a>
@@ -1233,7 +1188,7 @@
                 <!-- Product 71: HEADPHONE STAND WITH STORAGE TRAYS -->
                 <div class="product-card" data-category="apple organiser">
                     <div class="product-image">
-                        <img src="Image/Catalog/71.jpg" alt="HEADPHONE STAND WITH STORAGE TRAYS">
+                        <img src="Image/Catalog/72.jpg" alt="HEADPHONE STAND WITH STORAGE TRAYS">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">HEADPHONE STAND WITH STORAGE TRAYS</h3>
@@ -1348,17 +1303,7 @@
                         </div>
                     </div>
                 </div>
-
-            <!-- Add Pagination -->
-            <div class="pagination">
-                <button class="pagination-btn" id="prev-page" aria-label="Previous page">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-                <div class="pagination-numbers" id="pagination-numbers">
-                </div>
-                <button class="pagination-btn" id="next-page" aria-label="Next page">
+<button class="pagination-btn" id="next-page" aria-label="Next page">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -1367,143 +1312,84 @@
         </div>
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterTags = document.querySelectorAll('.filter-tag');
-            const productCards = document.querySelectorAll('.product-card');
-            const catalogTitle = document.querySelector('.catalog-title');
-            const itemsCount = document.querySelector('.items-count');
-            const sortSelect = document.getElementById('sortSelect');
-            const itemsPerPage = 12;
-            let currentPage = 1;
-            let filteredCards = Array.from(productCards);
-            let currentFilter = 'all';
+    
 
-            // Function to sort products
-            function sortProducts(cards, order) {
-                return Array.from(cards).sort((a, b) => {
-                    const dateA = new Date(a.querySelector('.product-date').textContent.replace('Added: ', '')).getTime();
-                    const dateB = new Date(b.querySelector('.product-date').textContent.replace('Added: ', '')).getTime();
-                    
-                    // For newest first, we want larger timestamps at the start
-                    return order === 'newest' ? (dateB - dateA) : (dateA - dateB);
-                });
-            }
 
-            // Function to update pagination
-            function updatePagination() {
-                const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
-                const paginationNumbers = document.getElementById('pagination-numbers');
-                paginationNumbers.innerHTML = '';
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const filterTags = document.querySelectorAll('.filter-tag');
+  const masterCards = Array.from(document.querySelectorAll('.product-card')).map(c => c.cloneNode(true));
+  const itemsCount = document.querySelector('.items-count');
+  const sortSelect = document.getElementById('sortSelect');
+  const grid = document.querySelector('.catalog-grid');
 
-                // Add page numbers
-                for (let i = 1; i <= totalPages; i++) {
-                    const pageButton = document.createElement('button');
-                    pageButton.className = `pagination-number ${i === currentPage ? 'active' : ''}`;
-                    pageButton.textContent = i;
-                    pageButton.addEventListener('click', () => {
-                        currentPage = i;
-                        displayProducts();
-                    });
-                    paginationNumbers.appendChild(pageButton);
-                }
+  let currentFilter = 'all';
 
-                // Update prev/next buttons
-                document.getElementById('prev-page').disabled = currentPage === 1;
-                document.getElementById('next-page').disabled = currentPage === totalPages;
-            }
+  function getCardCategories(card) {
+    const raw = (card.getAttribute('data-category') || '').toLowerCase();
+    return raw.split(/[^a-z0-9]+/).filter(Boolean);
+  }
 
-            // Function to display products for current page
-            function displayProducts() {
-                const startIndex = (currentPage - 1) * itemsPerPage;
-                const endIndex = startIndex + itemsPerPage;
+  function sortProducts(cards, order) {
+    return cards.slice().sort((a, b) => {
+      const aTime = new Date(a.querySelector('.product-date').textContent.replace('Added: ', '')).getTime();
+      const bTime = new Date(b.querySelector('.product-date').textContent.replace('Added: ', '')).getTime();
+      return order === 'newest' ? (bTime - aTime) : (aTime - bTime);
+    });
+  }
 
-                // Hide all product cards first
-                productCards.forEach(card => {
-                    card.style.display = 'none';
-                });
+  function renderAll(cards) {
+    grid.innerHTML = '';
+    const frag = document.createDocumentFragment();
+    cards.forEach(card => frag.appendChild(card.cloneNode(true)));
+    grid.appendChild(frag);
+  }
 
-                // Show only products for current page  
-                for (let i = startIndex; i < endIndex && i < filteredCards.length; i++) {
-                    if (filteredCards[i]) {
-                        filteredCards[i].style.display = '';
-                    }
-                }
+  function applyFilterAndSort() {
+    let filtered = masterCards.filter(card => {
+      if (currentFilter === 'all') return true;
+      const tokens = getCardCategories(card);
+      return tokens.includes(currentFilter.toLowerCase());
+    });
+    filtered = sortProducts(filtered, sortSelect.value || 'newest');
+    if (itemsCount) itemsCount.textContent = `${filtered.length} items`;
+    renderAll(filtered);
+    window.scrollTo({ top: 0 });
+  }
 
-                updatePagination();
-            }
+  // Init
+  sortSelect.value = 'newest';
+  applyFilterAndSort();
 
-            // Function to apply filter and sort
-            function applyFilterAndSort() {
-                // Filter products based on current filter
-                filteredCards = Array.from(productCards).filter(card => 
-                    currentFilter === 'all' || card.getAttribute('data-category').includes(currentFilter)
-                );
+  // Events
+  sortSelect.addEventListener('change', applyFilterAndSort);
+  filterTags.forEach(tag => {
+    tag.addEventListener('click', function () {
+      filterTags.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      currentFilter = this.getAttribute('data-filter') || 'all';
+      applyFilterAndSort();
+    });
+  });
 
-                // Sort the filtered products according to current sort order
-                filteredCards = sortProducts(filteredCards, sortSelect.value);
+  // Mobile menu (unchanged)
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const closeMenu = document.querySelector('.close-menu');
+  const body = document.body;
+  function toggleMenu() {
+    mobileMenu.classList.toggle('active');
+    body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+  }
+  if (menuToggle && closeMenu) {
+    menuToggle.addEventListener('click', toggleMenu);
+    closeMenu.addEventListener('click', toggleMenu);
+  }
+});
+</script>
 
-                // Update count in title
-                itemsCount.textContent = `${filteredCards.length} items`;
-                
-                // Reset to first page and display
-                currentPage = 1;
-                displayProducts();
-            }
 
-            // Initial setup
-            filteredCards = sortProducts(Array.from(productCards), 'newest');
-            displayProducts();
 
-            // Handle sorting
-            sortSelect.addEventListener('change', function() {
-                applyFilterAndSort();
-            });
-
-            // Handle filtering
-            filterTags.forEach(tag => {
-                tag.addEventListener('click', function() {
-                    // Remove active class from all tags
-                    filterTags.forEach(t => t.classList.remove('active'));
-                    // Add active class to clicked tag
-                    this.classList.add('active');
-
-                    currentFilter = this.getAttribute('data-filter');
-                    applyFilterAndSort();
-                });
-            });
-
-            // Handle pagination navigation
-            document.getElementById('prev-page').addEventListener('click', () => {
-                if (currentPage > 1) {
-                    currentPage--;
-                    displayProducts();
-                }
-            });
-
-            document.getElementById('next-page').addEventListener('click', () => {
-                const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    displayProducts();
-                }
-            });
-
-            // Mobile menu toggle
-            const menuToggle = document.querySelector('.menu-toggle');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const closeMenu = document.querySelector('.close-menu');
-            const body = document.body;
-
-            function toggleMenu() {
-                mobileMenu.classList.toggle('active');
-                body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-            }
-
-            menuToggle.addEventListener('click', toggleMenu);
-            closeMenu.addEventListener('click', toggleMenu);
-        });
-    </script>
 
     <footer class="footer">
         <p>All rights reserved - © 2025 Jerry Ho</p>
