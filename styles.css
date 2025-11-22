@@ -1368,3 +1368,25 @@ body:has(.mobile-menu.active) .header-wrapper {
 
 /* Center pagination below grid */
 /* pagination removed */
+
+/* Ensure responsive columns take precedence after fixes */
+@media (max-width: 1024px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
