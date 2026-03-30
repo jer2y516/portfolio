@@ -70,7 +70,7 @@
         },
         "inLanguage": "en",
         "itemListOrder": "https://schema.org/ItemListOrderDescending",
-        "numberOfItems": 94,
+        "numberOfItems": 93,
         "itemListElement": [
             {
                 "@type": "ListItem",
@@ -1893,6 +1893,24 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Product 97: Aura | Architectural Ribbed Square Planter with Hidden Drainage -->
+                <div class="product-card" data-sales="0.0" data-category="planter">
+                    <div class="product-image">
+                        <img src="Image/Catalog/97.jpg"
+                            alt="Aura | Architectural Ribbed Square Planter with Hidden Drainage">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Aura | Architectural Ribbed Square Planter with Hidden Drainage</h3>
+                        <p class="product-date">Added: 2026-03-30</p>
+                        <div class="product-actions">
+                            <a href="https://cults3d.com/en/3d-model/home/aura-architectural-ribbed-square-planter-with-hidden-drainage"
+                                class="btn btn-primary">Cults</a>
+                            <a href="https://thangs.com/designer/Jer_Ho/3d-model/20260330_Aura%20%7C%20Architectural%20Ribbed%20Square%20Planter%20with%20Hidden%20Drainage_bottom.3mf-1532694"
+                                class="btn btn-secondary">Thangs</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="sentinel" style="height: 20px; width: 100%;"></div>
         </div>
@@ -2069,7 +2087,13 @@
             }
 
             function getCardCategories(card) {
-                const raw = (card.getAttribute('data-category') || '').toLowerCase();
+                const raw = [
+                    card.getAttribute('data-category') || '',
+                    // New tag attribute support (either style)
+                    card.getAttribute('data-tags') || '',
+                    card.getAttribute('data-tag') || ''
+                ].join(' ').toLowerCase();
+
                 return raw.split(/[^a-z0-9]+/).filter(Boolean);
             }
 
