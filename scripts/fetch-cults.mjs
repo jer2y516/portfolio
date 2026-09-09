@@ -4,16 +4,28 @@
  * verbatim (see CLAUDE.md content rule #2: site descriptions must be original
  * and more useful than the store's).
  *
- * You run this, not Claude — the API key never enters the assistant session:
+ * You run this, not Claude — the API key never enters the assistant session.
  *
  *   1. Generate a key at  https://cults3d.com/en/api/keys
- *   2. CULTS_USER="YourUsername" CULTS_KEY="the-key" node scripts/fetch-cults.mjs
+ *   2. Create a file called  .env  in the project root with two lines:
+ *          CULTS_USER=YourCultsUsername
+ *          CULTS_KEY=the-key-you-just-generated
+ *   3. Run:  node scripts/fetch-cults.mjs
  *
  * Output: raw-assets/cults_export.json  (gitignored)
  * Rate limits: ~60 req / 30 s, 500 / day — one run is well within that.
  */
 import fs from 'node:fs';
 import path from 'node:path';
+
+const ROOT_ = path.resolve(import.meta.dirname, '..');
+// minimal .env loader (no dependency)
+try {
+  for (const line of fs.readFileSync(path.join(ROOT_, '.env'), 'utf8').split(/\r?\n/)) {
+    const m = line.match(/^\s*([A-Z_]+)\s*=\s*(.*)\s*$/);
+    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].replace(/^["']|["']$/g, '');
+  }
+} catch { /* no .env — fall back to real env vars */ }
 
 const ENDPOINT = 'https://cults3d.com/graphql';
 const USER = process.env.CULTS_USER;
