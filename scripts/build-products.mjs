@@ -13,7 +13,7 @@ import path from 'node:path';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const CSV = path.join(ROOT, 'Product list - master.csv');
-const IMG_DIR = path.join(ROOT, 'Image', 'Catalog');
+const IMG_DIR = path.join(ROOT, 'raw-assets', 'catalog'); // untracked originals
 const OUT = path.join(ROOT, 'src', 'data', 'products.json');
 const CATALOG = path.join(ROOT, 'catalog.html');
 
@@ -70,6 +70,75 @@ const FLAG_TO_TAG = {
   'K pop Idol': 'k-pop',
   'Planter': 'planter',
 };
+
+// ---------- tags (SEO, additive, cross-category) ----------
+// Vocabulary — keep tight; every tag must be a real search phrase and must NOT
+// just duplicate one of the 5 categories. See docs/tags.md.
+export const TAG_VOCAB = [
+  // compatibility
+  'magsafe', 'apple-watch', 'headphones', 'bambu-lab-led-kit',
+  // print / build
+  'no-supports', 'print-in-place', 'multi-color', 'modular',
+  // use / theme
+  'charging', 'cable-management', 'retro', 'planter', 'k-pop', 'seasonal',
+];
+
+// derivable from the product name (conservative — avoid false positives)
+const NAME_TAG_RULES = [
+  ['magsafe', /mag\s?safe|wireless charg/i],
+  ['apple-watch', /apple watch/i],
+  ['headphones', /head\s?phone|ear\s?phone|airpods? max/i],
+  ['charging', /charg(?:er|ing)|\bdock\b/i],
+  ['cable-management', /cable (?:management|storage)/i],
+  ['modular', /\bmodular\b|multi[-\s]?layered|multi[-\s]?device|\bstackable\b|3[-\s]?in[-\s]?1/i],
+  ['planter', /\bplanter\b|plant pot|terraflora/i],
+  ['retro', /\bretro\b|\bvintage\b|\b80s\b|crt monitor|imac g3|music records? lamp|records? player/i],
+  ['seasonal', /christmas|halloween|\beaster\b|valentine/i],
+  ['multi-color', /colou?r swatch|multi[-\s]?colou?r/i],
+  ['bambu-lab-led-kit', /bambu\s?lab.{0,12}led|led kit\s?00\d/i],
+];
+
+// Cults tagNames (lower-cased) -> our vocabulary. Applied only when
+// raw-assets/cults_export.json is present.
+const CULTS_TAG_MAP = {
+  'support free': 'no-supports', 'support-free': 'no-supports', 'no support': 'no-supports',
+  'no supports': 'no-supports', 'supportless': 'no-supports', 'no-support': 'no-supports',
+  'print in place': 'print-in-place', 'print-in-place': 'print-in-place', 'in place': 'print-in-place',
+  'magsafe': 'magsafe', 'mag safe': 'magsafe',
+  'apple watch': 'apple-watch',
+  'headphone': 'headphones', 'headphones': 'headphones', 'earphone': 'headphones', 'headphone stand': 'headphones',
+  'modular': 'modular',
+  'cable management': 'cable-management', 'cable-management': 'cable-management',
+  'planter': 'planter', 'plant pot': 'planter', 'plant': 'planter',
+  'multicolor': 'multi-color', 'multi color': 'multi-color', 'multi-color': 'multi-color',
+  'multicolour': 'multi-color', 'ams': 'multi-color',
+  'retro': 'retro', 'vintage': 'retro',
+  'christmas': 'seasonal', 'xmas': 'seasonal', 'holiday': 'seasonal',
+  'kpop': 'k-pop', 'k-pop': 'k-pop', 'k pop': 'k-pop',
+  'wireless charger': 'charging', 'wireless charging': 'charging', 'charging dock': 'charging',
+  'bambu lab led': 'bambu-lab-led-kit', 'led kit': 'bambu-lab-led-kit',
+};
+
+// optional Cults export (owner runs scripts/fetch-cults.mjs)
+let cultsBySlug = new Map();
+try {
+  const exp = JSON.parse(fs.readFileSync(path.join(ROOT, 'raw-assets', 'cults_export.json'), 'utf8'));
+  cultsBySlug = new Map((exp.creations || []).map((c) => [c.slug, c]));
+} catch { /* not fetched yet */ }
+
+function deriveTags(name, slug, csvTags) {
+  const set = new Set(csvTags);
+  const hay = name.toLowerCase();
+  for (const [tag, re] of NAME_TAG_RULES) if (re.test(hay)) set.add(tag);
+  const cults = cultsBySlug.get(slug);
+  if (cults?.tagNames) {
+    for (const t of cults.tagNames) {
+      const mapped = CULTS_TAG_MAP[String(t).toLowerCase().trim()];
+      if (mapped) set.add(mapped);
+    }
+  }
+  return [...set].filter((t) => TAG_VOCAB.includes(t)).sort();
+}
 
 // Products with no CSV category flag. PROVISIONAL best-guess categories so the
 // build stays valid — every one is listed in docs/uncategorised-review.md for
@@ -170,7 +239,8 @@ for (const r of raw.slice(1)) {
   if (categories.length > 1 && categories.includes('organisers')) {
     categories = categories.filter((c) => c !== 'organisers');
   }
-  const tags = [...new Set(flags.map((f) => FLAG_TO_TAG[f]).filter(Boolean))];
+  const csvTags = flags.map((f) => FLAG_TO_TAG[f]).filter(Boolean);
+  const tags = deriveTags(name, slug, csvTags);
   let provisional = false;
   if (categories.length === 0 && PROVISIONAL_CATEGORY[imgNum]) {
     categories = [...PROVISIONAL_CATEGORY[imgNum]];

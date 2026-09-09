@@ -19,9 +19,11 @@ const PRODUCTS = path.join(ROOT, 'src', 'data', 'products.json');
 const IMG_DIR = path.join(ROOT, 'public', 'img');
 
 const CATEGORIES = new Set(['skadis', 'lamps', 'apple', 'organisers', 'display']);
+// keep in sync with TAG_VOCAB in build-products.mjs / docs/tags.md
 const TAGS = new Set([
-  'k-pop', 'planter', 'no-supports', 'bambu-lab-led-kit', 'magsafe',
-  'print-in-place', 'modular', 'wall-mounted', 'multi-color',
+  'magsafe', 'apple-watch', 'headphones', 'bambu-lab-led-kit',
+  'no-supports', 'print-in-place', 'multi-color', 'modular',
+  'charging', 'cable-management', 'retro', 'planter', 'k-pop', 'seasonal',
 ]);
 
 // mojibake: replacement char, or Latin-1-mis-decode signatures

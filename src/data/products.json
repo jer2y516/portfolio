@@ -9,7 +9,9 @@
     "categories": [
       "lamps"
     ],
-    "tags": [],
+    "tags": [
+      "retro"
+    ],
     "images": {
       "plain": "1b.jpg",
       "colour": "1.jpg"
@@ -45,7 +47,10 @@
     "categories": [
       "apple"
     ],
-    "tags": [],
+    "tags": [
+      "apple-watch",
+      "charging"
+    ],
     "images": {
       "plain": "2b.jpg",
       "colour": "2.jpg"
@@ -119,7 +124,10 @@
       "apple",
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "apple-watch",
+      "charging"
+    ],
     "images": {
       "plain": "4b.jpg",
       "colour": "4.jpg"
@@ -155,7 +163,9 @@
     "categories": [
       "apple"
     ],
-    "tags": [],
+    "tags": [
+      "headphones"
+    ],
     "images": {
       "plain": "5b.jpg",
       "colour": "5.jpg"
@@ -191,7 +201,9 @@
     "categories": [
       "apple"
     ],
-    "tags": [],
+    "tags": [
+      "retro"
+    ],
     "images": {
       "plain": "6b.jpg",
       "colour": "6.jpg"
@@ -227,7 +239,9 @@
     "categories": [
       "apple"
     ],
-    "tags": [],
+    "tags": [
+      "magsafe"
+    ],
     "images": {
       "plain": "8b.jpg",
       "colour": "8.jpg"
@@ -480,7 +494,9 @@
     "categories": [
       "organisers"
     ],
-    "tags": [],
+    "tags": [
+      "modular"
+    ],
     "images": {
       "plain": "16b.jpg",
       "colour": "16.jpg"
@@ -517,7 +533,9 @@
       "organisers"
     ],
     "provisionalCategory": true,
-    "tags": [],
+    "tags": [
+      "multi-color"
+    ],
     "images": {
       "plain": "17b.jpg",
       "colour": "17.jpg"
@@ -879,7 +897,11 @@
     "categories": [
       "lamps"
     ],
-    "tags": [],
+    "tags": [
+      "charging",
+      "magsafe",
+      "retro"
+    ],
     "images": {
       "plain": "27b.jpg",
       "colour": "27.jpg"
@@ -915,7 +937,11 @@
     "categories": [
       "organisers"
     ],
-    "tags": [],
+    "tags": [
+      "cable-management",
+      "charging",
+      "magsafe"
+    ],
     "images": {
       "plain": "28b.jpg",
       "colour": "28.jpg"
@@ -951,7 +977,9 @@
     "categories": [
       "lamps"
     ],
-    "tags": [],
+    "tags": [
+      "retro"
+    ],
     "images": {
       "plain": "29b.jpg",
       "colour": "29.jpg"
@@ -1314,7 +1342,11 @@
     "categories": [
       "apple"
     ],
-    "tags": [],
+    "tags": [
+      "apple-watch",
+      "charging",
+      "retro"
+    ],
     "images": {
       "plain": "39b.jpg",
       "colour": "39.jpg"
@@ -1639,7 +1671,9 @@
     "categories": [
       "lamps"
     ],
-    "tags": [],
+    "tags": [
+      "modular"
+    ],
     "images": {
       "plain": "49b.jpg",
       "colour": "49.jpg"
@@ -1675,7 +1709,10 @@
     "categories": [
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "cable-management",
+      "modular"
+    ],
     "images": {
       "plain": "50b.jpg",
       "colour": "50.jpg"
@@ -1748,7 +1785,9 @@
       "display"
     ],
     "provisionalCategory": true,
-    "tags": [],
+    "tags": [
+      "modular"
+    ],
     "images": {
       "plain": "52b.jpg",
       "colour": "52.jpg"
@@ -1785,7 +1824,10 @@
       "apple",
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "charging",
+      "magsafe"
+    ],
     "images": {
       "plain": "53b.jpg",
       "colour": "53.jpg"
@@ -1929,7 +1971,9 @@
     "categories": [
       "lamps"
     ],
-    "tags": [],
+    "tags": [
+      "retro"
+    ],
     "images": {
       "plain": "57b.jpg",
       "colour": "57.jpg"
@@ -2001,7 +2045,9 @@
     "categories": [
       "organisers"
     ],
-    "tags": [],
+    "tags": [
+      "retro"
+    ],
     "images": {
       "plain": "59b.jpg",
       "colour": "59.jpg"
@@ -2110,7 +2156,9 @@
       "apple",
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "headphones"
+    ],
     "images": {
       "plain": "62b.jpg",
       "colour": "62.jpg"
@@ -2291,7 +2339,9 @@
     "categories": [
       "organisers"
     ],
-    "tags": [],
+    "tags": [
+      "modular"
+    ],
     "images": {
       "plain": "67b.jpg",
       "colour": "67.jpg"
@@ -2399,7 +2449,9 @@
     "categories": [
       "organisers"
     ],
-    "tags": [],
+    "tags": [
+      "modular"
+    ],
     "images": {
       "plain": "70b.jpg",
       "colour": "70.jpg"
@@ -2435,7 +2487,9 @@
     "categories": [
       "apple"
     ],
-    "tags": [],
+    "tags": [
+      "headphones"
+    ],
     "images": {
       "plain": "72b.jpg",
       "colour": "72.jpg"
@@ -2472,7 +2526,10 @@
       "apple",
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "charging",
+      "modular"
+    ],
     "images": {
       "plain": "73b.jpg",
       "colour": "73.jpg"
@@ -2580,7 +2637,9 @@
     "categories": [
       "organisers"
     ],
-    "tags": [],
+    "tags": [
+      "modular"
+    ],
     "images": {
       "plain": "76b.jpg",
       "colour": "76.jpg"
@@ -2798,7 +2857,10 @@
     "categories": [
       "apple"
     ],
-    "tags": [],
+    "tags": [
+      "apple-watch",
+      "charging"
+    ],
     "images": {
       "plain": "82b.jpg",
       "colour": "82.jpg"
@@ -2835,7 +2897,10 @@
       "lamps",
       "apple"
     ],
-    "tags": [],
+    "tags": [
+      "charging",
+      "retro"
+    ],
     "images": {
       "plain": "83b.jpg",
       "colour": "83.jpg"
@@ -2872,7 +2937,9 @@
       "organisers"
     ],
     "provisionalCategory": true,
-    "tags": [],
+    "tags": [
+      "seasonal"
+    ],
     "images": {
       "plain": "84b.jpg",
       "colour": "84.jpg"
@@ -3273,7 +3340,10 @@
     "categories": [
       "apple"
     ],
-    "tags": [],
+    "tags": [
+      "charging",
+      "magsafe"
+    ],
     "images": {
       "plain": "95b.jpg",
       "colour": "95.jpg"
@@ -3384,7 +3454,9 @@
     "categories": [
       "lamps"
     ],
-    "tags": [],
+    "tags": [
+      "retro"
+    ],
     "images": {
       "plain": "98b.jpg",
       "colour": "98.jpg"
@@ -3456,7 +3528,9 @@
     "categories": [
       "apple"
     ],
-    "tags": [],
+    "tags": [
+      "cable-management"
+    ],
     "images": {
       "plain": "101b.jpg",
       "colour": "101.jpg"
@@ -3492,7 +3566,11 @@
     "categories": [
       "apple"
     ],
-    "tags": [],
+    "tags": [
+      "charging",
+      "magsafe",
+      "modular"
+    ],
     "images": {
       "plain": "102b.jpg",
       "colour": "102.jpg"
@@ -3528,7 +3606,9 @@
     "categories": [
       "organisers"
     ],
-    "tags": [],
+    "tags": [
+      "modular"
+    ],
     "images": {
       "plain": "103b.jpg",
       "colour": "103.jpg"
@@ -3601,6 +3681,7 @@
       "organisers"
     ],
     "tags": [
+      "modular",
       "planter"
     ],
     "images": {
