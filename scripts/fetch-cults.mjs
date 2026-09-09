@@ -19,13 +19,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const ROOT_ = path.resolve(import.meta.dirname, '..');
-// minimal .env loader (no dependency)
-try {
-  for (const line of fs.readFileSync(path.join(ROOT_, '.env'), 'utf8').split(/\r?\n/)) {
-    const m = line.match(/^\s*([A-Z_]+)\s*=\s*(.*)\s*$/);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].replace(/^["']|["']$/g, '');
-  }
-} catch { /* no .env — fall back to real env vars */ }
+// minimal .env loader (no dependency). .env.txt is accepted because Notepad
+// silently appends .txt when you "Save As" .env. Both are gitignored.
+for (const name of ['.env', '.env.txt']) {
+  try {
+    for (const line of fs.readFileSync(path.join(ROOT_, name), 'utf8').split(/\r?\n/)) {
+      const m = line.match(/^\s*([A-Z_]+)\s*=\s*(.*)\s*$/);
+      if (m && !process.env[m[1]]) process.env[m[1]] = m[2].replace(/^["']|["']$/g, '');
+    }
+  } catch { /* not present */ }
+}
 
 const ENDPOINT = 'https://cults3d.com/graphql';
 const USER = process.env.CULTS_USER;
