@@ -51,35 +51,43 @@ async function gql(query, variables = {}) {
   return json.data;
 }
 
-// paginate myself.creations; `offset`/`limit` are the documented list args
-const PAGE = 30;
+const PAGE = 20;
 const CREATION_FIELDS = `
-  id
+  identifier
   name
   slug
   url
   shortUrl
   description
-  tagNames
+  details
+  tags
+  metaTags { name }
   publishedAt
   updatedAt
-  license { name }
-  category { name }
+  downloadsCount
+  likesCount
+  viewsCount
+  category { name slug }
+  license { name code allowsCommercialUse }
+  comments { text publishedAt }
 `;
 
 async function fetchAll() {
   const all = [];
+  let total = null;
   for (let offset = 0; ; offset += PAGE) {
     const data = await gql(
       `query($limit:Int!,$offset:Int!){
-         myself { creations(limit:$limit, offset:$offset){ ${CREATION_FIELDS} } }
+         myself { creationsBatch(limit:$limit, offset:$offset){ total results { ${CREATION_FIELDS} } } }
        }`,
       { limit: PAGE, offset },
     );
-    const batch = data?.myself?.creations ?? [];
-    all.push(...batch);
-    console.log(`  fetched ${all.length}…`);
-    if (batch.length < PAGE) break;
+    const batch = data?.myself?.creationsBatch;
+    const results = batch?.results ?? [];
+    total ??= batch?.total ?? null;
+    all.push(...results);
+    console.log(`  fetched ${all.length}${total ? ` / ${total}` : ''}…`);
+    if (results.length < PAGE || (total != null && all.length >= total)) break;
     await new Promise((r) => setTimeout(r, 1200)); // be gentle
   }
   return all;

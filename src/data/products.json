@@ -87,7 +87,9 @@
       "organisers"
     ],
     "provisionalCategory": true,
-    "tags": [],
+    "tags": [
+      "planter"
+    ],
     "images": {
       "plain": "3b.jpg",
       "colour": "3.jpg"
@@ -164,6 +166,7 @@
       "apple"
     ],
     "tags": [
+      "cable-management",
       "headphones"
     ],
     "images": {
@@ -495,6 +498,9 @@
       "organisers"
     ],
     "tags": [
+      "apple-watch",
+      "charging",
+      "magsafe",
       "modular"
     ],
     "images": {
@@ -1124,7 +1130,9 @@
     "categories": [
       "lamps"
     ],
-    "tags": [],
+    "tags": [
+      "bambu-lab-led-kit"
+    ],
     "images": {
       "plain": "33b.jpg",
       "colour": "33.jpg"
@@ -1635,7 +1643,9 @@
     "categories": [
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "modular"
+    ],
     "images": {
       "plain": "48b.jpg",
       "colour": "48.jpg"
@@ -1863,7 +1873,11 @@
     "categories": [
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "apple-watch",
+      "charging",
+      "magsafe"
+    ],
     "images": {
       "plain": "54b.jpg",
       "colour": "54.jpg"
@@ -1899,7 +1913,9 @@
     "categories": [
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "modular"
+    ],
     "images": {
       "plain": "55b.jpg",
       "colour": "55.jpg"
@@ -1972,6 +1988,7 @@
       "lamps"
     ],
     "tags": [
+      "modular",
       "retro"
     ],
     "images": {
@@ -2009,7 +2026,9 @@
     "categories": [
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "modular"
+    ],
     "images": {
       "plain": "58b.jpg",
       "colour": "58.jpg"
@@ -2046,6 +2065,7 @@
       "organisers"
     ],
     "tags": [
+      "modular",
       "retro"
     ],
     "images": {
@@ -2083,7 +2103,10 @@
     "categories": [
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "modular",
+      "no-supports"
+    ],
     "images": {
       "plain": "60b.jpg",
       "colour": "60.jpg"
@@ -2119,7 +2142,9 @@
     "categories": [
       "lamps"
     ],
-    "tags": [],
+    "tags": [
+      "bambu-lab-led-kit"
+    ],
     "images": {
       "plain": "61b.jpg",
       "colour": "61.jpg"
@@ -2195,7 +2220,9 @@
       "apple",
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "modular"
+    ],
     "images": {
       "plain": "63b.jpg",
       "colour": "63.jpg"
@@ -2303,7 +2330,9 @@
     "categories": [
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "modular"
+    ],
     "images": {
       "plain": "66b.jpg",
       "colour": "66.jpg"
@@ -2377,7 +2406,9 @@
     "categories": [
       "organisers"
     ],
-    "tags": [],
+    "tags": [
+      "no-supports"
+    ],
     "images": {
       "plain": "68b.jpg",
       "colour": "68.jpg"
@@ -2528,6 +2559,7 @@
     ],
     "tags": [
       "charging",
+      "headphones",
       "modular"
     ],
     "images": {
@@ -2676,7 +2708,8 @@
       "organisers"
     ],
     "tags": [
-      "k-pop"
+      "k-pop",
+      "multi-color"
     ],
     "images": {
       "plain": "77b.jpg",
@@ -2713,7 +2746,9 @@
     "categories": [
       "display"
     ],
-    "tags": [],
+    "tags": [
+      "multi-color"
+    ],
     "images": {
       "plain": "78b.jpg",
       "colour": "78.jpg"
@@ -2821,7 +2856,9 @@
     "categories": [
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "modular"
+    ],
     "images": {
       "plain": "81b.jpg",
       "colour": "81.jpg"
@@ -2859,7 +2896,8 @@
     ],
     "tags": [
       "apple-watch",
-      "charging"
+      "charging",
+      "no-supports"
     ],
     "images": {
       "plain": "82b.jpg",
@@ -2898,7 +2936,9 @@
       "apple"
     ],
     "tags": [
+      "apple-watch",
       "charging",
+      "magsafe",
       "retro"
     ],
     "images": {
@@ -3012,7 +3052,9 @@
     "categories": [
       "organisers"
     ],
-    "tags": [],
+    "tags": [
+      "planter"
+    ],
     "images": {
       "plain": "86b.jpg",
       "colour": "86.jpg"
@@ -3156,7 +3198,9 @@
     "categories": [
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "no-supports"
+    ],
     "images": {
       "plain": "90b.jpg",
       "colour": "90.jpg"
@@ -3193,7 +3237,9 @@
       "skadis",
       "display"
     ],
-    "tags": [],
+    "tags": [
+      "no-supports"
+    ],
     "images": {
       "plain": "91b.jpg",
       "colour": "91.jpg"
@@ -3379,7 +3425,9 @@
     "categories": [
       "skadis"
     ],
-    "tags": [],
+    "tags": [
+      "no-supports"
+    ],
     "images": {
       "plain": "96b.jpg",
       "colour": "96.jpg"
@@ -3455,6 +3503,9 @@
       "lamps"
     ],
     "tags": [
+      "bambu-lab-led-kit",
+      "multi-color",
+      "no-supports",
       "retro"
     ],
     "images": {
@@ -3492,7 +3543,11 @@
     "categories": [
       "lamps"
     ],
-    "tags": [],
+    "tags": [
+      "bambu-lab-led-kit",
+      "multi-color",
+      "no-supports"
+    ],
     "images": {
       "plain": "100b.jpg",
       "colour": "100.jpg"
@@ -3529,7 +3584,9 @@
       "apple"
     ],
     "tags": [
-      "cable-management"
+      "cable-management",
+      "charging",
+      "magsafe"
     ],
     "images": {
       "plain": "101b.jpg",
@@ -3567,6 +3624,7 @@
       "apple"
     ],
     "tags": [
+      "apple-watch",
       "charging",
       "magsafe",
       "modular"
@@ -3607,7 +3665,8 @@
       "organisers"
     ],
     "tags": [
-      "modular"
+      "modular",
+      "no-supports"
     ],
     "images": {
       "plain": "103b.jpg",
@@ -3644,7 +3703,9 @@
     "categories": [
       "organisers"
     ],
-    "tags": [],
+    "tags": [
+      "multi-color"
+    ],
     "images": {
       "plain": "104b.jpg",
       "colour": "104.jpg"
@@ -3682,6 +3743,7 @@
     ],
     "tags": [
       "modular",
+      "no-supports",
       "planter"
     ],
     "images": {
@@ -3720,6 +3782,7 @@
       "skadis"
     ],
     "tags": [
+      "no-supports",
       "planter"
     ],
     "images": {

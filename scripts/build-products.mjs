@@ -98,26 +98,31 @@ const NAME_TAG_RULES = [
   ['bambu-lab-led-kit', /bambu\s?lab.{0,12}led|led kit\s?00\d/i],
 ];
 
-// Cults tagNames (lower-cased) -> our vocabulary. Applied only when
-// raw-assets/cults_export.json is present.
+// Cults `tags` (lower-cased) -> our vocabulary. Only maps unambiguous ones;
+// Cults tags are a loose folksonomy (ikea, minimal, homedecor, pegbaord…).
 const CULTS_TAG_MAP = {
-  'support free': 'no-supports', 'support-free': 'no-supports', 'no support': 'no-supports',
-  'no supports': 'no-supports', 'supportless': 'no-supports', 'no-support': 'no-supports',
-  'print in place': 'print-in-place', 'print-in-place': 'print-in-place', 'in place': 'print-in-place',
   'magsafe': 'magsafe', 'mag safe': 'magsafe',
-  'apple watch': 'apple-watch',
-  'headphone': 'headphones', 'headphones': 'headphones', 'earphone': 'headphones', 'headphone stand': 'headphones',
+  'apple watch': 'apple-watch', 'applewatch': 'apple-watch',
+  'headphone': 'headphones', 'headphones': 'headphones', 'earphone': 'headphones',
+  'headphone stand': 'headphones', 'headphone holder': 'headphones',
   'modular': 'modular',
-  'cable management': 'cable-management', 'cable-management': 'cable-management',
-  'planter': 'planter', 'plant pot': 'planter', 'plant': 'planter',
-  'multicolor': 'multi-color', 'multi color': 'multi-color', 'multi-color': 'multi-color',
-  'multicolour': 'multi-color', 'ams': 'multi-color',
+  'cable management': 'cable-management', 'cablemanagement': 'cable-management',
+  'planter': 'planter', 'plant pot': 'planter', 'garden': 'planter', 'plant': 'planter',
+  'multicolor': 'multi-color', 'multi color': 'multi-color', 'multicolour': 'multi-color', 'ams': 'multi-color',
   'retro': 'retro', 'vintage': 'retro',
-  'christmas': 'seasonal', 'xmas': 'seasonal', 'holiday': 'seasonal',
+  'christmas': 'seasonal', 'xmas': 'seasonal',
   'kpop': 'k-pop', 'k-pop': 'k-pop', 'k pop': 'k-pop',
-  'wireless charger': 'charging', 'wireless charging': 'charging', 'charging dock': 'charging',
-  'bambu lab led': 'bambu-lab-led-kit', 'led kit': 'bambu-lab-led-kit',
+  'charger': 'charging', 'wireless charger': 'charging', 'wireless charging': 'charging',
 };
+
+// tags that only ever appear in prose, not in the title or Cults tags —
+// scanned against Cults description + details.
+const CULTS_TEXT_RULES = [
+  ['no-supports', /no support|support[-\s]?free|without support|no[-\s]?support[-\s]?(needed|print|required)|supportless/i],
+  ['print-in-place', /print[-\s]?in[-\s]?place|prints? in place|no assembly (needed|required)/i],
+  ['bambu-lab-led-kit', /bambu[-\s]?lab.{0,15}led|led kit\s?00\d|bambu.{0,15}light kit/i],
+  ['multi-color', /\bams\b|multi[-\s]?colou?r|multi[-\s]?material|filament swap|color change at layer/i],
+];
 
 // optional Cults export (owner runs scripts/fetch-cults.mjs)
 let cultsBySlug = new Map();
@@ -131,11 +136,13 @@ function deriveTags(name, slug, csvTags) {
   const hay = name.toLowerCase();
   for (const [tag, re] of NAME_TAG_RULES) if (re.test(hay)) set.add(tag);
   const cults = cultsBySlug.get(slug);
-  if (cults?.tagNames) {
-    for (const t of cults.tagNames) {
+  if (cults) {
+    for (const t of (cults.tags || [])) {
       const mapped = CULTS_TAG_MAP[String(t).toLowerCase().trim()];
       if (mapped) set.add(mapped);
     }
+    const prose = `${cults.description || ''}\n${cults.details || ''}`;
+    for (const [tag, re] of CULTS_TEXT_RULES) if (re.test(prose)) set.add(tag);
   }
   return [...set].filter((t) => TAG_VOCAB.includes(t)).sort();
 }

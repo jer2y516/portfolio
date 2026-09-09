@@ -40,3 +40,8 @@ raw-assets/
 # secrets
 .env
 cults_export.json
+
+# any .env variant (Notepad saves .env as .env.txt)
+.env
+.env.*
+*.env
