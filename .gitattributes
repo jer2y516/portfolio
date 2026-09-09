@@ -1,0 +1,13 @@
+# Keep tooling/source files LF regardless of core.autocrlf (Astro/Node toolchain)
+*.mjs   text eol=lf
+*.js    text eol=lf
+*.ts    text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.astro text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+
+# Legacy static site stays as-is (currently CRLF) — do not renormalize
+*.html  -text
+*.css   -text
