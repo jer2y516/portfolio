@@ -9,3 +9,19 @@ node_modules/
 *~ 
 # Local Netlify folder
 .netlify
+
+# Dev/scratch junk — never deploy or commit these
+*.py
+script_*.js
+render_output.txt
+insertion_point.txt
+catalog_end.txt
+catalog_sample.txt
+catalog_full.png
+catalog_debug.png
+catalog_snapshot.png
+mobile.png
+tmp.jpg
+
+# Product source data (kept out of the deploy repo)
+Product list*.csv
