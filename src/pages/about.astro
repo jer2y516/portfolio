@@ -69,31 +69,33 @@ const jsonLd = [
     <section class="about-hero">
       <div class="wrap">
         <div class="stage">
-          <!-- 3 pre-aligned same-size layers, just stacked in one box -->
-          <img class="lyr l-back" aria-hidden="true" alt="" width="692" height="669" loading="lazy"
-            src="/img/about-props-1000.webp"
-            srcset="/img/about-props-460.webp 460w, /img/about-props-700.webp 700w, /img/about-props-1000.webp 1000w"
-            sizes="(min-width:900px) 560px, 88vw" />
+          <!-- 3 pre-aligned same-size layers + the icon marquee, stacked in one box -->
+          <div class="about-media" aria-hidden="true">
+            <img class="lyr l-back" alt="" width="692" height="669" loading="lazy"
+              src="/img/about-props-1000.webp"
+              srcset="/img/about-props-460.webp 460w, /img/about-props-700.webp 700w, /img/about-props-1000.webp 1000w"
+              sizes="(min-width:900px) 560px, 92vw" />
 
-          <div class="lyr l-icons" aria-hidden="true">
-            <ul class="icon-track">
-              {[...skillIcons, ...skillIcons].map((ic, i) => (
-                <li class="icon" style={`--i:${i % skillIcons.length}`}>
-                  <img src={`/about-icons/${ic.file}`} alt={ic.name}
-                    onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'ph',textContent:this.alt}))" />
-                </li>
-              ))}
-            </ul>
+            <div class="lyr l-icons">
+              <ul class="icon-track">
+                {[...skillIcons, ...skillIcons].map((ic, i) => (
+                  <li class="icon" style={`--i:${i % skillIcons.length}`}>
+                    <img src={`/about-icons/${ic.file}`} alt={ic.name}
+                      onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'ph',textContent:this.alt}))" />
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <img class="lyr l-front" alt="" width="692" height="669" fetchpriority="high"
+              src="/img/about-portrait-1000.webp"
+              srcset="/img/about-portrait-460.webp 460w, /img/about-portrait-700.webp 700w, /img/about-portrait-1000.webp 1000w"
+              sizes="(min-width:900px) 560px, 92vw" />
+            <img class="lyr l-cursor" alt="" width="692" height="669" loading="lazy"
+              src="/img/about-cursor-700.webp"
+              srcset="/img/about-cursor-460.webp 460w, /img/about-cursor-700.webp 700w"
+              sizes="(min-width:900px) 560px, 92vw" />
           </div>
-
-          <img class="lyr l-front" aria-hidden="true" alt="" width="692" height="669" fetchpriority="high"
-            src="/img/about-portrait-1000.webp"
-            srcset="/img/about-portrait-460.webp 460w, /img/about-portrait-700.webp 700w, /img/about-portrait-1000.webp 1000w"
-            sizes="(min-width:900px) 560px, 88vw" />
-          <img class="lyr l-cursor" aria-hidden="true" alt="" width="692" height="669" loading="lazy"
-            src="/img/about-cursor-700.webp"
-            srcset="/img/about-cursor-460.webp 460w, /img/about-cursor-700.webp 700w"
-            sizes="(min-width:900px) 560px, 88vw" />
 
           <!-- copy -->
           <div class="copy">
@@ -117,14 +119,30 @@ const jsonLd = [
     <section class="about-do wrap">
       <p class="lbl">What I do</p>
       <div class="do-grid">
-        <div><h3>UI/UX Design</h3><p>Product and interface design — research, flows,
-          prototypes, design systems. The day job, and the lens on everything else.</p></div>
-        <div><h3>3D-Print Design</h3><p>{products.length}+ downloadable models, sold on
-          Cults3D, Thangs, Pixup and Cubee. The IKEA SKÅDIS ecosystem is the core.</p></div>
-        <div><h3>Content Creation</h3><p>Build logs, design breakdowns and print tips on
-          Instagram, Threads, YouTube and TikTok — <b>@jer_folio</b>.</p></div>
-        <div><h3>+ More</h3><p>Branding, illustration and the occasional physical-product
-          consult. If it needs designing, ask.</p></div>
+        <div>
+          <svg class="do-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="m13 14 3 2.5-3 2.5-1-2z" fill="currentColor" stroke="none"/></svg>
+          <h3>UI/UX Design</h3>
+          <p>Product and interface design — research, flows, prototypes, design
+            systems. The day job, and the lens on everything else.</p>
+        </div>
+        <div>
+          <svg class="do-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 7.5v9L12 21l9-4.5v-9Z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg>
+          <h3>3D-Print Design</h3>
+          <p>{products.length}+ downloadable models, sold on Cults3D, Thangs, Pixup
+            and Cubee. The IKEA SKÅDIS ecosystem is the core.</p>
+        </div>
+        <div>
+          <svg class="do-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z" fill="currentColor" stroke="none"/></svg>
+          <h3>Content Creation</h3>
+          <p>Build logs, design breakdowns and print tips on Instagram, Threads,
+            YouTube and TikTok — <b>@jer_folio</b>.</p>
+        </div>
+        <div>
+          <svg class="do-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M5.5 5.5l13 13M18.5 5.5l-13 13"/></svg>
+          <h3>+ More</h3>
+          <p>Branding, illustration and the occasional physical-product consult.
+            If it needs designing, ask.</p>
+        </div>
       </div>
     </section>
 
