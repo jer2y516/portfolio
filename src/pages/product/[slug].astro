@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { products, seriesLabel, storeLinks, isIndexable } from '../../lib/products.js';
+import { products, seriesLabel, storeLinks, isIndexable, img } from '../../lib/products.js';
 import { SITE } from '../../lib/site.js';
 
 export function getStaticPaths() {
@@ -10,9 +10,11 @@ export function getStaticPaths() {
 const { p } = Astro.props;
 const series = seriesLabel(p);
 const stores = storeLinks(p, 'detail');
-const img = `/Image/Catalog/`;
-const imgAbs = new URL(img + (p.images.colour || p.images.plain), SITE).toString();
+const plain = img(p.images.plain || p.images.colour);
+const colour = img(p.images.colour || p.images.plain);
+const imgAbs = new URL(colour.src, SITE).toString();
 const url = `${SITE}/product/${p.slug}`;
+const sizes = '(min-width:860px) 46vw, 92vw';
 
 const SPEC_ROWS = [
   ['layerHeight', 'Layer height'],
@@ -72,16 +74,16 @@ const jsonLd = [
     : []),
 ];
 ---
-<Base {title} {description} {robots} path={`/product/${p.slug}`} ogImage={img + (p.images.colour || p.images.plain)} {jsonLd} activeNav="catalog">
+<Base {title} {description} {robots} path={`/product/${p.slug}`} ogImage={colour.src} {jsonLd} activeNav="catalog">
   <main id="main" class="detail">
     <div class="wrap">
       <div>
         <div class="shot">
           <img
-            src={img + (p.images.plain || p.images.colour)}
-            data-plain={img + (p.images.plain || p.images.colour)}
-            data-colour={img + (p.images.colour || p.images.plain)}
-            alt={p.name} width="760" height="760" decoding="async" />
+            src={plain.src} srcset={plain.srcset} sizes={sizes}
+            data-plain={plain.src} data-plain-set={plain.srcset}
+            data-colour={colour.src} data-colour-set={colour.srcset}
+            alt={p.name} width="760" height="760" decoding="async" fetchpriority="high" />
         </div>
       </div>
 

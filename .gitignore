@@ -32,3 +32,7 @@ dist/
 .astro/
 public/Image/
 *.tsbuildinfo
+
+# Original full-size image sources — regenerated into public/img/ by
+# scripts/build-images.mjs. Kept out of the repo (like the master CSV).
+raw-assets/

@@ -1,23 +1,30 @@
 /**
- * Copy the canonical asset folders into public/ so Astro serves them.
- * Image/  is the source of truth at the repo root (also used by the legacy
- * site during the transition); public/Image/ is a build artifact (gitignored).
+ * Copy the small static assets Astro serves from public/.
+ * (Catalogue photos are handled separately by build-images.mjs -> public/img/.)
+ *
+ *   Image/logo.svg          -> public/Image/logo.svg
+ *   Image/Catalog/*.png|svg -> public/Image/Catalog/   (store + ui icons, ~120 KB)
+ *
+ * public/Image/ is gitignored and rebuilt. The legacy Image/Homepage and
+ * Image/Contactus folders are not copied — the Astro site does not use them.
  */
 import fs from 'node:fs';
 import path from 'node:path';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
-const pairs = [
-  ['Image', 'public/Image'],
-];
+const DST = path.join(ROOT, 'public', 'Image');
 
-for (const [from, to] of pairs) {
-  const src = path.join(ROOT, from);
-  const dst = path.join(ROOT, to);
-  if (!fs.existsSync(src)) { console.warn(`skip: ${from} not found`); continue; }
-  fs.rmSync(dst, { recursive: true, force: true });
-  fs.mkdirSync(path.dirname(dst), { recursive: true });
-  fs.cpSync(src, dst, { recursive: true });
-  const n = fs.readdirSync(path.join(dst, 'Catalog')).length;
-  console.log(`synced ${from} -> ${to} (${n} catalog files)`);
+fs.rmSync(DST, { recursive: true, force: true });
+fs.mkdirSync(path.join(DST, 'Catalog'), { recursive: true });
+
+fs.copyFileSync(path.join(ROOT, 'Image', 'logo.svg'), path.join(DST, 'logo.svg'));
+
+const catSrc = path.join(ROOT, 'Image', 'Catalog');
+let n = 0;
+for (const f of fs.readdirSync(catSrc)) {
+  if (/\.(png|svg|jpe?g)$/i.test(f)) {
+    fs.copyFileSync(path.join(catSrc, f), path.join(DST, 'Catalog', f));
+    n++;
+  }
 }
+console.log(`synced logo.svg + ${n} icon file(s) to public/Image/`);

@@ -47,6 +47,17 @@ export function storeLinks(p, medium) {
   ];
 }
 
+/** Responsive image attrs for a stored filename ("56b.jpg" -> stem "56b"). */
+const IMG_WIDTHS = [400, 600];
+export function img(filename) {
+  if (!filename) return null;
+  const stem = filename.replace(/\.[^.]+$/, '');
+  return {
+    src: `/img/${stem}-600.webp`,
+    srcset: IMG_WIDTHS.map((w) => `/img/${stem}-${w}.webp ${w}w`).join(', '),
+  };
+}
+
 export function isIndexable(p) {
   return p.indexable === true;
 }

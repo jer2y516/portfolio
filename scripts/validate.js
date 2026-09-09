@@ -13,7 +13,10 @@ import path from 'node:path';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const PRODUCTS = path.join(ROOT, 'src', 'data', 'products.json');
-const IMG_DIR = path.join(ROOT, 'Image', 'Catalog');
+// Originals live untracked in raw-assets/catalog/; build-images.mjs turns them
+// into public/img/ (committed). Validate the generated 600w webp — the file
+// that actually deploys — so a new product without built images fails CI.
+const IMG_DIR = path.join(ROOT, 'public', 'img');
 
 const CATEGORIES = new Set(['skadis', 'lamps', 'apple', 'organisers', 'display']);
 const TAGS = new Set([
@@ -55,11 +58,14 @@ for (const p of products) {
   if (seenSlug.has(p.slug)) err(id, `duplicate slug "${p.slug}"`);
   seenSlug.set(p.slug, id);
 
-  // images
+  // images — the generated 600w webp must exist in public/img/
   for (const kind of ['plain', 'colour']) {
     const f = p.images?.[kind];
     if (!f) { err(id, `images.${kind} is null`); continue; }
-    if (!imgFiles.has(f)) err(id, `images.${kind} "${f}" not found in Image/Catalog/`);
+    const stem = f.replace(/\.[^.]+$/, '');
+    for (const w of [400, 600]) {
+      if (!imgFiles.has(`${stem}-${w}.webp`)) err(id, `images.${kind}: public/img/${stem}-${w}.webp missing — run npm run build:img`);
+    }
   }
 
   // links

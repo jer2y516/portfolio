@@ -10,7 +10,7 @@ const {
   description,
   path = Astro.url.pathname,
   robots = 'index,follow',
-  ogImage = '/Image/Catalog/thumbnail.png',
+  ogImage = '/img/og.jpg',
   jsonLd = [],
   activeNav = null,
   showStores = true,
@@ -84,10 +84,12 @@ const nav = [
   </footer>
 
   <script>
-    document.querySelectorAll('.shot img').forEach(function (img, i) {
-      var p = img.dataset.plain, c = img.dataset.colour;
+    document.querySelectorAll('.shot img').forEach(function (el, i) {
+      var p = el.dataset.plain, c = el.dataset.colour;
+      var ps = el.dataset.plainSet, cs = el.dataset.colourSet;
       if (!c || c === p) return;
-      new Image().src = c;
+      var show = function (src, set) { el.src = src; if (set) el.srcset = set; };
+      var pre = new Image(); pre.srcset = cs || ''; pre.src = c;
       var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (matchMedia('(hover: none)').matches) {
         if (reduce) return;
@@ -98,22 +100,22 @@ const nav = [
             var on = false;
             setTimeout(function () {
               setInterval(function () {
-                img.style.opacity = '0';
-                setTimeout(function () { img.src = on ? p : c; on = !on; img.style.opacity = '1'; }, 130);
+                el.style.opacity = '0';
+                setTimeout(function () { on ? show(p, ps) : show(c, cs); on = !on; el.style.opacity = '1'; }, 130);
               }, 3000 + (i % 3) * 400);
             }, i * 220);
           });
         }, { rootMargin: '200px' });
-        io.observe(img);
+        io.observe(el);
         return;
       }
-      var card = img.closest('.card') || img.closest('.detail');
+      var card = el.closest('.card') || el.closest('.detail');
       if (!card) return;
       var main = card.querySelector('.card-main') || card;
-      card.addEventListener('mouseenter', function () { img.src = c; });
-      card.addEventListener('mouseleave', function () { img.src = p; });
-      main.addEventListener('focusin', function () { img.src = c; });
-      main.addEventListener('focusout', function () { img.src = p; });
+      card.addEventListener('mouseenter', function () { show(c, cs); });
+      card.addEventListener('mouseleave', function () { show(p, ps); });
+      main.addEventListener('focusin', function () { show(c, cs); });
+      main.addEventListener('focusout', function () { show(p, ps); });
     });
   </script>
 </body>
