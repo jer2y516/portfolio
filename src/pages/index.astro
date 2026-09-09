@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { products, sortedByDate } from '../lib/products.js';
+import { SITE } from '../lib/site.js';
+
+const recent = sortedByDate(products).slice(0, 8);
+const skadisCount = products.filter((p) => p.categories.includes('skadis')).length;
+const lampCount = products.filter((p) => p.categories.includes('lamps')).length;
+
+const title = 'Jer{folio} — 3D printable lamps, IKEA SKÅDIS mods & desk organisers';
+const description = `${products.length} downloadable 3D-print designs by Jerry Ho: ${skadisCount} IKEA SKÅDIS pegboard accessories, ${lampCount} desk lamps, Apple charging stands and organisers. Every model links to its store.`;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE}/#website`,
+    name: 'Jer{folio}',
+    url: `${SITE}/`,
+    description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Jerry Ho',
+    url: `${SITE}/`,
+    jobTitle: '3D print designer',
+    sameAs: [
+      'https://cults3d.com/en/users/JerH/3d-models',
+      'https://thangs.com/designer/Jer_Ho',
+    ],
+  },
+];
+---
+<Base {title} {description} activeNav="about" path="/" {jsonLd}>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1 class="big"><span>3D print</span><span class="out">catalogue</span></h1>
+          <p class="tag">Lamps, IKEA SKÅDIS pegboard accessories, Apple charging stands and
+            desk organisers. Designed in Hong Kong, printed on your machine.</p>
+          <div class="stats">
+            <div><span class="n">{products.length}</span><span class="lbl">Designs</span></div>
+            <div><span class="n">{skadisCount}</span><span class="lbl">SKÅDIS</span></div>
+            <div><span class="n">{lampCount}</span><span class="lbl">Lamps</span></div>
+            <div><span class="n">5</span><span class="lbl">Stores</span></div>
+          </div>
+          <p><a class="chip" href="/catalog" style="display:inline-block;background:#fff;color:var(--ink);border-color:#fff">Browse the catalogue →</a></p>
+        </div>
+        <div class="specimen">
+          <img src="/Image/Catalog/56.jpg" alt="IKEA SKÅDIS Portable Tool Tote" width="300" height="300" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <div class="wrap">
+      <p class="lbl" style="margin-bottom:14px">Recently added</p>
+      <div class="grid">
+        {recent.map((p) => <ProductCard {p} medium="card" />)}
+      </div>
+    </div>
+  </main>
+</Base>

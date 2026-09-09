@@ -8,10 +8,10 @@
  *   - no mojibake / U+FFFD anywhere in the record
  * Plus: unique ids, unique slugs, known category/tag vocabulary.
  */
-const fs = require('node:fs');
-const path = require('node:path');
+import fs from 'node:fs';
+import path from 'node:path';
 
-const ROOT = path.resolve(__dirname, '..');
+const ROOT = path.resolve(import.meta.dirname, '..');
 const PRODUCTS = path.join(ROOT, 'src', 'data', 'products.json');
 const IMG_DIR = path.join(ROOT, 'Image', 'Catalog');
 

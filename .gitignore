@@ -25,3 +25,10 @@ tmp.jpg
 
 # Product source data (kept out of the deploy repo)
 Product list*.csv
+
+# Astro / Node build
+node_modules/
+dist/
+.astro/
+public/Image/
+*.tsbuildinfo

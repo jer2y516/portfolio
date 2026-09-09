@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import FilterStrip from '../components/FilterStrip.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { products, sortedByDate } from '../lib/products.js';
+import { SITE } from '../lib/site.js';
+
+const list = sortedByDate(products);
+
+const title = `3D Print Catalogue — ${products.length} models | Jer{folio}`;
+const description = `All ${products.length} 3D-printable designs by Jerry Ho. Filter by lamps, IKEA SKÅDIS, Apple accessories, organisers and display; search by name. Each links to Cults3D and Thangs.`;
+
+// ItemList — url points at our own product pages, never at cults3d.com
+const jsonLd = [{
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  '@id': `${SITE}/catalog#itemlist`,
+  name: 'Jer{folio} 3D Print Catalogue',
+  numberOfItems: list.length,
+  itemListOrder: 'https://schema.org/ItemListOrderDescending',
+  itemListElement: list.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: `${SITE}/product/${p.slug}`,
+    name: p.name,
+  })),
+}];
+---
+<Base {title} {description} activeNav="catalog" path="/catalog" {jsonLd} feed={true}>
+  <section class="hero" style="padding-bottom:18px">
+    <div class="wrap">
+      <h1 class="big" style="font-size:clamp(34px,7vw,74px)"><span>Catalogue</span></h1>
+      <p class="tag">{products.length} designs. Filter, search, then head to a store.</p>
+    </div>
+  </section>
+
+  <FilterStrip />
+
+  <main id="main">
+    <div class="wrap">
+      <div class="grid">
+        {list.map((p) => <ProductCard {p} medium="card" />)}
+      </div>
+    </div>
+  </main>
+</Base>

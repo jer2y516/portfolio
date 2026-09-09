@@ -1,0 +1,40 @@
+---
+import { seriesLabel, withUtm } from '../lib/products.js';
+
+const { p, medium = 'card' } = Astro.props;
+const series = seriesLabel(p);
+const cults = withUtm(p.links.cults, medium);
+const thangs = withUtm(p.links.thangs, medium);
+const img = `/Image/Catalog/`;
+const haystack = [p.name, p.shortName, p.series, ...p.categories, ...p.tags]
+  .filter(Boolean).join(' ').toLowerCase();
+---
+<article class="card"
+  data-cats={p.categories.join(' ')}
+  data-tags={p.tags.join(' ')}
+  data-search={haystack}
+  data-date={p.date}>
+  <a class="card-main" href={`/product/${p.slug}`}>
+    <div class="shot">
+      <img
+        src={img + (p.images.plain || p.images.colour)}
+        data-plain={img + (p.images.plain || p.images.colour)}
+        data-colour={img + (p.images.colour || p.images.plain)}
+        alt={p.name}
+        loading="lazy" decoding="async" width="380" height="380" />
+      <span class="idx">{p.id}</span>
+    </div>
+    <div class="cbody">
+      {series && <span class="series">{series}</span>}
+      <h3 class="name">{p.shortName}</h3>
+    </div>
+  </a>
+  <div class="acts">
+    {cults
+      ? <a class="b-cults" href={cults} target="_blank" rel="noopener">Cults</a>
+      : <span class="b-off" aria-disabled="true">Not listed</span>}
+    {thangs
+      ? <a class="b-thangs" href={thangs} target="_blank" rel="noopener">Thangs</a>
+      : <span class="b-off" aria-disabled="true">Thangs · n/a</span>}
+  </div>
+</article>

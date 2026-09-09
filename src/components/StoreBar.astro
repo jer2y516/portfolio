@@ -1,0 +1,30 @@
+---
+// Global "where to download" section. Becomes a fixed bottom icon bar under
+// 760px via CSS only (no duplicate DOM). aria-label stays complete so the
+// licence difference is not lost when labels are hidden on mobile.
+const stores = [
+  { name: 'Cults3D', href: 'https://cults3d.com/en/users/JerH/3d-models', licence: 'Personal-use licence. Largest catalogue.', icon: '/Image/Catalog/store_icon2.png' },
+  { name: 'Thangs', href: 'https://thangs.com/designer/Jer_Ho', licence: 'Commercial licence available.', icon: '/Image/Catalog/store_icon1.png' },
+  { name: 'Pixup', href: 'https://pixup3d.com/en/p/516jerryho174409210058/posts', licence: 'Commercial licence.', icon: '/Image/Catalog/store_icon3.png' },
+  { name: 'Cubee', href: 'https://www.cubee3d.com/?code=wU1aFSz8U7AF', licence: 'Print-on-demand partner.', icon: '/Image/Catalog/store_icon4.png' },
+  // TODO(assets): Cubee and Buy Me a Coffee still share store_icon4.png — needs its own asset.
+  { name: 'Buy Me a Coffee', href: 'https://buymeacoffee.com/jer2yho', licence: 'Support the work directly.', icon: '/Image/Catalog/store_icon4.png' },
+];
+---
+<section class="stores" aria-label="Where to download">
+  <div class="wrap">
+    <span class="lbl" style="color:var(--orange)">Where to download</span>
+    <h2>Same files, different licences</h2>
+    <div class="store-grid">
+      {stores.map((s) => (
+        <a class="store" href={s.href} target="_blank" rel="noopener"
+           aria-label={`${s.name} — ${s.licence}`}>
+          <img src={s.icon} alt="" width="40" height="40" loading="lazy" />
+          <b>{s.name}</b>
+          <span class="lic">{s.licence}</span>
+          <span class="go lbl">Open store →</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

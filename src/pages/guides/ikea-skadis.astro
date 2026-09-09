@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { products, sortedByDate } from '../../lib/products.js';
+import { SITE } from '../../lib/site.js';
+
+const skadis = sortedByDate(products.filter((p) => p.categories.includes('skadis')));
+
+const title = `IKEA SKÅDIS 3D Print Accessories — ${skadis.length} designs | Jer{folio}`;
+const description = `${skadis.length} 3D-printable IKEA SKÅDIS pegboard accessories by Jerry Ho: trays, hooks, boxes, tool totes, charging mounts and toy displays. The core of the catalogue.`;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${SITE}/guides/ikea-skadis#collection`,
+    name: 'IKEA SKÅDIS 3D Print Accessories',
+    url: `${SITE}/guides/ikea-skadis`,
+    description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    numberOfItems: skadis.length,
+    itemListElement: skadis.map((p, i) => ({
+      '@type': 'ListItem', position: i + 1, url: `${SITE}/product/${p.slug}`, name: p.name,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Catalogue', item: `${SITE}/catalog` },
+      { '@type': 'ListItem', position: 2, name: 'IKEA SKÅDIS', item: `${SITE}/guides/ikea-skadis` },
+    ],
+  },
+];
+---
+<Base {title} {description} path="/guides/ikea-skadis" activeNav="skadis" {jsonLd}>
+  <main id="main" class="guide">
+    <div class="wrap">
+      <nav class="crumbs"><a href="/catalog">Catalogue</a> / IKEA SKÅDIS</nav>
+      <h1>IKEA SKÅDIS<br />accessories</h1>
+      <p class="intro">The SKÅDIS pegboard is the backbone of this catalogue — {skadis.length} of
+        {products.length} designs mount to it. Trays, lidded boxes, tool totes, cable management,
+        charging docks and figure displays, all sized to the standard 20&nbsp;mm hole grid.
+        Files download from Cults3D and Thangs.</p>
+
+      <h2>All {skadis.length} SKÅDIS designs</h2>
+      <div class="grid">
+        {skadis.map((p) => <ProductCard {p} medium="card" />)}
+      </div>
+    </div>
+  </main>
+</Base>

@@ -1,0 +1,120 @@
+---
+import '../styles/global.css';
+import Logo from '../components/Logo.astro';
+import Social from '../components/Social.astro';
+import StoreBar from '../components/StoreBar.astro';
+import { SITE } from '../lib/site.js';
+
+const {
+  title,
+  description,
+  path = Astro.url.pathname,
+  robots = 'index,follow',
+  ogImage = '/Image/Catalog/thumbnail.png',
+  jsonLd = [],
+  activeNav = null,
+  showStores = true,
+  feed = false,
+} = Astro.props;
+
+const canonical = new URL(path.replace(/\.html$/, ''), SITE).toString();
+const ogImageAbs = new URL(ogImage, SITE).toString();
+
+const nav = [
+  { key: 'catalog', label: 'Catalogue', href: '/catalog' },
+  { key: 'skadis', label: 'SKÅDIS', href: '/guides/ikea-skadis' },
+  { key: 'about', label: 'About', href: '/' },
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content={robots} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" type="image/svg+xml" href="/Image/logo.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Jer{folio}" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImageAbs} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageAbs} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Matangi:wght@300..900&display=swap" rel="stylesheet" />
+
+  {jsonLd.map((block) => (
+    <script type="application/ld+json" set:html={JSON.stringify(block)} />
+  ))}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="page" data-feed={feed ? '' : undefined}>
+    <header class="mast">
+      <div class="wrap">
+        <a href="/" aria-label="Jer{folio} home" style="display:flex;align-items:center"><Logo /></a>
+        <nav class="lbl">
+          {nav.map((n) => (
+            <a href={n.href} aria-current={activeNav === n.key ? 'page' : undefined}>{n.label}</a>
+          ))}
+        </nav>
+        <Social />
+      </div>
+    </header>
+
+    <slot />
+
+    {showStores && <StoreBar />}
+  </div>
+
+  <footer>
+    <div class="wrap lbl">
+      Jer{'{'}folio{'}'} — 3D printable parts · Hong Kong
+      <Social />
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.shot img').forEach(function (img, i) {
+      var p = img.dataset.plain, c = img.dataset.colour;
+      if (!c || c === p) return;
+      new Image().src = c;
+      var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (matchMedia('(hover: none)').matches) {
+        if (reduce) return;
+        var io = new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            io.unobserve(e.target);
+            var on = false;
+            setTimeout(function () {
+              setInterval(function () {
+                img.style.opacity = '0';
+                setTimeout(function () { img.src = on ? p : c; on = !on; img.style.opacity = '1'; }, 130);
+              }, 3000 + (i % 3) * 400);
+            }, i * 220);
+          });
+        }, { rootMargin: '200px' });
+        io.observe(img);
+        return;
+      }
+      var card = img.closest('.card') || img.closest('.detail');
+      if (!card) return;
+      var main = card.querySelector('.card-main') || card;
+      card.addEventListener('mouseenter', function () { img.src = c; });
+      card.addEventListener('mouseleave', function () { img.src = p; });
+      main.addEventListener('focusin', function () { img.src = c; });
+      main.addEventListener('focusout', function () { img.src = p; });
+    });
+  </script>
+</body>
+</html>

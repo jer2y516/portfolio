@@ -1,0 +1,129 @@
+---
+import Base from '../../layouts/Base.astro';
+import { products, seriesLabel, storeLinks, isIndexable } from '../../lib/products.js';
+import { SITE } from '../../lib/site.js';
+
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+
+const { p } = Astro.props;
+const series = seriesLabel(p);
+const stores = storeLinks(p, 'detail');
+const img = `/Image/Catalog/`;
+const imgAbs = new URL(img + (p.images.colour || p.images.plain), SITE).toString();
+const url = `${SITE}/product/${p.slug}`;
+
+const SPEC_ROWS = [
+  ['layerHeight', 'Layer height'],
+  ['infill', 'Infill'],
+  ['supports', 'Supports'],
+  ['printTime', 'Print time'],
+  ['filament', 'Filament used'],
+  ['dimensions', 'Dimensions'],
+  ['hardware', 'Hardware needed'],
+  ['formats', 'File formats'],
+];
+const filledSpecs = SPEC_ROWS.filter(([k]) => p.specs?.[k] != null);
+const hasSpecs = filledSpecs.length > 0;
+
+const robots = isIndexable(p) ? 'index,follow' : 'noindex,follow';
+const title = `${p.seoTitle || p.name} | Jer{folio}`;
+const CAT_NOUN = { skadis: 'IKEA SKÅDIS accessory', lamps: 'desk lamp', apple: 'Apple accessory', organisers: 'desk organiser', display: 'display piece' };
+const catNoun = CAT_NOUN[p.categories[0]] || '3D-printable design';
+const description = p.metaDescription
+  || `${p.name} — a 3D-printable ${catNoun} by Jerry Ho. Download the files on Cults3D${p.links.thangs ? ' or Thangs' : ''}.`;
+
+const catLabel = { skadis: 'IKEA SKÅDIS', lamps: 'Lamps', apple: 'Apple', organisers: 'Organisers', display: 'Display' };
+const primaryCat = p.categories[0];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    '@id': `${url}#product`,
+    name: p.name,
+    image: imgAbs,
+    url,
+    sku: `JERH-${p.id}`,
+    category: p.categories.join(', ') || undefined,
+    brand: { '@type': 'Brand', name: 'Jer{folio}' },
+    ...(p.description ? { description: p.description } : {}),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Catalogue', item: `${SITE}/catalog` },
+      ...(primaryCat ? [{ '@type': 'ListItem', position: 2, name: catLabel[primaryCat], item: `${SITE}/catalog#${primaryCat}` }] : []),
+      { '@type': 'ListItem', position: primaryCat ? 3 : 2, name: p.shortName, item: url },
+    ],
+  },
+  ...(p.faq?.length
+    ? [{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: p.faq.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      }]
+    : []),
+];
+---
+<Base {title} {description} {robots} path={`/product/${p.slug}`} ogImage={img + (p.images.colour || p.images.plain)} {jsonLd} activeNav="catalog">
+  <main id="main" class="detail">
+    <div class="wrap">
+      <div>
+        <div class="shot">
+          <img
+            src={img + (p.images.plain || p.images.colour)}
+            data-plain={img + (p.images.plain || p.images.colour)}
+            data-colour={img + (p.images.colour || p.images.plain)}
+            alt={p.name} width="760" height="760" decoding="async" />
+        </div>
+      </div>
+
+      <div>
+        <nav class="crumbs">
+          <a href="/catalog">Catalogue</a>
+          {primaryCat && <> / <a href={`/catalog#${primaryCat}`}>{catLabel[primaryCat]}</a></>}
+        </nav>
+        {series && <span class="series">{series}</span>}
+        <h1>{p.name}</h1>
+        {p.date && <p class="date">Added {p.date}</p>}
+
+        {hasSpecs ? (
+          <table class="spec-table">
+            <tbody>
+              {filledSpecs.map(([k, label]) => (
+                <tr><th>{label}</th><td>{p.specs[k]}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p class="spec-empty">Print specs for this model aren’t published yet — check the
+            store listing and the maker’s notes there before printing.</p>
+        )}
+
+        <div class="store-cta">
+          {stores.filter((s) => s.key !== 'pixup' || s.url).map((s) => (
+            s.url
+              ? <a class={s.key === 'cults' ? 'b-cults' : 'b-thangs'} href={s.url} target="_blank" rel="noopener">{s.label} →</a>
+              : <span class="b-off" aria-disabled="true">{s.label} · n/a</span>
+          ))}
+        </div>
+
+        {p.faq?.length > 0 && (
+          <div class="faq">
+            <h2>FAQ</h2>
+            {p.faq.map((f) => (
+              <details><summary>{f.q}</summary><p>{f.a}</p></details>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  </main>
+</Base>

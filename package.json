@@ -1,0 +1,19 @@
+{
+  "name": "jerfolio",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "sync-assets": "node scripts/sync-assets.mjs",
+    "build:data": "node scripts/build-products.mjs --write",
+    "validate": "node scripts/validate.js",
+    "predev": "npm run sync-assets",
+    "dev": "astro dev",
+    "prebuild": "npm run validate && npm run sync-assets",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^5.18.2"
+  }
+}
