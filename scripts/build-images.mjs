@@ -66,6 +66,27 @@ for (const stem of stems) {
   }
 }
 
+// Site imagery (banners, about-page photo, …): raw-assets/site/<name>.* ->
+// public/img/<name>-{width}.webp. Widths from the file's own list or a default.
+const SITE_DIR = path.join(ROOT, 'raw-assets', 'site');
+const SITE_WIDTHS = { 'banner-skadis': [900, 1600], 'about-portrait': [480, 800] };
+if (fs.existsSync(SITE_DIR)) {
+  for (const f of fs.readdirSync(SITE_DIR)) {
+    const name = f.replace(/\.[^.]+$/, '');
+    const src = path.join(SITE_DIR, f);
+    const widths = SITE_WIDTHS[name] || [800, 1600];
+    const meta = await sharp(src).metadata();
+    for (const w of widths) {
+      const dst = path.join(OUT, `${name}-${w}.webp`);
+      await sharp(src)
+        .resize({ width: Math.min(w, meta.width || w), withoutEnlargement: true })
+        .webp({ quality: 74, effort: 5 })
+        .toFile(dst);
+      console.log(`site: ${name}-${w}.webp (${(fs.statSync(dst).size / 1024).toFixed(0)} KB)`);
+    }
+  }
+}
+
 // OG image — keep as JPEG for scraper compatibility
 const ogSrc = findSrc('thumbnail');
 if (ogSrc) {

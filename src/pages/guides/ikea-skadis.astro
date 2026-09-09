@@ -40,11 +40,19 @@ const jsonLd = [
   <main id="main" class="guide">
     <div class="wrap">
       <nav class="crumbs"><a href="/catalog">Catalogue</a> / IKEA SKÅDIS</nav>
-      <h1>IKEA SKÅDIS<br />accessories</h1>
-      <p class="intro">The SKÅDIS pegboard is the backbone of this catalogue — {skadis.length} of
-        {products.length} designs mount to it. Trays, lidded boxes, tool totes, cable management,
-        charging docks and figure displays, all sized to the standard 20&nbsp;mm hole grid.
-        Files download from Cults3D and Thangs.</p>
+
+      <section class="pagebanner">
+        <img class="bg" src="/img/banner-skadis-1600.webp"
+          srcset="/img/banner-skadis-900.webp 900w, /img/banner-skadis-1600.webp 1600w"
+          sizes="(min-width:1360px) 1360px, 100vw" alt="" aria-hidden="true"
+          width="1429" height="473" fetchpriority="high" />
+        <span class="scrim"></span>
+        <h1>IKEA SKÅDIS Accessories</h1>
+        <p>The SKÅDIS pegboard is the backbone of this catalogue — {skadis.length} of
+          {products.length} designs mount to it. Trays, lidded boxes, tool totes, cable
+          management, charging docks and figure displays, all sized to the standard
+          20&nbsp;mm hole grid. Files download from Cults3D and Thangs.</p>
+      </section>
 
       <h2>All {skadis.length} SKÅDIS designs</h2>
       <div class="grid">
