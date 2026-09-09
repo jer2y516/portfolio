@@ -9,14 +9,14 @@ const skadisCount = products.filter((p) => p.categories.includes('skadis')).leng
 // transparent or white ground) at public/about-icons/<file>; placeholders show
 // until then. Order is the visual order in the loop.
 const skillIcons = [
-  { name: 'Figma', file: 'figma.svg' },
-  { name: 'Adobe Creative Cloud', file: 'adobe-cc.svg' },
-  { name: 'Claude', file: 'claude.svg' },
-  { name: 'ChatGPT', file: 'openai.svg' },
-  { name: 'Blender', file: 'blender.svg' },
-  { name: 'Bambu Studio', file: 'bambu.svg' },
-  { name: 'Atlassian', file: 'atlassian.svg' },
-  { name: 'Instagram', file: 'instagram.svg' },
+  { name: 'Figma', file: '01-figma.png' },
+  { name: 'Adobe Creative Cloud', file: '02-adobe-cc.png' },
+  { name: 'Claude', file: '03-claude.png' },
+  { name: 'ChatGPT', file: '04-openai.png' },
+  { name: 'Autodesk Fusion 360', file: '05-fusion360.png' },
+  { name: 'Jira', file: '06-atlassian.png' },
+  { name: 'Instagram', file: '07-instagram.png' },
+  { name: 'Autodesk', file: '08-autodesk.png' },
 ];
 
 const links = {
@@ -70,12 +70,14 @@ const jsonLd = [
       <div class="wrap">
         <div class="stage">
           <!-- layer 3 · back props -->
-          <div class="lyr lyr-props" aria-hidden="true">
-            <img src="/img/about-props-1400.webp"
-              srcset="/img/about-props-800.webp 800w, /img/about-props-1400.webp 1400w"
-              sizes="(min-width:900px) 720px, 90vw" alt="" width="1400" height="1000"
-              onerror="this.closest('.lyr-props').classList.add('missing')" />
-          </div>
+          <img class="lyr prop-mac" aria-hidden="true" alt=""
+            src="/img/about-mac-560.webp"
+            srcset="/img/about-mac-300.webp 300w, /img/about-mac-560.webp 560w"
+            sizes="clamp(150px,20vw,260px)" width="331" height="387" loading="lazy" />
+          <img class="lyr prop-printer" aria-hidden="true" alt=""
+            src="/img/about-printer-620.webp"
+            srcset="/img/about-printer-340.webp 340w, /img/about-printer-620.webp 620w"
+            sizes="clamp(190px,26vw,340px)" width="493" height="493" loading="lazy" />
 
           <!-- layer 2 · floating skill icons -->
           <div class="lyr lyr-icons" aria-hidden="true">
@@ -91,13 +93,10 @@ const jsonLd = [
 
           <!-- layer 1 · portrait + cursor -->
           <div class="lyr lyr-me" aria-hidden="true">
-            <img class="portrait" src="/img/about-portrait-1200.webp"
-              srcset="/img/about-portrait-480.webp 480w, /img/about-portrait-800.webp 800w, /img/about-portrait-1200.webp 1200w"
-              sizes="(min-width:900px) 460px, 60vw" alt="" width="1000" height="1200"
-              onerror="this.closest('.lyr-me').classList.add('missing')" />
-            <svg class="cursor" viewBox="0 0 24 24" width="34" height="34" aria-hidden="true">
-              <path d="M4 2l14 8-6 1.6L8.6 18z" fill="#fff" stroke="#0A0A0A" stroke-width="1.4" stroke-linejoin="round"/>
-            </svg>
+            <img class="portrait" src="/img/about-portrait-1000.webp"
+              srcset="/img/about-portrait-440.webp 440w, /img/about-portrait-700.webp 700w, /img/about-portrait-1000.webp 1000w"
+              sizes="clamp(220px,33vw,440px)" alt="" width="448" height="545" fetchpriority="high" />
+            <img class="cursor" src="/about-icons/cursor.png" alt="" width="40" height="44" />
           </div>
 
           <!-- copy -->
