@@ -120,7 +120,7 @@ const CULTS_TAG_MAP = {
 const CULTS_TEXT_RULES = [
   ['no-supports', /no support|support[-\s]?free|without support|no[-\s]?support[-\s]?(needed|print|required)|supportless/i],
   ['print-in-place', /print[-\s]?in[-\s]?place|prints? in place|no assembly (needed|required)/i],
-  ['bambu-lab-led-kit', /bambu[-\s]?lab.{0,15}led|led kit\s?00\d|bambu.{0,15}light kit/i],
+  ['bambu-lab-led-kit', /bambu[-\s]?lab.{0,18}(led|usb light|light)|led kit\s?00\d|bambu.{0,15}light kit/i],
   ['multi-color', /\bams\b|multi[-\s]?colou?r|multi[-\s]?material|filament swap|color change at layer/i],
 ];
 

@@ -70,11 +70,16 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A small angled block that holds your Apple Watch puck so the watch charges on its side in Nightstand mode, screen facing you. The puck slot is cut for the round Apple charging disc — you thread your own cable and puck in from below. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
-    "faq": [],
-    "indexable": false
+    "faq": [
+      {
+        "q": "Which Apple Watch charger fits?",
+        "a": "The standard round Apple Watch charging puck. The recess holds the disc; the cable runs out the back."
+      }
+    ],
+    "indexable": true
   },
   {
     "id": 3,
@@ -339,11 +344,16 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A tall, rippling column that reads as a frozen wave. It is built around the separate IKEA lamp cord set / light stand — that part is not printed and not included; the printed shade slides over it. Fit a warm or RGB bulb to taste. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
-    "faq": [],
-    "indexable": false
+    "faq": [
+      {
+        "q": "Does it include the light?",
+        "a": "No. The shade is designed to sit over an IKEA lamp base / cord set, which you buy separately, plus your own bulb."
+      }
+    ],
+    "indexable": true
   },
   {
     "id": 11,
@@ -714,11 +724,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A softly ridged shade — a corn cob abstracted — on a small cloud-shaped base. Two parts, press-fit, no glue, and the download includes two shade versions to change the light pattern. You supply the bulb and holder. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 22,
@@ -895,11 +905,16 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "An oversized Esc keycap that glows warm from within — a desk light and a keyboard in-joke in one. It prints in parts; the letter is a separate piece you glue to the top face so you can leave it bare or paint it first. Light source not included. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
-    "faq": [],
-    "indexable": false
+    "faq": [
+      {
+        "q": "Does it switch on by pressing the key?",
+        "a": "No — it is a static shade. Switching is whatever your bulb or LED source uses."
+      }
+    ],
+    "indexable": true
   },
   {
     "id": 27,
@@ -1070,7 +1085,9 @@
     "categories": [
       "lamps"
     ],
-    "tags": [],
+    "tags": [
+      "bambu-lab-led-kit"
+    ],
     "images": {
       "plain": "31b.jpg",
       "colour": "31.jpg"
@@ -1090,11 +1107,16 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A lattice-shell desk lamp that throws a soft, patterned light. The base accepts an E27 or E14 bulb, and the files also suit the Bambu Lab USB light for a low-voltage build. Bulb and light source are not included. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
-    "faq": [],
-    "indexable": false
+    "faq": [
+      {
+        "q": "What light does it take?",
+        "a": "An E27 or E14 bulb in the standard base, or a Bambu Lab USB light for a USB-powered build. You supply whichever you use."
+      }
+    ],
+    "indexable": true
   },
   {
     "id": 32,
@@ -1202,11 +1224,16 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "Snap-on shelves for displaying figures and collectibles on a SKÅDIS board. They hold with magnets you press into the print, so shelves lift off and rearrange without tools as your collection grows. Several shelf widths and back patterns are included. Magnets are not supplied. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
-    "faq": [],
-    "indexable": false
+    "faq": [
+      {
+        "q": "Where do the magnets go?",
+        "a": "Small magnets press into pockets on the back of each shelf and into the matching pegboard clip. You supply the magnets; the pockets are sized in the model."
+      }
+    ],
+    "indexable": true
   },
   {
     "id": 35,
@@ -1501,11 +1528,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "Hexagonal bins in two depths that clip to a SKÅDIS board and tile against each other, so you can grow a honeycomb of storage across the pegboard. Deeper cells for tools and cables, shallow ones for small parts. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 43,
@@ -1609,11 +1636,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A tilted tray that holds several pairs of glasses at a 15° angle on a SKÅDIS board, so a pair lifts straight out without knocking the others. The hexagon-cut walls keep the print light — the maker lists roughly 59 g of filament per tray. Clips to the 20 mm grid. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 46,
@@ -1953,11 +1980,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "Display cases that snap onto a SKÅDIS board with a support hanger, each with two clear-cut windows for a side view of what is inside. Stack and space them to build a wall display for figures or models. Windows are open cut-outs, not acrylic. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 56,
@@ -2599,11 +2626,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A bedside or desk charging hub for a SKÅDIS board: bays for power bricks and a power bank, channels for cables, a headphone hook and a phone rest — everything charging in one tidy block instead of a cable pile. Chargers and bricks are not included. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 74,
