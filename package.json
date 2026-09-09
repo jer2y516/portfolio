@@ -8,12 +8,12 @@
     "build:data": "node scripts/build-products.mjs --write",
     "build:img": "node scripts/build-images.mjs",
     "validate": "node scripts/validate.js",
-    "assets": "npm run sync-assets && npm run build:img",
-    "predev": "npm run assets",
+    "predev": "npm run sync-assets && npm run build:img",
     "dev": "astro dev",
-    "prebuild": "npm run assets && npm run validate",
+    "prebuild": "npm run sync-assets && npm run validate",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "regen": "npm run build:data && npm run build:img && npm run validate"
   },
   "devDependencies": {
     "astro": "^5.18.2"

@@ -1,0 +1,12 @@
+# 301s for URLs that changed in the rebuild. NO catch-all — a missing path
+# must return a real 404 (the old netlify.toml /* -> /index.html rule was the
+# whole reason soft-404s piled up).
+
+/catalog.html        /catalog        301
+/contact.html        /               301
+/contact             /               301
+
+# Astro emits build.format=file, so /product/foo.html also resolves at
+# /product/foo — normalise the .html form for anyone who links it.
+/product/*.html       /product/:splat  301
+/guides/*.html        /guides/:splat   301

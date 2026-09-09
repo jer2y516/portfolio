@@ -1,0 +1,21 @@
+# Cloudflare Pages configuration.
+#
+# Most of this is also set in the Pages dashboard when you connect the repo —
+# whichever you use, the two must agree.
+#
+#   Framework preset:   Astro   (or "None")
+#   Build command:      npm run build
+#   Build output dir:   dist
+#   Root directory:     /
+#   Node version:       20 or newer  (set NODE_VERSION=22 in the env vars,
+#                       or rely on .nvmrc)
+#
+# The build needs nothing outside git: products.json and public/img/ are
+# committed, and prebuild only runs sync-assets + validate. raw-assets/,
+# .env and the master CSV are NOT required to build and stay out of the repo.
+
+name = "jerfolio"
+pages_build_output_dir = "dist"
+
+[vars]
+NODE_VERSION = "22"
