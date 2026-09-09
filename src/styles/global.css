@@ -87,9 +87,10 @@ h1.big .out{-webkit-text-stroke:2px #fff;color:transparent;font-weight:700}
 /* filter strip */
 .strip{background:var(--shell);position:sticky;top:56px;z-index:50;
   box-shadow:0 1px 0 var(--line)}
-.strip .wrap{display:flex;align-items:center;gap:8px;height:60px;
-  overflow-x:auto;scrollbar-width:none}
-.strip .wrap::-webkit-scrollbar{display:none}
+.strip .wrap{display:flex;align-items:center;gap:12px;min-height:60px}
+.strip .chips{display:flex;align-items:center;gap:8px;flex:1 1 auto;min-width:0;
+  padding:11px 0;overflow-x:auto;scrollbar-width:none}
+.strip .chips::-webkit-scrollbar{display:none}
 .readout{white-space:nowrap;color:var(--mute);padding-right:10px;margin-right:2px;
   border-right:1px solid var(--line)}
 .chip{background:none;border:1px solid var(--ink);color:var(--ink);border-radius:999px;
@@ -97,11 +98,18 @@ h1.big .out{-webkit-text-stroke:2px #fff;color:transparent;font-weight:700}
   font-family:inherit;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:500}
 .chip:hover{background:var(--ink);color:#fff}
 .chip[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:#fff}
-.search{margin-left:auto;flex:0 0 auto;display:flex;align-items:center}
+.search{flex:0 0 auto;display:flex;align-items:center}
 .search input{font-family:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
   border:1px solid var(--ink);border-radius:999px;padding:9px 16px;min-height:38px;
-  background:var(--panel);color:var(--ink);width:min(46vw,220px)}
-@media(max-width:680px){.readout{display:none}}
+  background:var(--panel);color:var(--ink);width:min(40vw,220px)}
+/* mobile: search on its own full-width row, chips scroll below it */
+@media(max-width:759px){
+  .strip .wrap{flex-wrap:wrap;gap:8px;padding-bottom:10px}
+  .strip .search{order:-1;width:100%}
+  .strip .search input{width:100%}
+  .strip .chips{padding:6px 0 2px}
+  .readout{display:none}
+}
 
 /* ---------- CARD ---------- */
 main{padding:var(--g) 0 72px}

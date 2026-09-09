@@ -7,13 +7,15 @@ const total = products.length;
 ---
 <div class="strip" role="region" aria-label="Filter catalogue">
   <div class="wrap">
-    <span class="readout" data-readout>{total} items</span>
-    <button class="chip" data-filter="all" aria-pressed="true">All</button>
-    {CATEGORY_ORDER.map((c) => (
-      <button class="chip" data-filter={c} aria-pressed="false">
-        {CATEGORY_LABELS[c]} <span aria-hidden="true">· {counts[c]}</span>
-      </button>
-    ))}
+    <div class="chips">
+      <span class="readout" data-readout>{total} items</span>
+      <button class="chip" data-filter="all" aria-pressed="true">All</button>
+      {CATEGORY_ORDER.map((c) => (
+        <button class="chip" data-filter={c} aria-pressed="false">
+          {CATEGORY_LABELS[c]} <span aria-hidden="true">· {counts[c]}</span>
+        </button>
+      ))}
+    </div>
     <span class="search">
       <input type="search" placeholder="Search" aria-label="Search products" data-search-input autocomplete="off" />
     </span>

@@ -2,13 +2,15 @@
 // Global "where to download" section. Becomes a fixed bottom icon bar under
 // 760px via CSS only (no duplicate DOM). aria-label stays complete so the
 // licence difference is not lost when labels are hidden on mobile.
+// Square icons (store_iconN_mobile.png, 115×115). The wide wordmark variants
+// (store_iconN.png, 294×103) distort in the 40px slot the design calls for.
 const stores = [
-  { name: 'Cults3D', href: 'https://cults3d.com/en/users/JerH/3d-models', licence: 'Personal-use licence. Largest catalogue.', icon: '/Image/Catalog/store_icon2.png' },
-  { name: 'Thangs', href: 'https://thangs.com/designer/Jer_Ho', licence: 'Commercial licence available.', icon: '/Image/Catalog/store_icon1.png' },
-  { name: 'Pixup', href: 'https://pixup3d.com/en/p/516jerryho174409210058/posts', licence: 'Commercial licence.', icon: '/Image/Catalog/store_icon3.png' },
-  { name: 'Cubee', href: 'https://www.cubee3d.com/?code=wU1aFSz8U7AF', licence: 'Print-on-demand partner.', icon: '/Image/Catalog/store_icon4.png' },
-  // TODO(assets): Cubee and Buy Me a Coffee still share store_icon4.png — needs its own asset.
-  { name: 'Buy Me a Coffee', href: 'https://buymeacoffee.com/jer2yho', licence: 'Support the work directly.', icon: '/Image/Catalog/store_icon4.png' },
+  { name: 'Cults3D', href: 'https://cults3d.com/en/users/JerH/3d-models', licence: 'Personal-use licence. Largest catalogue.', icon: '/Image/Catalog/store_icon2_mobile.png' },
+  { name: 'Thangs', href: 'https://thangs.com/designer/Jer_Ho', licence: 'Commercial licence available.', icon: '/Image/Catalog/store_icon1_mobile.png' },
+  { name: 'Pixup', href: 'https://pixup3d.com/en/p/516jerryho174409210058/posts', licence: 'Commercial licence.', icon: '/Image/Catalog/store_icon3_mobile.png' },
+  { name: 'Cubee', href: 'https://www.cubee3d.com/?code=wU1aFSz8U7AF', licence: 'Print-on-demand partner.', icon: '/Image/Catalog/store_icon4_mobile.png' },
+  // TODO(assets): Cubee and Buy Me a Coffee still share store_icon4_mobile.png — needs its own asset.
+  { name: 'Buy Me a Coffee', href: 'https://buymeacoffee.com/jer2yho', licence: 'Support the work directly.', icon: '/Image/Catalog/store_icon4_mobile.png' },
 ];
 ---
 <section class="stores" aria-label="Where to download">
