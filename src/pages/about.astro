@@ -69,18 +69,13 @@ const jsonLd = [
     <section class="about-hero">
       <div class="wrap">
         <div class="stage">
-          <!-- layer 3 · back props -->
-          <img class="lyr prop-mac" aria-hidden="true" alt=""
-            src="/img/about-mac-560.webp"
-            srcset="/img/about-mac-300.webp 300w, /img/about-mac-560.webp 560w"
-            sizes="clamp(150px,20vw,260px)" width="331" height="387" loading="lazy" />
-          <img class="lyr prop-printer" aria-hidden="true" alt=""
-            src="/img/about-printer-620.webp"
-            srcset="/img/about-printer-340.webp 340w, /img/about-printer-620.webp 620w"
-            sizes="clamp(190px,26vw,340px)" width="493" height="493" loading="lazy" />
+          <!-- 3 pre-aligned same-size layers, just stacked in one box -->
+          <img class="lyr l-back" aria-hidden="true" alt="" width="692" height="669" loading="lazy"
+            src="/img/about-props-1000.webp"
+            srcset="/img/about-props-460.webp 460w, /img/about-props-700.webp 700w, /img/about-props-1000.webp 1000w"
+            sizes="(min-width:900px) 560px, 88vw" />
 
-          <!-- layer 2 · floating skill icons -->
-          <div class="lyr lyr-icons" aria-hidden="true">
+          <div class="lyr l-icons" aria-hidden="true">
             <ul class="icon-track">
               {[...skillIcons, ...skillIcons].map((ic, i) => (
                 <li class="icon" style={`--i:${i % skillIcons.length}`}>
@@ -91,13 +86,14 @@ const jsonLd = [
             </ul>
           </div>
 
-          <!-- layer 1 · portrait + cursor -->
-          <div class="lyr lyr-me" aria-hidden="true">
-            <img class="portrait" src="/img/about-portrait-1000.webp"
-              srcset="/img/about-portrait-440.webp 440w, /img/about-portrait-700.webp 700w, /img/about-portrait-1000.webp 1000w"
-              sizes="clamp(220px,33vw,440px)" alt="" width="448" height="545" fetchpriority="high" />
-            <img class="cursor" src="/about-icons/cursor.png" alt="" width="40" height="44" />
-          </div>
+          <img class="lyr l-front" aria-hidden="true" alt="" width="692" height="669" fetchpriority="high"
+            src="/img/about-portrait-1000.webp"
+            srcset="/img/about-portrait-460.webp 460w, /img/about-portrait-700.webp 700w, /img/about-portrait-1000.webp 1000w"
+            sizes="(min-width:900px) 560px, 88vw" />
+          <img class="lyr l-cursor" aria-hidden="true" alt="" width="692" height="669" loading="lazy"
+            src="/img/about-cursor-700.webp"
+            srcset="/img/about-cursor-460.webp 460w, /img/about-cursor-700.webp 700w"
+            sizes="(min-width:900px) 560px, 88vw" />
 
           <!-- copy -->
           <div class="copy">

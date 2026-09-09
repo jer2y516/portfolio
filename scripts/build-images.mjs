@@ -71,9 +71,10 @@ for (const stem of stems) {
 const SITE_DIR = path.join(ROOT, 'raw-assets', 'site');
 const SITE_WIDTHS = {
   'banner-skadis': [900, 1600],
-  'about-portrait': [440, 700, 1000],
-  'about-mac': [300, 560],
-  'about-printer': [340, 620],
+  // about-hero layers — all the same canvas size, stacked (portrait / props / cursor)
+  'about-portrait': [460, 700, 1000],
+  'about-props': [460, 700, 1000],
+  'about-cursor': [460, 700],
   'about-grid': [900, 1600],
 };
 if (fs.existsSync(SITE_DIR)) {

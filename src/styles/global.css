@@ -193,15 +193,17 @@ main{padding:var(--g) 0 72px}
 .about-hero .stage{position:relative;padding:clamp(26px,4.5vw,52px);
   min-height:clamp(440px,42vw,540px);
   display:flex;flex-direction:column;justify-content:space-between;gap:20px}
-.about-hero .lyr{position:absolute;pointer-events:none;display:block}
+.about-hero .lyr{position:absolute;pointer-events:none}
 
-/* layer 3 · back props */
-.prop-mac{right:15%;top:8%;width:clamp(120px,17vw,210px);height:auto;z-index:2;
-  filter:drop-shadow(0 14px 22px rgba(0,0,0,.22))}
-.prop-printer{right:-4%;bottom:2%;width:clamp(170px,24vw,320px);height:auto;z-index:2;
-  filter:drop-shadow(0 14px 22px rgba(0,0,0,.22))}
+/* the three stacked layers share one box on the right — the artwork is
+   already aligned inside each same-size PNG, so we only place the box */
+.l-back,.l-front,.l-cursor{right:clamp(-30px,-1vw,10px);bottom:0;
+  width:clamp(300px,46vw,560px);height:auto;display:block}
+.l-back{z-index:1}
+.l-front{z-index:5;filter:drop-shadow(0 22px 38px rgba(0,0,0,.26))}
+.l-cursor{z-index:6}
 
-.lyr-icons{left:0;right:0;bottom:clamp(20px,4vw,54px);z-index:4;overflow:hidden;
+.l-icons{left:0;right:0;bottom:clamp(18px,4vw,46px);z-index:3;overflow:hidden;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
           mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .icon-track{display:flex;gap:clamp(16px,3vw,32px);width:max-content;margin:0;padding:14px 18px;
@@ -216,11 +218,6 @@ main{padding:var(--g) 0 72px}
 @keyframes about-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes about-bob{50%{transform:translateY(-9px)}}
 
-.lyr-me{right:2%;bottom:0;width:clamp(230px,32vw,430px);z-index:6}
-.lyr-me .portrait{width:100%;height:auto;filter:drop-shadow(0 24px 40px rgba(0,0,0,.28))}
-.lyr-me .cursor{position:absolute;left:-8%;bottom:26%;width:clamp(26px,3vw,40px);height:auto;
-  filter:drop-shadow(0 3px 6px rgba(0,0,0,.45))}
-
 .about-hero .copy{position:relative;z-index:12;max-width:min(52%,560px)}
 .about-hero h1{font-weight:800;text-transform:uppercase;letter-spacing:-.03em;
   line-height:.88;font-size:clamp(42px,7.6vw,92px);margin:0}
@@ -233,19 +230,12 @@ main{padding:var(--g) 0 72px}
 
 @media(max-width:860px){
   .about-hero{margin:var(--g) 0 40px}
-  .about-hero .stage{display:block;min-height:0;padding-bottom:330px}
+  .about-hero .stage{display:block;min-height:0;padding-bottom:min(92vw,430px)}
   .about-hero .copy{max-width:none}
   .about-hero .bio{max-width:42ch}
-  .lyr-me{width:clamp(210px,50vw,300px);right:-4%;bottom:0;opacity:.97}
-  .prop-mac{width:clamp(90px,22vw,130px);right:22%;top:auto;bottom:190px;opacity:.55}
-  .prop-printer{width:clamp(150px,40vw,220px);right:-8%;bottom:20px;opacity:.5}
-  .lyr-icons{bottom:12px}
+  .l-back,.l-front,.l-cursor{width:min(88vw,440px);right:-6%}
+  .l-icons{bottom:10px}
   .icon{box-shadow:0 6px 16px rgba(0,0,0,.22)}
-}
-@media(max-width:560px){
-  .about-hero .stage{padding-bottom:290px}
-  .lyr-me{width:62vw;right:-8%}
-  .prop-mac{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   .icon-track{animation:none}
