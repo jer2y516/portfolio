@@ -1,0 +1,530 @@
+{
+  "retro-mushroom-lamp": {
+    "description": "A domed shade on a cylindrical base — the classic mushroom-lamp silhouette, sized for a desk or shelf. It is built to light with an LED strip or a small warm bulb, fed up through the hollow base; the light source is not included. Two-part print. Files on Cults3D and Thangs.",
+    "faq": [],
+    "source": "auto-draft",
+    "_note": "CONFIRM: intended light source (LED strip vs bulb+socket) and whether the shade needs supports."
+  },
+  "apple-watch-charger-mini-stand": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "flowing-heart-incense-dish": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-apple-watch-charger-holder": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "minimal-headphone-holder-support-apple-airpods-max": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "vintage-crt-monitor-ipad-holder": {
+    "description": "A miniature CRT monitor that stands an iPad mini (6th generation) upright at desk height — a nod to Scott Yu-Jan's Mac Studio iPad dock. A front drawer takes SD cards, a rear drawer holds larger odds and ends, and a top slot keeps a pen or remote. Dimensioned for the iPad mini 6 only; other models need rescaling. STL files on Cults3D and Thangs.",
+    "faq": [
+      {
+        "q": "Which iPad does it fit?",
+        "a": "The iPad mini (6th generation). Other iPad sizes are not dimensioned in the files and would need to be rescaled."
+      }
+    ],
+    "source": "auto-draft"
+  },
+  "mac-folder-inspired-mag-safe-card-holder": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "passport-foreign-coins-and-currency-organizer-made-for-traveller-jerh-2": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "sleek-wave-lamp-jerh": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "spherical-composition-sleek-wave-holder-jerh-2": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "desktop-organiser-fit-for-ikea-vattenkar": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "sakura-plate-jerh": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "minimal-tray-set": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "magnetic-modular-iphone-storage-system": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "bambu-lab-colour-swatches": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "screw-tray-and-storage-set": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "minimal-desk-lamp-jelly-fish-jerh": {
+    "description": "A fluted, domed shade on a slim neck — a jellyfish drifting above the desk. It prints in two pieces, shade and stand, that press together without glue, and the shade is drawn to print in vase / spiralise mode. You add the light: a small bulb holder and bulb, or an IKEA cord set, seats in the base. Files on Cults3D and Thangs.",
+    "faq": [
+      {
+        "q": "Is a bulb or socket included?",
+        "a": "No. Fit your own bulb holder and bulb, or drop in an IKEA cord set — the base is hollow to take one."
+      }
+    ],
+    "source": "auto-draft",
+    "_note": "CONFIRM: exact socket/holder type for the jelly fish base (E14? IKEA cord set only?)."
+  },
+  "not-cigarette-cigarette-box": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "minimal-desk-lamp-corn": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "minimal-desk-lamp-vortex": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "minimal-lantern-bubble-tea": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "rotatable-mushroom-lamp-jerh-2": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "vortex-spiral-fidget-desk-lamp": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "esc-key-cap-lamp": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "80s-retro-desklamp-with-mac-charger": {
+    "description": "An 80s Japanese-electronics desk lamp with a slot for a MagSafe-style wireless puck, so a phone charges face-up beside it. The body takes a standard E14 lamp socket and bulb — neither is included — and there is a small cut-out for a clock display. Print it, wire in the socket, drop in your charger. Files on Cults3D and Thangs.",
+    "faq": [
+      {
+        "q": "What do I need to buy separately?",
+        "a": "A standard E14 lamp socket and bulb, and a slim round MagSafe-style wireless charging puck. None of these are included in the files."
+      }
+    ],
+    "source": "auto-draft"
+  },
+  "123-jerh-3": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "vintage-music-records-lamp": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "minimal-mixed-texture-desk-lamp": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "minimal-mesh-lamp-woody-jerh": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "minimal-mesh-gaming-console-stand": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "minimal-tiny-mushroom-desk-lamp": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-figure-display-shelf": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-minimal-pendant-light": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skaids-tray-set": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-accessories-set": {
+    "description": "A discounted three-model bundle: the SKÅDIS Figure Display Shelf, the SKÅDIS Tray Set and the SKÅDIS Minimal Pendant Light. All three clip to the standard 20 mm SKÅDIS pegboard grid and can be printed and rearranged on their own. Buying the set is cheaper than the three designs separately. STL files on Cults3D and Thangs.",
+    "faq": [],
+    "source": "auto-draft"
+  },
+  "sunset-wave-desk-lamp": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "retro-records-player-charging-station-for-iphone-apple-watch": {
+    "description": "A turntable-shaped dock that charges an iPhone and an Apple Watch side by side, each from your own charger. An internal drawer hides the cables, and the model separates into parts for easier printing and finishing. Chargers and pucks are not included. STL files on Cults3D and Thangs.",
+    "faq": [
+      {
+        "q": "Which chargers does it take?",
+        "a": "You supply both: a slim round MagSafe-style puck for the phone and a standard Apple Watch charging disc. The recesses are sized for the common Apple-style pucks."
+      }
+    ],
+    "source": "auto-draft",
+    "_note": "CONFIRM: exact puck/charger dimensions the recesses are cut for."
+  },
+  "minimal-desk-lamp-ripple": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "egg-capsule-for-tiny-toys-jerh": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-hexagon-storage-kit-jerh-2": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "giant-cross-tray": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-hexagon-storage-box-with-lids": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-glasses-holder-jerh": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "multifunction-minimal-lamp": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-accessories-kit-vol-2-jerh": {
+    "description": "A discounted bundle of three SKÅDIS models: the Glasses Holder, the Hexagon Storage Kit and the Hexagon Box. All clip to the 20 mm SKÅDIS grid, and the hexagon pieces tile together across the board so you can cover as much area as you need. STL and 3MF project files on Cults3D and Thangs.",
+    "faq": [],
+    "source": "auto-draft"
+  },
+  "modern-multi-layered-lamp": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-modular-cable-management-system": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "mini-bed-lamp-combo": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "gacha-box-toys-modular-display-shelf": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-magsafe-charger": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-accessories-kit-vol-3": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-toy-display-boxes": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-portable-tool-tote": {
+    "description": "A SKÅDIS tray with a fixed carry handle: hang it on the pegboard between jobs, then lift it off by the handle to carry tools to the bench or another room. One open bay holds hand tools, fasteners and offcuts, and you can stand SKÅDIS hooks or cups next to it on the same board. Prints for the standard 20 mm SKÅDIS hole grid. STL and 3MF files on Cults3D and Thangs.",
+    "faq": [],
+    "source": "auto-draft"
+  },
+  "vintage-mosaic-lamp": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-extentsion-boxes": {
+    "description": "Storage boxes with SKÅDIS pegboard holes moulded into their outer faces, so each box becomes mountable board space in its own right. Hang hooks, cups or trays straight off a box, or clip the box to a pegboard and keep building outward from it. Useful where flat wall space has run out. STL files on Cults3D and Thangs.",
+    "faq": [],
+    "source": "auto-draft"
+  },
+  "retro-pie-chart-storage-set-jerh-2": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-accessories-basic-set-trays-hooks-ring-tool-mount": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "futuristic-grenade-lamp-sci-fi-inspired-led-light-with-honeycomb-diffuser": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-earphone-holder-with-storage": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-desktop-storage-set": {
+    "description": "A vertical SKÅDIS pegboard panel plus a starter set of accessories: two universal hooks, a flat catch-all tray, two pen pots, a memory-card and USB holder, and a phone dock slot. Everything clips to the 20 mm grid and can be moved or swapped as your desk changes. A compact EDC and desk station in one print set. STL files on Cults3D and Thangs.",
+    "faq": [],
+    "source": "auto-draft"
+  },
+  "ikea-skadis-tilted-drawers-tray-combo-modular-ergonomic-pegboard-organizer": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-adjustable-action-figure-stand-modular-display-system-jerh": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-rotatable-pegboard-storage-system-modular-4-sided-organizer-with-i": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "hookform-modular-rotating-hook-display-system-customizable-wall-mount-rack-for": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "flexfold-minimalist-snap-tray-jerh": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-hook-based-display-system-modular-sliding-clip-organizer": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "bento-style-modular-storage-box-with-customizable-dividers": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "minimalist-3-part-headphone-stand-with-storage-trays-3d-printable-organizer": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-multi-device-charging-station": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-90-extension-board": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-90-extension-box-compact-storage-add-on": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "gridstack-modular-shelf": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "g-dragon-inspired-minimal-folding-tray": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "tomica-car-display-box": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "jardine-house-dice-lamp-jerh": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "flowform-ripple-lamp-jerh-2": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-door-entrance-organizer-jerh": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "translucent-shell-apple-watch-charging-dock": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "g3-glow-dock-translucent-imac-g3-inspired-charging-dock": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "christmas-accessories-vol-1-3d-printed-christmas-ball-ornament-jerh": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ninja-memo-board-pin-set-kunai-shuriken-jerh": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "handheld-portable-tote-set-for-picnic-outdoor-maintenance-and-more-jerh": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "multiple-shelf-stack-and-foldable-toy-box": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-rotatable-tray-set": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "gas-tank-portable-storage-box": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-sakdis-rotatable-hook-set": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-minimal-toy-display-shelf-snap-on-pegboard-shelf-for-mini-figures": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-sliding-shelf-with-orgnaiser-small": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-sliding-shelf-with-organizer-large": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-accessories-kit-vol-6": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "rotatable-magsafe-bedside-dock-3d-printed-stand": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-sliding-hanger-3d-printed-pegboard-hat-bag-organizer-2-sizes": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "aura-architectural-ribbed-square-planter-with-hidden-drainage": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "retro-traffic-cone-desk-light-no-support-print-jerh": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "fujisan-mount-fuji-mini-lamp-bambu-lab-led-kit-001-compatible": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "orbit-8-under-desk-minimalist-cable-management-organizer-8-slot": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "horizon-dock-modular-3-in-1-wireless-charging-tray-edc-desk-organizer": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "modular-glasses-storage-drawer-stackable-eyewear-organizer-jerh": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "fidget-rolling-marble-pen-holder-spiral-desk-toy-organizer": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "terraflora-modular-tiered-planter-system-with-excess-water-tray": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  },
+  "ikea-skadis-pegboard-plant-pot-holder-minimalist-floating-planter": {
+    "description": "",
+    "faq": [],
+    "source": "auto"
+  }
+}

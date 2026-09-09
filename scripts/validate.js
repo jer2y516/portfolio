@@ -88,10 +88,13 @@ for (const p of products) {
   const blob = JSON.stringify(p);
   if (MOJIBAKE_RE.test(blob)) err(id, 'mojibake / U+FFFD detected in record');
 
-  // indexable gate: specs must be filled to be indexable
+  // doorway-page gate: an indexable page must carry real content — either an
+  // original 35+ word description OR filled print specs. Both is best.
   if (p.indexable) {
-    const specVals = Object.values(p.specs || {});
-    if (specVals.every((v) => v == null)) err(id, 'indexable:true but all specs are null (doorway page)');
+    const hasDesc = typeof p.description === 'string' && p.description.trim().split(/\s+/).length >= 35;
+    const hasSpecs = Object.values(p.specs || {}).some((v) => v != null);
+    if (!hasDesc && !hasSpecs) err(id, 'indexable:true but no description and no specs (doorway page)');
+    else if (!hasSpecs) warn(id, 'indexable on description alone — add print specs to strengthen the page');
   }
 }
 

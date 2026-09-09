@@ -96,6 +96,8 @@ const jsonLd = [
         <h1>{p.name}</h1>
         {p.date && <p class="date">Added {p.date}</p>}
 
+        {p.description && <p class="lede">{p.description}</p>}
+
         {hasSpecs ? (
           <table class="spec-table">
             <tbody>

@@ -31,11 +31,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A domed shade on a cylindrical base — the classic mushroom-lamp silhouette, sized for a desk or shelf. It is built to light with an LED strip or a small warm bulb, fed up through the hollow base; the light source is not included. Two-part print. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 2,
@@ -87,9 +87,7 @@
       "organisers"
     ],
     "provisionalCategory": true,
-    "tags": [
-      "planter"
-    ],
+    "tags": [],
     "images": {
       "plain": "3b.jpg",
       "colour": "3.jpg"
@@ -226,11 +224,16 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A miniature CRT monitor that stands an iPad mini (6th generation) upright at desk height — a nod to Scott Yu-Jan's Mac Studio iPad dock. A front drawer takes SD cards, a rear drawer holds larger odds and ends, and a top slot keeps a pen or remote. Dimensioned for the iPad mini 6 only; other models need rescaling. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
-    "faq": [],
-    "indexable": false
+    "faq": [
+      {
+        "q": "Which iPad does it fit?",
+        "a": "The iPad mini (6th generation). Other iPad sizes are not dimensioned in the files and would need to be rescaled."
+      }
+    ],
+    "indexable": true
   },
   {
     "id": 8,
@@ -633,11 +636,16 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A fluted, domed shade on a slim neck — a jellyfish drifting above the desk. It prints in two pieces, shade and stand, that press together without glue, and the shade is drawn to print in vase / spiralise mode. You add the light: a small bulb holder and bulb, or an IKEA cord set, seats in the base. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
-    "faq": [],
-    "indexable": false
+    "faq": [
+      {
+        "q": "Is a bulb or socket included?",
+        "a": "No. Fit your own bulb holder and bulb, or drop in an IKEA cord set — the base is hollow to take one."
+      }
+    ],
+    "indexable": true
   },
   {
     "id": 20,
@@ -927,11 +935,16 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "An 80s Japanese-electronics desk lamp with a slot for a MagSafe-style wireless puck, so a phone charges face-up beside it. The body takes a standard E14 lamp socket and bulb — neither is included — and there is a small cut-out for a clock display. Print it, wire in the socket, drop in your charger. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
-    "faq": [],
-    "indexable": false
+    "faq": [
+      {
+        "q": "What do I need to buy separately?",
+        "a": "A standard E14 lamp socket and bulb, and a slim round MagSafe-style wireless charging puck. None of these are included in the files."
+      }
+    ],
+    "indexable": true
   },
   {
     "id": 28,
@@ -1298,11 +1311,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A discounted three-model bundle: the SKÅDIS Figure Display Shelf, the SKÅDIS Tray Set and the SKÅDIS Minimal Pendant Light. All three clip to the standard 20 mm SKÅDIS pegboard grid and can be printed and rearranged on their own. Buying the set is cheaper than the three designs separately. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 38,
@@ -1374,11 +1387,16 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A turntable-shaped dock that charges an iPhone and an Apple Watch side by side, each from your own charger. An internal drawer hides the cables, and the model separates into parts for easier printing and finishing. Chargers and pucks are not included. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
-    "faq": [],
-    "indexable": false
+    "faq": [
+      {
+        "q": "Which chargers does it take?",
+        "a": "You supply both: a slim round MagSafe-style puck for the phone and a standard Apple Watch charging disc. The recesses are sized for the common Apple-style pucks."
+      }
+    ],
+    "indexable": true
   },
   {
     "id": 40,
@@ -1665,11 +1683,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A discounted bundle of three SKÅDIS models: the Glasses Holder, the Hexagon Storage Kit and the Hexagon Box. All clip to the 20 mm SKÅDIS grid, and the hexagon pieces tile together across the board so you can cover as much area as you need. STL and 3MF project files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 49,
@@ -1971,11 +1989,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A SKÅDIS tray with a fixed carry handle: hang it on the pegboard between jobs, then lift it off by the handle to carry tools to the bench or another room. One open bay holds hand tools, fasteners and offcuts, and you can stand SKÅDIS hooks or cups next to it on the same board. Prints for the standard 20 mm SKÅDIS hole grid. STL and 3MF files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 57,
@@ -2048,11 +2066,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "Storage boxes with SKÅDIS pegboard holes moulded into their outer faces, so each box becomes mountable board space in its own right. Hang hooks, cups or trays straight off a box, or clip the box to a pegboard and keep building outward from it. Useful where flat wall space has run out. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 59,
@@ -2242,11 +2260,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A vertical SKÅDIS pegboard panel plus a starter set of accessories: two universal hooks, a flat catch-all tray, two pen pots, a memory-card and USB holder, and a phone dock slot. Everything clips to the 20 mm grid and can be moved or swapped as your desk changes. A compact EDC and desk station in one print set. STL files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 64,
@@ -3052,9 +3070,7 @@
     "categories": [
       "organisers"
     ],
-    "tags": [
-      "planter"
-    ],
+    "tags": [],
     "images": {
       "plain": "86b.jpg",
       "colour": "86.jpg"

@@ -45,3 +45,6 @@ cults_export.json
 .env
 .env.*
 *.env
+
+# Cults raw text — reference only, not shipped
+content/descriptions.reference.md

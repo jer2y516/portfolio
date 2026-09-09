@@ -157,7 +157,8 @@ main{padding:var(--g) 0 72px}
 .detail h1{font-weight:800;text-transform:uppercase;line-height:1.02;
   letter-spacing:-.02em;font-size:clamp(28px,4.4vw,46px);margin:6px 0 10px}
 .detail .series{font-size:13px;margin-bottom:8px}
-.detail .date{color:var(--mute);font-size:13px;margin-bottom:22px}
+.detail .date{color:var(--mute);font-size:13px;margin-bottom:18px}
+.detail .lede{font-size:15.5px;line-height:1.55;margin-bottom:22px;max-width:52ch}
 .spec-table{width:100%;border-collapse:collapse;margin:18px 0 26px;font-size:14px}
 .spec-table th,.spec-table td{text-align:left;padding:9px 0;border-bottom:1px solid var(--line);
   vertical-align:top}

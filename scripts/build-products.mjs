@@ -107,7 +107,7 @@ const CULTS_TAG_MAP = {
   'headphone stand': 'headphones', 'headphone holder': 'headphones',
   'modular': 'modular',
   'cable management': 'cable-management', 'cablemanagement': 'cable-management',
-  'planter': 'planter', 'plant pot': 'planter', 'garden': 'planter', 'plant': 'planter',
+  'planter': 'planter', 'plant pot': 'planter', 'plant pot holder': 'planter',
   'multicolor': 'multi-color', 'multi color': 'multi-color', 'multicolour': 'multi-color', 'ams': 'multi-color',
   'retro': 'retro', 'vintage': 'retro',
   'christmas': 'seasonal', 'xmas': 'seasonal',
@@ -130,6 +130,12 @@ try {
   const exp = JSON.parse(fs.readFileSync(path.join(ROOT, 'raw-assets', 'cults_export.json'), 'utf8'));
   cultsBySlug = new Map((exp.creations || []).map((c) => [c.slug, c]));
 } catch { /* not fetched yet */ }
+
+// hand-written copy (scripts/gen-descriptions.mjs skeleton, filled by hand)
+let copyBySlug = {};
+try {
+  copyBySlug = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', 'descriptions.json'), 'utf8'));
+} catch { /* not created yet */ }
 
 function deriveTags(name, slug, csvTags) {
   const set = new Set(csvTags);
@@ -259,6 +265,17 @@ for (const r of raw.slice(1)) {
   for (const c of categories) report.categoryCounts[c] = (report.categoryCounts[c] || 0) + 1;
   for (const t of tags) report.tagCounts[t] = (report.tagCounts[t] || 0) + 1;
 
+  // hand-written copy
+  const copy = copyBySlug[slug] || {};
+  const description = (copy.description || '').trim() || null;
+  const faq = Array.isArray(copy.faq) ? copy.faq.filter((f) => f && f.q && f.a) : [];
+  // index once the page carries real content (an original 35+ word description) —
+  // not a doorway page. `"indexable": false` in the entry forces it back out.
+  const indexable = Boolean(description)
+    && description.split(/\s+/).length >= 35
+    && copy.indexable !== false;
+  if (description) report.described = (report.described || 0) + 1;
+
   // reconcile vs catalog.html
   const card = catalogCards[imgNum];
   if (card) {
@@ -290,11 +307,11 @@ for (const r of raw.slice(1)) {
       layerHeight: null, infill: null, supports: null, printTime: null,
       filament: null, dimensions: null, hardware: null, formats: null,
     },
-    description: null,
-    seoTitle: null,
-    metaDescription: null,
-    faq: [],
-    indexable: false,
+    description,
+    seoTitle: copy.seoTitle || null,
+    metaDescription: copy.metaDescription || null,
+    faq,
+    indexable,
   });
 }
 
