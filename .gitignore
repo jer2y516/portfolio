@@ -36,3 +36,7 @@ public/Image/
 # Original full-size image sources — regenerated into public/img/ by
 # scripts/build-images.mjs. Kept out of the repo (like the master CSV).
 raw-assets/
+
+# secrets
+.env
+cults_export.json
