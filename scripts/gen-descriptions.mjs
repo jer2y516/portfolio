@@ -69,6 +69,35 @@ for (const p of PRODUCTS) ordered[p.slug] = existing[p.slug];
 fs.writeFileSync(OUT, JSON.stringify(ordered, null, 2) + '\n');
 fs.writeFileSync(REF, refLines.join('\n'));
 
+// review doc — everything on one page, grouped by category, notes flagged
+const CAT_ORDER = ['skadis', 'lamps', 'apple', 'organisers', 'display'];
+const CAT_LABEL = { skadis: 'IKEA SKÅDIS', lamps: 'Lamps', apple: 'Apple', organisers: 'Organisers', display: 'Display' };
+const rev = ['# Description review', '',
+  'Edit `content/descriptions.json` directly, then `npm run build:data`.', ''];
+const notes = PRODUCTS.filter((p) => ordered[p.slug]?._note);
+if (notes.length) {
+  rev.push(`## ⚠ ${notes.length} entries need a fact confirmed`, '');
+  for (const p of notes) rev.push(`- **${p.name}** — ${ordered[p.slug]._note}`);
+  rev.push('');
+}
+for (const cat of CAT_ORDER) {
+  const inCat = PRODUCTS.filter((p) => p.categories[0] === cat).sort((a, b) => a.id - b.id);
+  if (!inCat.length) continue;
+  rev.push(`## ${CAT_LABEL[cat]} (${inCat.length})`, '');
+  for (const p of inCat) {
+    const e = ordered[p.slug] || {};
+    const wc = (e.description || '').trim().split(/\s+/).filter(Boolean).length;
+    rev.push(`### ${p.id} · ${p.name}`);
+    rev.push(`\`${p.slug}\` · tags: ${p.tags.join(', ') || '—'} · ${wc} words · ${wc >= 35 ? 'index' : 'noindex (too short)'}`);
+    rev.push('');
+    rev.push(e.description || '_(none)_');
+    if (e.faq?.length) { rev.push(''); for (const f of e.faq) rev.push(`- **Q:** ${f.q}  \n  **A:** ${f.a}`); }
+    if (e._note) rev.push(`\n> ⚠ ${e._note}`);
+    rev.push('', '---', '');
+  }
+}
+fs.writeFileSync(path.join(ROOT, 'content', 'descriptions.review.md'), rev.join('\n'));
+
 const filled = Object.values(ordered).filter((e) => e.description.trim()).length;
 console.log(`content/descriptions.json: ${Object.keys(ordered).length} entries, ${filled} written, ${added} new skeletons`);
-console.log(`content/descriptions.reference.md written`);
+console.log(`content/descriptions.reference.md + descriptions.review.md written`);
