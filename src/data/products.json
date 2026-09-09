@@ -31,7 +31,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": "A domed shade on a cylindrical base — the classic mushroom-lamp silhouette, sized for a desk or shelf. It is built to light with an LED strip or a small warm bulb, fed up through the hollow base; the light source is not included. Two-part print. Files on Cults3D and Thangs.",
+    "description": "A domed shade on a cylindrical base — the classic mushroom-lamp silhouette, sized for a desk or shelf. It lights with an LED strip run up through the hollow base; the strip is not included. Two-part print, press-fit. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -70,13 +70,13 @@
       "hardware": null,
       "formats": null
     },
-    "description": "A small angled block that holds your Apple Watch puck so the watch charges on its side in Nightstand mode, screen facing you. The puck slot is cut for the round Apple charging disc — you thread your own cable and puck in from below. STL files on Cults3D and Thangs.",
+    "description": "A small angled block that holds your Apple Watch puck so the watch charges on its side in Nightstand mode, screen toward you. The slot is cut for the USB-C Apple Watch charging puck only — the cable threads in from below. Puck not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [
       {
         "q": "Which Apple Watch charger fits?",
-        "a": "The standard round Apple Watch charging puck. The recess holds the disc; the cable runs out the back."
+        "a": "The USB-C Apple Watch magnetic charging puck. The older USB-A puck is a different shape and is not supported."
       }
     ],
     "indexable": true
@@ -112,11 +112,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A heart-outline dish for stick or cone incense, with two swappable insert holders. One insert is fully printed; the other seats a metal screw as the incense post, so you can burn thinner sticks. Screw not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 4,
@@ -152,11 +152,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A small cradle that clips to a SKÅDIS pegboard and holds your Apple Watch puck at a readable angle for Nightstand mode. You feed your own charging cable and puck through from behind. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 5,
@@ -191,11 +191,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A weighted cylindrical stand that takes the hook of AirPods Max or most over-ear headphones without stretching the band. A slot at the base routes the cable down and out of sight. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 6,
@@ -272,11 +272,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A slim card wallet shaped like the classic Mac folder icon that snaps to the back of an iPhone via the phone's own MagSafe magnets (57 mm ring). Holds two or three cards. No charging — this is a wallet, not a dock. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 9,
@@ -308,11 +308,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A stacking tray set for sorting foreign coins and notes between trips — one tray per currency, stack them in a drawer, lift out the one you need before you fly. Modular, so add trays as you collect more currencies. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 10,
@@ -344,13 +344,13 @@
       "hardware": null,
       "formats": null
     },
-    "description": "A tall, rippling column that reads as a frozen wave. It is built around the separate IKEA lamp cord set / light stand — that part is not printed and not included; the printed shade slides over it. Fit a warm or RGB bulb to taste. STL files on Cults3D and Thangs.",
+    "description": "A tall, rippling column that reads as a frozen wave. It is built around a separate IKEA lamp cord set / base — not printed, not included — with the printed shade sliding over it. Fit a warm or RGB bulb to taste. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [
       {
         "q": "Does it include the light?",
-        "a": "No. The shade is designed to sit over an IKEA lamp base / cord set, which you buy separately, plus your own bulb."
+        "a": "No. The shade sits over an IKEA lamp base / cord set bought separately, plus your own bulb."
       }
     ],
     "indexable": true
@@ -385,7 +385,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A rounded desk caddy with a wave-cut profile that holds a games console, a controller, AirPods, pens and odds and ends in one sculptural piece. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -421,7 +421,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A wave-profiled desk tray sized to sit in the IKEA Vattenkar desk pad / tray, holding a card reader, a portable drive and other small items. Compact and light. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -457,7 +457,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A shallow catch-all dish with a cherry-blossom relief across the base — for keys, rings, a watch or loose change by the door or on the desk. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -494,7 +494,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A set of four tray shapes, each with three design variants, all sharing a soft curved-wave lip. Twelve trays in total for drawers, desktops or a shelf. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -535,11 +535,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A magnetic desk system for iPhone gear in three modules: a 57 mm MagSafe charger holder, an Apple Watch charger holder, and a small parts tray, all held together and to a backplate by magnets so you can rearrange them. Chargers and magnets are not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 17,
@@ -574,11 +574,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A rack that files filament swatches upright, sixteen to a plate, with a strip for writing the filament name or settings next to each. Print one plate per brand or type and build a shelf reference. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 18,
@@ -610,11 +610,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A sorting tray plus small parts boxes for fasteners and DIY bits. The boxes take 15 × 6 × 4 mm magnets so they cling to the tray or a steel surface and pull off one-handed; a non-magnet version is also included. Magnets not supplied. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 19,
@@ -646,13 +646,13 @@
       "hardware": null,
       "formats": null
     },
-    "description": "A fluted, domed shade on a slim neck — a jellyfish drifting above the desk. It prints in two pieces, shade and stand, that press together without glue, and the shade is drawn to print in vase / spiralise mode. You add the light: a small bulb holder and bulb, or an IKEA cord set, seats in the base. Files on Cults3D and Thangs.",
+    "description": "A fluted, domed shade on a slim neck — a jellyfish drifting above the desk. It prints in two pieces, shade and stand, that press together without glue, and the shade is drawn to print in vase / spiralise mode. Fit a standard E27 socket and bulb in the base; neither is included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [
       {
-        "q": "Is a bulb or socket included?",
-        "a": "No. Fit your own bulb holder and bulb, or drop in an IKEA cord set — the base is hollow to take one."
+        "q": "What bulb does it take?",
+        "a": "A standard E27 socket and bulb, fitted into the hollow base. You supply both."
       }
     ],
     "indexable": true
@@ -688,7 +688,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A slip case that hides a standard cigarette pack behind a plain shell engraved \"Not Cigarette\" — covers the health-warning graphics without changing the pack. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -760,11 +760,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A tapering shade wound with a spiral rib — a slow vortex over the desk. Two parts, press-fit; the shade seats onto the base. Fit your own bulb holder and bulb. Note that the shade is matched to the current base version. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 23,
@@ -793,15 +793,15 @@
       "supports": null,
       "printTime": null,
       "filament": null,
-      "dimensions": null,
+      "dimensions": "≈70 × 70 mm",
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A palm-sized lantern, about 70 mm square, with an integrated top handle to hang or carry it — built for a picnic table, tent or garden as much as a desk. Takes a small battery light or tea-light-sized LED (not included). Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 24,
@@ -833,11 +833,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A mushroom lamp built from four parts that assemble and pull apart for flat storage. The shade rotates on the stem, so you can aim the glow up, down or at the wall. Fit your own bulb holder and bulb. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 25,
@@ -869,11 +869,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A layered spiral shade that spins on its base — a desk lamp you can also fidget with. The stacked-ring pattern breaks up the light into a soft, textured glow. Two-part print; you supply the bulb and holder. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 26,
@@ -950,13 +950,13 @@
       "hardware": null,
       "formats": null
     },
-    "description": "An 80s Japanese-electronics desk lamp with a slot for a MagSafe-style wireless puck, so a phone charges face-up beside it. The body takes a standard E14 lamp socket and bulb — neither is included — and there is a small cut-out for a clock display. Print it, wire in the socket, drop in your charger. Files on Cults3D and Thangs.",
+    "description": "An 80s Japanese-electronics desk lamp with a slot for a 57 mm MagSafe-style wireless puck, so a phone charges face-up beside it. The body takes a standard E14 lamp socket and bulb — neither is included — and there is a small cut-out for a clock display. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [
       {
         "q": "What do I need to buy separately?",
-        "a": "A standard E14 lamp socket and bulb, and a slim round MagSafe-style wireless charging puck. None of these are included in the files."
+        "a": "A standard E14 lamp socket and bulb, and a 57 mm round MagSafe-style wireless charging puck. Neither is included in the files."
       }
     ],
     "indexable": true
@@ -995,11 +995,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A 57 mm MagSafe puck holder with a wrapped channel around the back for the excess cable — the charger sits flush and the cord stops pooling on the desk. Puck and cable not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 29,
@@ -1033,11 +1033,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A lamp shaped as an oversized vinyl record standing on edge, grooves and label picked out in the print. It reads as sculpture off and glows warm when lit. Designed for a simple socket-and-bulb fit; light source not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 30,
@@ -1065,15 +1065,15 @@
       "supports": null,
       "printTime": null,
       "filament": null,
-      "dimensions": null,
+      "dimensions": "≈300 mm tall assembled",
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A slim column lamp, about 30 cm tall assembled, that pairs a fuzzy stone-like texture with clean curved lines. The texture scatters the light into a soft wash for a desk or bedside table. You supply the bulb and holder. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 31,
@@ -1107,15 +1107,10 @@
       "hardware": null,
       "formats": null
     },
-    "description": "A lattice-shell desk lamp that throws a soft, patterned light. The base accepts an E27 or E14 bulb, and the files also suit the Bambu Lab USB light for a low-voltage build. Bulb and light source are not included. STL files on Cults3D and Thangs.",
+    "description": "A lattice-shell desk lamp that throws a soft, patterned light. The base takes an E27 or E14 bulb, and the files also suit the Bambu Lab USB light for a low-voltage build. Bulb or LED not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
-    "faq": [
-      {
-        "q": "What light does it take?",
-        "a": "An E27 or E14 bulb in the standard base, or a Bambu Lab USB light for a USB-powered build. You supply whichever you use."
-      }
-    ],
+    "faq": [],
     "indexable": true
   },
   {
@@ -1149,7 +1144,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A vertical stand for a games console that also parks a controller and a phone. The open mesh body cuts filament use and lets air move around the console. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -1187,11 +1182,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A small two-part mushroom lamp — base and shade — sized for a shelf edge or bedside. It is built around the Bambu Lab LED light for a low-voltage, USB-powered build; the LED is not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 34,
@@ -1224,13 +1219,13 @@
       "hardware": null,
       "formats": null
     },
-    "description": "Snap-on shelves for displaying figures and collectibles on a SKÅDIS board. They hold with magnets you press into the print, so shelves lift off and rearrange without tools as your collection grows. Several shelf widths and back patterns are included. Magnets are not supplied. STL files on Cults3D and Thangs.",
+    "description": "Snap-on shelves for displaying figures and collectibles on a SKÅDIS board. They hold with magnets you press into the print, so shelves lift off and rearrange without tools. Several widths and back patterns are included. Magnets not supplied. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [
       {
         "q": "Where do the magnets go?",
-        "a": "Small magnets press into pockets on the back of each shelf and into the matching pegboard clip. You supply the magnets; the pockets are sized in the model."
+        "a": "Small magnets press into pockets on the back of each shelf and the matching pegboard clip. You supply the magnets; the pockets are sized in the model."
       }
     ],
     "indexable": true
@@ -1266,11 +1261,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A pendant shade that clips to a SKÅDIS pegboard with no screws — hang task light exactly where the board is. Fits a standard E14 socket and bulb, which you supply. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 36,
@@ -1302,7 +1297,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A set of SKÅDIS trays in several sizes that clip onto the pegboard with no screws — line them up for stationery, tools or small parts. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -1374,11 +1369,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A desk lamp with a fuzzy-textured wave shade, drawn from 90s anime cel-shading and low evening sun on water. The texture blends the light into a warm gradient. Simple assembly; you fit the bulb and holder. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 39,
@@ -1414,13 +1409,13 @@
       "hardware": null,
       "formats": null
     },
-    "description": "A turntable-shaped dock that charges an iPhone and an Apple Watch side by side, each from your own charger. An internal drawer hides the cables, and the model separates into parts for easier printing and finishing. Chargers and pucks are not included. STL files on Cults3D and Thangs.",
+    "description": "A turntable-shaped dock that charges an iPhone and an Apple Watch side by side, each from your own charger. An internal drawer hides the cables, and the model separates into parts for easier printing. The phone recess is cut for a 57 mm MagSafe-style puck. Chargers and pucks are not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [
       {
         "q": "Which chargers does it take?",
-        "a": "You supply both: a slim round MagSafe-style puck for the phone and a standard Apple Watch charging disc. The recesses are sized for the common Apple-style pucks."
+        "a": "A 57 mm round MagSafe-style puck for the phone and a standard Apple Watch charging disc. You supply both."
       }
     ],
     "indexable": true
@@ -1455,11 +1450,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A rippled column shade that stacks concentric waves up its height, throwing a layered glow. Fit a standard E27 bulb socket to the base, then seat the shade on top. Socket and bulb not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 41,
@@ -1492,7 +1487,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "An egg-shaped capsule that opens and closes to store or display a single mini figure or gashapon toy. Print a set to keep a collection dust-free on a shelf. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -1560,15 +1555,15 @@
       "supports": null,
       "printTime": null,
       "filament": null,
-      "dimensions": null,
+      "dimensions": "≈335 × 210 × 35 mm (L×W×H)",
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "An oversized catch-all tray with a bold cross graphic sunk into the base, about 335 × 210 mm and 35 mm deep. Big enough for snacks, mail or a whole pocket-dump. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 44,
@@ -1600,7 +1595,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "Hexagonal storage boxes with press-on lids that keep dust off the contents. The hex footprint tiles neatly in a drawer or on a shelf. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -1636,7 +1631,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": "A tilted tray that holds several pairs of glasses at a 15° angle on a SKÅDIS board, so a pair lifts straight out without knocking the others. The hexagon-cut walls keep the print light — the maker lists roughly 59 g of filament per tray. Clips to the 20 mm grid. STL files on Cults3D and Thangs.",
+    "description": "A tilted tray that holds several pairs of glasses at an angle on a SKÅDIS board, so a pair lifts straight out without knocking the others. The hexagon-cut walls keep the print light — the maker lists about 59 g per tray. Clips to the pegboard, no screws. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -1672,11 +1667,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "An arc-form lamp that ships with three interchangeable shades for different light effects, and stands on a table or hangs on a wall. Swap shades to suit the room. You supply the bulb and holder. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 48,
@@ -1748,11 +1743,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A lamp built from two overlapping forms that read as drifting smoke when lit. The base takes either an E14 or an E27 socket, so you can match whatever bulb you have. Socket and bulb not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 50,
@@ -1787,11 +1782,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A cable capsule for the SKÅDIS board that stores and separates several cables, each slot with a removable label tag so you can tell power from data at a glance. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 51,
@@ -1823,7 +1818,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A compact two-layer bedside lamp designed around the Bambu Lab LED plate for a USB-powered build, with two shade styles in the download. The LED plate is not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -1862,11 +1857,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A modular shelf for gashapon capsules and blind-box figures: add or rearrange tiers to fit the collection and the wall. Each shelf holds a row securely at a viewing tilt. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 53,
@@ -1902,7 +1897,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A holder that seats a 57 mm MagSafe-style puck against a SKÅDIS pegboard so a phone charges upright on the board. Cable runs behind the board. Puck not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -1942,7 +1937,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A discounted bundle of three SKÅDIS models: the Modular Cable Management System, the MagSafe Charger holder (57 mm puck) and the Apple Watch Charger Holder. Chargers not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -2055,11 +2050,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A lamp with a slotted shade that holds swappable printed mosaic panels — snap-to-grid, so the panels stay put even upside down. Change the panels to change the colour and pattern of the glow. A translucent inner sleeve helps diffusion (not supplied). Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 58,
@@ -2132,11 +2127,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A two-tier organiser: a rotating lower tray with interchangeable wedge bins in 12.5%, 25% and 50% segments, and a top dish for jewellery, USB drives or stationery. Build the pie to match what you store. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 60,
@@ -2171,11 +2166,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A starter accessory set for the SKÅDIS board: three trays (small, medium, large), several hook sizes, and ring mounts that hold pliers, scissors or similar by the handle. Designed to print without supports. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 61,
@@ -2209,11 +2204,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A sci-fi grenade-styled desk light with a hexagon-grid diffuser and a working push-button top. Built for the Bambu Lab LED plate or a similar round LED panel; the panel is not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 62,
@@ -2248,7 +2243,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A SKÅDIS headphone dock: a padded-profile hook for AirPods Max or other over-ear headphones, plus a compartment for earbuds and small bits and an optional pull-out drawer. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -2323,11 +2318,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A SKÅDIS unit that combines a tilted-front tray with pull drawers, angled so you can see and reach the contents without taking anything off the board. Modular — run one or several across the pegboard. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 65,
@@ -2359,11 +2354,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "An adjustable arm-and-grip stand for the SKÅDIS board that holds an action figure or vinyl toy at the pose and height you set. Multiple grip sizes are included for different figure scales. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 66,
@@ -2397,11 +2392,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A four-sided tower that mounts to a SKÅDIS board and spins, so all four pegboard faces come to you in turn — four times the accessory space in one footprint. Note the clip plates are thicker than IKEA's metal hooks and use their own mounts. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 67,
@@ -2435,11 +2430,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A wall-mount rack with fifteen hooks that each rotate, extend and combine into little platforms — build a custom grid for keychains, figures, tools or cables and change it whenever. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 68,
@@ -2473,11 +2468,16 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A flat-pack catch-all tray that folds up from a printed sheet: flexible living-hinge corners let it snap into a shallow tray using only a few grams of filament. Print it in a flexible filament (TPU) or PLA/PETG with thin hinge walls. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
-    "faq": [],
-    "indexable": false
+    "faq": [
+      {
+        "q": "What filament should I use?",
+        "a": "A flexible filament such as TPU gives the best hinges. PLA or PETG also works if your slicer keeps the hinge walls thin."
+      }
+    ],
+    "indexable": true
   },
   {
     "id": 69,
@@ -2509,11 +2509,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A set of clips that slide along a rail on the SKÅDIS board, each holding a cable, a tool or a small accessory. Slide them together to save space or spread them out to display. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 70,
@@ -2547,7 +2547,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A lidded desk box with swappable internal dividers, so you set the compartment layout for tools, cables or stationery. Fluted sides, snug lid to keep dust out. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -2585,11 +2585,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A three-part headphone stand: an upper tray for earbuds, a remote or pens, a lower catch-all for keys and wallet, and a top yoke that holds most over-ear headphones without band stretch. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 73,
@@ -2662,11 +2662,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A right-angled panel that mounts to a SKÅDIS board and turns an unused corner into more pegboard, letting you hang accessories around a 90° bend for extra visible, reachable space. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 75,
@@ -2698,7 +2698,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A right-angle storage box that extends a SKÅDIS setup into a corner — holds stationery, cables or small tools while using space that was doing nothing. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -2736,11 +2736,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A stacking shelf system with an \"infinity\" stack: add tiers vertically for as much storage or display as you want. Four grid-plate textures are included as 3MF for mix-and-match fronts. STL and 3MF on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 77,
@@ -2775,11 +2775,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A folding desk tray with a clean daisy motif, a nod to G-Dragon's branding. Comes as a multi-colour 3MF so the flower prints in contrast straight off an AMS, and it assembles from flat pieces. STL and 3MF on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 78,
@@ -2813,11 +2813,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "An angled display case for a single Tomica die-cast, with a printed road plate and a choice of two backdrops — a Tomica-style panel or an Initial-D-style comic panel. STL and 3MF on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 79,
@@ -2849,11 +2849,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A cube lamp modelled on Hong Kong's Jardine House, its round windows reimagined as glowing portholes across five illuminated faces. The diffused glow suits a shelf or bedside table. Light source not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 80,
@@ -2885,11 +2885,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A two-part column lamp with a layered rib texture that spreads the light into a warm gradient, like sunset through moving glass. Easy to print and assemble; you fit the bulb and holder. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 81,
@@ -2923,11 +2923,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A small entryway board for the SKÅDIS system: a top shelf, a bottom tray and modular hooks for keys, AirPods, notes and a few display pieces. A wall-hanging hole is built in if you would rather not use a full pegboard. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 82,
@@ -2963,11 +2963,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A compact charging tray with a semi-transparent shell that glows softly as it works. It holds the Apple Watch upright and gives rings, AirPods, keys and coins a home around it. Prints without supports. Charger not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 83,
@@ -3005,11 +3005,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A charging dock styled after the translucent iMac G3, with a honeycomb inner structure that shows through the shell. Drop in a Bambu Lab light plate for a warm retro glow while your phone charges on the 57 mm MagSafe puck. Light plate and charger not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 84,
@@ -3044,7 +3044,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A lightweight ribbed bauble for the tree — the vertical ribs catch the lights with more depth than a smooth ball. Hangs from any branch. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -3081,7 +3081,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "Kunai and shuriken shaped memo magnets that pin notes and photos to a fridge or steel board. Each piece takes a 5 mm round magnet (not included). Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -3117,11 +3117,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A carry caddy with an integrated handle and several removable bins — sort tools, craft supplies or picnic kit into the bins and lift the whole thing by the handle. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 87,
@@ -3153,7 +3153,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A stackable shelf unit paired with a fold-flat toy box — display pieces on the shelves, pack the rest into the box, collapse it when you are done. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -3189,11 +3189,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "Trays that clip onto a slim central rod on the SKÅDIS board and swing out individually, so you can rotate one tier to reach it without pulling the whole stack. Turns dead pegboard space into layered storage. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 89,
@@ -3225,11 +3225,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A jerry-can shaped mini box that screws onto a spare drink-bottle cap, making a pocket or keychain container for hardware, SD cards, earbuds or small change. X-panel detailing on the sides. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 90,
@@ -3263,11 +3263,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A swivel hook mount for the SKÅDIS board with three hook sizes and full 360° rotation, so keys, bags, jewellery or tools hang where you want and turn out of the way. Snaps in, no screws. Prints without supports. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 91,
@@ -3293,20 +3293,20 @@
       "pixup": null
     },
     "specs": {
-      "layerHeight": null,
+      "layerHeight": "0.2 mm",
       "infill": null,
-      "supports": null,
+      "supports": "none",
       "printTime": null,
-      "filament": null,
+      "filament": "<50 g per shelf (PLA or PETG)",
       "dimensions": null,
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A slim slatted shelf that snaps onto a SKÅDIS board to display mini figures and gashapon toys gallery-style. Each shelf prints in under 50 g so you can fill a whole wall. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 92,
@@ -3339,11 +3339,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A low slatted SKÅDIS shelf whose deck works as a sliding rail: push trays and organisers on and off, reconfigure without taking the shelf down. Small size, for pens, cables, hobby tools and mini figures. Mounts on SKÅDIS hooks, no screws. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 93,
@@ -3376,11 +3376,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "The wide version of the sliding SKÅDIS shelf — a longer slatted deck for lining up trays, displaying toys or parking everyday carry. Trays slide along the deck to reposition. No screws. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 94,
@@ -3413,7 +3413,7 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A discounted bundle of three SKÅDIS display models: the Minimal Toy Display Shelf, the small Sliding Shelf with Organizer and the large Sliding Shelf with Organizer. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
@@ -3452,11 +3452,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A bedside dock with a 360° rotating head that turns a 57 mm MagSafe puck into a StandBy-mode phone stand — portrait or landscape, angle to taste. Room alongside for AirPods. Puck not included. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 96,
@@ -3490,11 +3490,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A hanger bar for the SKÅDIS board with hooks that slide along a front rail — bunch hats, bags, headphones or everyday carry together to save space, or spread them out to display. Two bar lengths are included: a compact one for caps and keys, and a longer one for coats and bags. Prints without supports. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 97,
@@ -3529,11 +3529,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A square planter with deep vertical fluting that hides layer lines and catches the light. An internal drainage system sits below the soil line, so water drains without a visible saucer. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 98,
@@ -3570,11 +3570,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A desk light shaped as a traffic cone — a nod to the VLC media-player icon — with a hollow translucent cone that diffuses a warm, \"cautionary\" glow. Built for the Bambu Lab LED Kit 001, precision-fit base, and designed to print with zero supports. LED kit not included. STL and 3MF (multi-colour) on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 100,
@@ -3610,11 +3610,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A Mount Fuji silhouette with a \"snow-drip\" peak that doubles as the light diffuser, for a soft bedside glow. Built for the Bambu Lab LED Kit 001 with a precision-fit base, and drawn to print without supports. LED kit not included. STL and 3MF (multi-colour) on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 101,
@@ -3650,11 +3650,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "An ultra-slim 8-slot cable bar that mounts to the edge or underside of a desk on a dual-axis pivot, so wiring runs off the desktop and along a clean line. Circular end caps let the bar tilt to the angle that keeps cables seated. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 102,
@@ -3691,11 +3691,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A desk station that pairs a storage bin with a sliding charging bridge: the top plate moves across the base so you can position a 57 mm MagSafe puck where the phone lands, with room below for keys, cards and cables. Charger not included. STL and 3MF on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 103,
@@ -3730,11 +3730,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A stackable drawer system for glasses: each module interlocks with the one below into a solid tower — no clips or hardware — and every pair gets its own closed slot away from scratches. Prints without supports. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 104,
@@ -3768,11 +3768,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A pen pot wrapped in a spiral marble run: drop a marble at the top and watch it wind down to the basin while you think. Optimised to print cleanly without supports. Marbles not included. STL and 3MF on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 105,
@@ -3808,11 +3808,11 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A stepped, modular planter grid that raises each pot to a different height so a tall plant does not shade the smaller ones. A tray underneath catches run-off. Prints without supports. STL and 3MF on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   },
   {
     "id": 106,
@@ -3847,10 +3847,10 @@
       "hardware": null,
       "formats": null
     },
-    "description": null,
+    "description": "A two-piece planter that drops onto an official SKÅDIS pegboard on built-in hooks — no glue, screws or extra hardware. The tapered inner pot slides out for planting and watering. Prints without supports. Files on Cults3D and Thangs.",
     "seoTitle": null,
     "metaDescription": null,
     "faq": [],
-    "indexable": false
+    "indexable": true
   }
 ]

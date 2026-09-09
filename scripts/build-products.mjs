@@ -269,6 +269,8 @@ for (const r of raw.slice(1)) {
   const copy = copyBySlug[slug] || {};
   const description = (copy.description || '').trim() || null;
   const faq = Array.isArray(copy.faq) ? copy.faq.filter((f) => f && f.q && f.a) : [];
+  const SPEC_KEYS = ['layerHeight', 'infill', 'supports', 'printTime', 'filament', 'dimensions', 'hardware', 'formats'];
+  const specs = Object.fromEntries(SPEC_KEYS.map((k) => [k, copy.specs?.[k] ?? null]));
   // index once the page carries real content (an original 35+ word description) —
   // not a doorway page. `"indexable": false` in the entry forces it back out.
   const indexable = Boolean(description)
@@ -303,10 +305,7 @@ for (const r of raw.slice(1)) {
       thangs: thangs || null,
       pixup: null,
     },
-    specs: {
-      layerHeight: null, infill: null, supports: null, printTime: null,
-      filament: null, dimensions: null, hardware: null, formats: null,
-    },
+    specs,
     description,
     seoTitle: copy.seoTitle || null,
     metaDescription: copy.metaDescription || null,
