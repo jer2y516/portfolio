@@ -1,0 +1,151 @@
+---
+import Base from '../layouts/Base.astro';
+import { products } from '../lib/products.js';
+import { SITE } from '../lib/site.js';
+
+const skadisCount = products.filter((p) => p.categories.includes('skadis')).length;
+
+// Skill / tool icons for the floating marquee. Drop the real logos (SVG, ~1:1,
+// transparent or white ground) at public/about-icons/<file>; placeholders show
+// until then. Order is the visual order in the loop.
+const skillIcons = [
+  { name: 'Figma', file: 'figma.svg' },
+  { name: 'Adobe Creative Cloud', file: 'adobe-cc.svg' },
+  { name: 'Claude', file: 'claude.svg' },
+  { name: 'ChatGPT', file: 'openai.svg' },
+  { name: 'Blender', file: 'blender.svg' },
+  { name: 'Bambu Studio', file: 'bambu.svg' },
+  { name: 'Atlassian', file: 'atlassian.svg' },
+  { name: 'Instagram', file: 'instagram.svg' },
+];
+
+const links = {
+  instagram: 'https://instagram.com/jer_folio',
+  behance: 'https://www.behance.net/', // TODO: real Behance URL
+  email: '516.jerry.ho@gmail.com',
+};
+
+const title = 'About — Jerry Ho, UI/UX designer & 3D-print maker | Jer{folio}';
+const description = `Jerry Ho is a Hong Kong UI/UX designer who also draws and sells ${products.length}+ 3D-printable designs — IKEA SKÅDIS systems, desk lamps and organisers — and documents the process across Instagram, YouTube and TikTok. Open to design commissions, brand collaborations and sponsorships.`;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    '@id': `${SITE}/about`,
+    url: `${SITE}/about`,
+    name: 'About Jerry Ho',
+    mainEntity: { '@id': `${SITE}/about#jerry` },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${SITE}/about#jerry`,
+    name: 'Jerry Ho',
+    alternateName: 'Jer',
+    url: `${SITE}/about`,
+    jobTitle: ['UI/UX Designer', '3D Print Designer', 'Content Creator'],
+    knowsAbout: ['UI/UX design', '3D printing', 'product design', 'IKEA SKÅDIS', 'content creation'],
+    address: { '@type': 'PostalAddress', addressLocality: 'Hong Kong' },
+    email: `mailto:${links.email}`,
+    sameAs: [
+      links.instagram,
+      'https://www.threads.net/@jer_folio',
+      'https://www.youtube.com/@jer_folio',
+      'https://www.tiktok.com/@jerfolio',
+      'https://cults3d.com/en/users/JerH/3d-models',
+      'https://thangs.com/designer/Jer_Ho',
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [{ '@type': 'ListItem', position: 1, name: 'About', item: `${SITE}/about` }],
+  },
+];
+---
+<Base {title} {description} path="/about" activeNav="about" {jsonLd} showStores={false}>
+  <main id="main" class="about">
+    <section class="about-hero">
+      <div class="wrap">
+        <div class="stage">
+          <!-- layer 3 · back props -->
+          <div class="lyr lyr-props" aria-hidden="true">
+            <img src="/img/about-props-1400.webp"
+              srcset="/img/about-props-800.webp 800w, /img/about-props-1400.webp 1400w"
+              sizes="(min-width:900px) 720px, 90vw" alt="" width="1400" height="1000"
+              onerror="this.closest('.lyr-props').classList.add('missing')" />
+          </div>
+
+          <!-- layer 2 · floating skill icons -->
+          <div class="lyr lyr-icons" aria-hidden="true">
+            <ul class="icon-track">
+              {[...skillIcons, ...skillIcons].map((ic, i) => (
+                <li class="icon" style={`--i:${i % skillIcons.length}`}>
+                  <img src={`/about-icons/${ic.file}`} alt={ic.name}
+                    onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'ph',textContent:this.alt}))" />
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- layer 1 · portrait + cursor -->
+          <div class="lyr lyr-me" aria-hidden="true">
+            <img class="portrait" src="/img/about-portrait-1200.webp"
+              srcset="/img/about-portrait-480.webp 480w, /img/about-portrait-800.webp 800w, /img/about-portrait-1200.webp 1200w"
+              sizes="(min-width:900px) 460px, 60vw" alt="" width="1000" height="1200"
+              onerror="this.closest('.lyr-me').classList.add('missing')" />
+            <svg class="cursor" viewBox="0 0 24 24" width="34" height="34" aria-hidden="true">
+              <path d="M4 2l14 8-6 1.6L8.6 18z" fill="#fff" stroke="#0A0A0A" stroke-width="1.4" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <!-- copy -->
+          <div class="copy">
+            <h1>Jerry Ho</h1>
+            <p class="role">UI/UX Designer <b>·</b> Maker <b>·</b> 3D-Print Creator</p>
+            <p class="bio">
+              UI/UX designer in Hong Kong, applying the same fixation on flow and detail
+              to physical objects. <b>Jer{'{'}folio{'}'}</b> is my catalogue of
+              {' '}{products.length}+ 3D-printable designs — {skadisCount} IKEA SKÅDIS
+              pieces, plus desk lamps, charging docks and organisers.
+            </p>
+            <p class="bio">
+              I also document the process on Instagram, YouTube and TikTok.
+              <a href="#collab">Let's talk</a> if you're building something.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-do wrap">
+      <p class="lbl">What I do</p>
+      <div class="do-grid">
+        <div><h3>UI/UX Design</h3><p>Product and interface design — research, flows,
+          prototypes, design systems. The day job, and the lens on everything else.</p></div>
+        <div><h3>3D-Print Design</h3><p>{products.length}+ downloadable models, sold on
+          Cults3D, Thangs, Pixup and Cubee. The IKEA SKÅDIS ecosystem is the core.</p></div>
+        <div><h3>Content Creation</h3><p>Build logs, design breakdowns and print tips on
+          Instagram, Threads, YouTube and TikTok — <b>@jer_folio</b>.</p></div>
+        <div><h3>+ More</h3><p>Branding, illustration and the occasional physical-product
+          consult. If it needs designing, ask.</p></div>
+      </div>
+    </section>
+
+    <section id="collab" class="collab">
+      <div class="wrap">
+        <p class="lbl">Work with me</p>
+        <h2>Design commissions, brand collaborations &amp; sponsorships</h2>
+        <p class="collab-lede">Product and print design, sponsored builds, or UI/UX
+          contract work — send a note with what you're making.</p>
+        <div class="collab-links">
+          <a class="b-cults" href={`mailto:${links.email}`}>Email</a>
+          <a class="b-thangs" href={links.instagram} target="_blank" rel="noopener">Instagram</a>
+          <a class="b-thangs" href={links.behance} target="_blank" rel="noopener">Behance</a>
+        </div>
+        <p class="collab-mail">{links.email}</p>
+      </div>
+    </section>
+  </main>
+</Base>

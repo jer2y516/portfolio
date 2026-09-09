@@ -69,7 +69,11 @@ for (const stem of stems) {
 // Site imagery (banners, about-page photo, …): raw-assets/site/<name>.* ->
 // public/img/<name>-{width}.webp. Widths from the file's own list or a default.
 const SITE_DIR = path.join(ROOT, 'raw-assets', 'site');
-const SITE_WIDTHS = { 'banner-skadis': [900, 1600], 'about-portrait': [480, 800] };
+const SITE_WIDTHS = {
+  'banner-skadis': [900, 1600],
+  'about-portrait': [480, 800, 1200],
+  'about-props': [800, 1400],
+};
 if (fs.existsSync(SITE_DIR)) {
   for (const f of fs.readdirSync(SITE_DIR)) {
     const name = f.replace(/\.[^.]+$/, '');

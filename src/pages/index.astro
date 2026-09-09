@@ -23,17 +23,13 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': `${SITE}/about#jerry`,
     name: 'Jerry Ho',
-    url: `${SITE}/`,
-    jobTitle: '3D print designer',
-    sameAs: [
-      'https://cults3d.com/en/users/JerH/3d-models',
-      'https://thangs.com/designer/Jer_Ho',
-    ],
+    url: `${SITE}/about`,
   },
 ];
 ---
-<Base {title} {description} activeNav="about" path="/" {jsonLd}>
+<Base {title} {description} activeNav={null} path="/" {jsonLd}>
   <section class="hero">
     <div class="wrap">
       <div class="hero-grid">
