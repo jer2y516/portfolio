@@ -1,2 +1,6 @@
 [build]
-publish = "."
+command = "npm run build"
+publish = "dist"
+
+# The Astro build (npm run build) runs validate + asset sync first, then
+# emits dist/. No catch-all redirect — dist/_redirects carries the real 301s.
