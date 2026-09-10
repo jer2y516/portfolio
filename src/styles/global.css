@@ -191,7 +191,7 @@ main{padding:var(--g) 0 72px}
   transform:translate(50%,-50%) rotate(45deg);pointer-events:none}
 .about-hero .wrap{padding:0}
 .about-hero .stage{position:relative;padding:clamp(26px,4.5vw,52px);
-  min-height:clamp(540px,50vw,620px)}
+  min-height:clamp(560px,52vw,660px)}
 
 /* media box: on desktop it fills the stage; the 4 layers stack inside it.
    Every layer sits fully inside the panel — nothing is cropped by the edge. */
@@ -203,22 +203,33 @@ main{padding:var(--g) 0 72px}
 .l-front{z-index:5;filter:drop-shadow(0 22px 38px rgba(0,0,0,.26))}
 .l-cursor{z-index:6}
 
-/* icon marquee. On desktop it lives in the right lane only, so it never
-   crosses under the left-aligned copy; the mask fades both ends. */
-.l-icons{left:min(52%,520px);right:clamp(14px,2.5vw,44px);bottom:clamp(30px,6vw,58px);z-index:3;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 93%,transparent);
-          mask-image:linear-gradient(90deg,transparent,#000 9%,#000 93%,transparent)}
-.icon-track{display:flex;gap:clamp(16px,3vw,32px);width:max-content;margin:0;
-  padding:26px 18px 34px;list-style:none;animation:about-marquee 36s linear infinite}
-.icon{flex:0 0 auto;width:clamp(54px,7vw,82px);height:clamp(54px,7vw,82px);
+/* icon marquee — spans the full panel width, low enough to clear the copy.
+   The mask fades both ends. */
+.l-icons{left:0;right:0;bottom:clamp(24px,4.5vw,46px);z-index:3;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.icon-track{display:flex;align-items:center;gap:clamp(26px,4.6vw,56px);width:max-content;
+  margin:0;padding:44px 22px;list-style:none;animation:about-marquee 40s linear infinite}
+.icon{flex:0 0 auto;width:clamp(54px,7vw,80px);height:clamp(54px,7vw,80px);
   border-radius:20px;background:#fff;border:1px solid var(--line);
   box-shadow:0 8px 22px rgba(0,0,0,.18);display:grid;place-items:center;overflow:hidden;
-  animation:about-bob 4.2s ease-in-out infinite;animation-delay:calc(var(--i) * -0.55s)}
+  --y0:0px;--amp:-9px;
+  animation:about-bob var(--dur,4.2s) ease-in-out infinite;
+  animation-delay:calc(var(--i) * -0.53s)}
+/* pseudo-random spread — resting height, bob amplitude and speed per icon */
+.icon:nth-child(3n+1){--y0:-16px;--amp:-13px;--dur:5.3s}
+.icon:nth-child(3n+2){--y0:12px;--amp:-7px;--dur:3.7s}
+.icon:nth-child(4n){--y0:22px;--amp:-10px;--dur:4.8s}
+.icon:nth-child(5n){--y0:-24px;--amp:-6px;--dur:4.1s}
+.icon:nth-child(7n){--y0:6px;--amp:-15px;--dur:5.9s}
 .icon img,.icon svg{width:66%;height:66%;object-fit:contain}
 .icon .ph{font:700 10px/1.15 inherit;letter-spacing:.06em;text-transform:uppercase;
   color:var(--mute);text-align:center;padding:6px}
 @keyframes about-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes about-bob{50%{transform:translateY(-9px)}}
+@keyframes about-bob{
+  0%,100%{transform:translateY(var(--y0))}
+  50%{transform:translateY(calc(var(--y0) + var(--amp)))}
+}
 
 .about-hero .copy{position:relative;z-index:12;max-width:min(50%,540px)}
 .about-hero h1{font-weight:800;text-transform:uppercase;letter-spacing:-.03em;
