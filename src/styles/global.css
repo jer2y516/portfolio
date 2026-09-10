@@ -193,18 +193,19 @@ main{padding:var(--g) 0 72px}
 .about-hero .stage{position:relative;padding:clamp(26px,4.5vw,52px);
   min-height:clamp(540px,50vw,620px)}
 
-/* media box: on desktop it fills the stage; the 4 layers stack inside it */
+/* media box: on desktop it fills the stage; the 4 layers stack inside it.
+   Every layer sits fully inside the panel — nothing is cropped by the edge. */
 .about-media{position:absolute;inset:0;z-index:1;pointer-events:none}
 .about-media .lyr{position:absolute}
-.l-back,.l-front,.l-cursor{right:clamp(-30px,-1vw,10px);bottom:0;
-  width:clamp(320px,44vw,540px);height:auto;display:block}
+.l-back,.l-front,.l-cursor{right:clamp(14px,2.5vw,44px);bottom:0;
+  width:clamp(340px,42vw,520px);height:auto;display:block}
 .l-back{z-index:1}
 .l-front{z-index:5;filter:drop-shadow(0 22px 38px rgba(0,0,0,.26))}
 .l-cursor{z-index:6}
 
-/* icon marquee. On desktop it lives in the right half only, so it never
-   crosses under the left-aligned copy; the panel + mask fade the edges. */
-.l-icons{left:min(52%,520px);right:-3%;bottom:clamp(30px,6vw,58px);z-index:3;
+/* icon marquee. On desktop it lives in the right lane only, so it never
+   crosses under the left-aligned copy; the mask fades both ends. */
+.l-icons{left:min(52%,520px);right:clamp(14px,2.5vw,44px);bottom:clamp(30px,6vw,58px);z-index:3;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 93%,transparent);
           mask-image:linear-gradient(90deg,transparent,#000 9%,#000 93%,transparent)}
 .icon-track{display:flex;gap:clamp(16px,3vw,32px);width:max-content;margin:0;
@@ -237,21 +238,20 @@ main{padding:var(--g) 0 72px}
     flex-direction:column;gap:8px;padding:var(--p)}
   .about-hero .copy{max-width:none;order:1}
   .about-hero .bio{max-width:46ch}
-  /* media: person anchored to the bottom, icons floating over his head */
-  .about-media{position:relative;inset:auto;order:2;overflow:hidden;
-    width:min(100%,600px);margin:12px auto calc(-1*var(--p));
-    height:min(88vw,470px)}
+  /* media: the box matches the layer aspect exactly, so width:100% images
+     fill it with NO crop; person is anchored to the panel's bottom edge */
+  .about-media{position:relative;inset:auto;order:2;
+    width:min(100%,560px);aspect-ratio:692/669;height:auto;
+    margin:16px auto calc(-1*var(--p))}
   .l-back,.l-front,.l-cursor{left:0;right:0;width:100%;bottom:0;height:auto}
   .l-front{filter:drop-shadow(0 -6px 26px rgba(0,0,0,.18))}
-  .l-icons{bottom:auto;top:14%}
-  .icon{width:clamp(54px,13vw,74px);height:clamp(54px,13vw,74px);
+  .l-icons{bottom:auto;top:13%}
+  .icon{width:clamp(52px,12vw,70px);height:clamp(52px,12vw,70px);
     box-shadow:0 8px 18px rgba(0,0,0,.24)}
   .icon-track{padding:16px 14px 24px}
 }
 @media(max-width:560px){
-  .about-media{width:auto;margin:12px calc(-1*var(--p)) calc(-1*var(--p));
-    height:min(116vw,430px)}
-  .l-icons{top:10%}
+  .about-media{width:auto;margin:16px calc(-1*var(--p)) calc(-1*var(--p))}
 }
 @media (prefers-reduced-motion:reduce){
   .icon-track{animation:none}
