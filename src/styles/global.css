@@ -197,16 +197,16 @@ main{padding:var(--g) 0 72px}
 .about-media{position:absolute;inset:0;z-index:1;pointer-events:none}
 .about-media .lyr{position:absolute}
 .l-back,.l-front,.l-cursor{right:clamp(-30px,-1vw,10px);bottom:0;
-  width:clamp(300px,46vw,560px);height:auto;display:block}
+  width:clamp(320px,44vw,540px);height:auto;display:block}
 .l-back{z-index:1}
 .l-front{z-index:5;filter:drop-shadow(0 22px 38px rgba(0,0,0,.26))}
 .l-cursor{z-index:6}
 
-/* icon marquee — no box clipping; the panel + mask handle the horizontal
-   fade, and there is vertical room for the bob + shadow */
-.l-icons{left:0;right:0;bottom:clamp(30px,6vw,58px);z-index:3;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
-          mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+/* icon marquee. On desktop it lives in the right half only, so it never
+   crosses under the left-aligned copy; the panel + mask fade the edges. */
+.l-icons{left:min(52%,520px);right:-3%;bottom:clamp(30px,6vw,58px);z-index:3;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 93%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 9%,#000 93%,transparent)}
 .icon-track{display:flex;gap:clamp(16px,3vw,32px);width:max-content;margin:0;
   padding:26px 18px 34px;list-style:none;animation:about-marquee 36s linear infinite}
 .icon{flex:0 0 auto;width:clamp(54px,7vw,82px);height:clamp(54px,7vw,82px);
@@ -219,7 +219,7 @@ main{padding:var(--g) 0 72px}
 @keyframes about-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes about-bob{50%{transform:translateY(-9px)}}
 
-.about-hero .copy{position:relative;z-index:12;max-width:min(52%,560px)}
+.about-hero .copy{position:relative;z-index:12;max-width:min(50%,540px)}
 .about-hero h1{font-weight:800;text-transform:uppercase;letter-spacing:-.03em;
   line-height:.88;font-size:clamp(42px,7.6vw,92px);margin:0}
 .about-hero .role{font-weight:600;letter-spacing:.02em;font-size:clamp(13px,1.7vw,19px);
