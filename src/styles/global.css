@@ -229,24 +229,29 @@ main{padding:var(--g) 0 72px}
   color:rgba(255,255,255,.94);margin:0 0 12px}
 .about-hero .bio a{color:#fff;text-underline-offset:2px}
 
-/* tablet + mobile: copy flows above, media becomes its own block below */
+/* tablet + mobile: copy flows above; the media bleeds to the full panel width
+   with the person anchored to the bottom and the icons floating over his head */
 @media(max-width:960px){
   .about-hero{margin:var(--g) 0 40px}
-  .about-hero .stage{min-height:0;display:flex;flex-direction:column;gap:14px;
-    padding:clamp(24px,5vw,40px)}
+  .about-hero .stage{--p:clamp(24px,5vw,38px);min-height:0;display:flex;
+    flex-direction:column;gap:8px;padding:var(--p)}
   .about-hero .copy{max-width:none;order:1}
   .about-hero .bio{max-width:46ch}
-  .about-media{position:relative;inset:auto;order:2;width:100%;
-    height:min(78vw,420px);margin-top:6px}
-  .l-back,.l-front,.l-cursor{width:min(72vw,380px);right:-4%;bottom:0}
-  .l-icons{bottom:auto;top:8%}
-  .icon{width:clamp(52px,11vw,70px);height:clamp(52px,11vw,70px);box-shadow:0 6px 16px rgba(0,0,0,.2)}
-  .icon-track{padding:20px 16px 26px}
+  /* media: person anchored to the bottom, icons floating over his head */
+  .about-media{position:relative;inset:auto;order:2;overflow:hidden;
+    width:min(100%,600px);margin:12px auto calc(-1*var(--p));
+    height:min(88vw,470px)}
+  .l-back,.l-front,.l-cursor{left:0;right:0;width:100%;bottom:0;height:auto}
+  .l-front{filter:drop-shadow(0 -6px 26px rgba(0,0,0,.18))}
+  .l-icons{bottom:auto;top:14%}
+  .icon{width:clamp(54px,13vw,74px);height:clamp(54px,13vw,74px);
+    box-shadow:0 8px 18px rgba(0,0,0,.24)}
+  .icon-track{padding:16px 14px 24px}
 }
-@media(max-width:520px){
-  .about-media{height:74vw}
-  .l-back,.l-front,.l-cursor{width:74vw;right:-6%}
-  .l-icons{top:4%}
+@media(max-width:560px){
+  .about-media{width:auto;margin:12px calc(-1*var(--p)) calc(-1*var(--p));
+    height:min(116vw,430px)}
+  .l-icons{top:10%}
 }
 @media (prefers-reduced-motion:reduce){
   .icon-track{animation:none}
