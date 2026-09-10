@@ -204,12 +204,13 @@ main{padding:var(--g) 0 72px}
 .l-cursor{z-index:6}
 
 /* icon marquee — spans the full panel width, low enough to clear the copy.
-   The mask fades both ends. */
+   The mask only fades the left/right ends; it is stretched 5x vertically so
+   it never clips the icons as they bob up out of the row. */
 .l-icons{left:0;right:0;bottom:clamp(24px,4.5vw,46px);z-index:3;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
-          mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+  -webkit-mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent) center / 100% 500% no-repeat;
+          mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent) center / 100% 500% no-repeat}
 .icon-track{display:flex;align-items:center;gap:clamp(26px,4.6vw,56px);width:max-content;
-  margin:0;padding:44px 22px;list-style:none;animation:about-marquee 40s linear infinite}
+  margin:0;padding:46px 22px;list-style:none;animation:about-marquee 40s linear infinite}
 .icon{flex:0 0 auto;width:clamp(54px,7vw,80px);height:clamp(54px,7vw,80px);
   border-radius:20px;background:#fff;border:1px solid var(--line);
   box-shadow:0 8px 22px rgba(0,0,0,.18);display:grid;place-items:center;overflow:hidden;
@@ -259,7 +260,7 @@ main{padding:var(--g) 0 72px}
   .l-icons{bottom:auto;top:13%}
   .icon{width:clamp(52px,12vw,70px);height:clamp(52px,12vw,70px);
     box-shadow:0 8px 18px rgba(0,0,0,.24)}
-  .icon-track{padding:16px 14px 24px}
+  .icon-track{padding:40px 14px 30px}
 }
 @media(max-width:560px){
   .about-media{width:auto;margin:16px calc(-1*var(--p)) calc(-1*var(--p))}
