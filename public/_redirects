@@ -2,7 +2,8 @@
 # must return a real 404 (the old netlify.toml /* -> /index.html rule was the
 # whole reason soft-404s piled up).
 
-/catalog.html        /catalog        301
+/catalog             /               301
+/catalog.html        /               301
 /contact.html        /               301
 /contact             /               301
 

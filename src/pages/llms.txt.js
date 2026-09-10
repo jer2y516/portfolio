@@ -14,7 +14,7 @@ export function GET() {
     '> this site is the catalogue and reference.',
     '',
     '## Core pages',
-    `- [Catalogue](${SITE}/catalog): all ${products.length} designs, filterable and searchable`,
+    `- [Catalogue](${SITE}/): all ${products.length} designs, filterable and searchable`,
     `- [IKEA SKÅDIS guide](${SITE}/guides/ikea-skadis): the ${products.filter((p) => p.categories.includes('skadis')).length} pegboard accessories`,
     '',
     '## Product pages',

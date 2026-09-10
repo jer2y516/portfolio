@@ -7,4 +7,6 @@ export default defineConfig({
   trailingSlash: 'never',
   build: { format: 'file' },
   devToolbar: { enabled: false },
+  // the catalogue now lives at the site root
+  redirects: { '/catalog': '/' },
 });

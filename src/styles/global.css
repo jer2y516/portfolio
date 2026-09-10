@@ -182,15 +182,18 @@ main{padding:var(--g) 0 72px}
 .guide h2{font-weight:800;text-transform:uppercase;font-size:22px;margin:30px 0 14px}
 
 /* ---------- about page ---------- */
+/* every section is wrapped in .wrap (same gutter + max-width as other pages) */
 .about{padding:0 0 80px}
+.about-sec{padding-block:clamp(18px,3vw,32px)}
+.about-sec:first-of-type{padding-top:var(--g)}
+
 .about-hero{position:relative;isolation:isolate;overflow:hidden;color:#fff;
   background:var(--orange) url(/img/about-grid-1600.webp) center/cover;
-  border-radius:var(--r) 0 var(--r) var(--r);margin:var(--g) var(--g) 44px}
+  border-radius:var(--r) 0 var(--r) var(--r)}
 .about-hero:after{content:"";position:absolute;top:0;right:0;z-index:20;
   width:var(--chamfer);height:var(--chamfer);background:var(--shell);
   transform:translate(50%,-50%) rotate(45deg);pointer-events:none}
-.about-hero .wrap{padding:0}
-.about-hero .stage{position:relative;padding:clamp(26px,4.5vw,52px);
+.about-hero .stage{position:relative;--p:clamp(26px,4.5vw,52px);padding:var(--p);
   min-height:clamp(560px,52vw,660px)}
 
 /* media box: on desktop it fills the stage; the 4 layers stack inside it.
@@ -207,8 +210,8 @@ main{padding:var(--g) 0 72px}
    The mask only fades the left/right ends; it is stretched 5x vertically so
    it never clips the icons as they bob up out of the row. */
 .l-icons{left:0;right:0;bottom:clamp(24px,4.5vw,46px);z-index:3;
-  -webkit-mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent) center / 100% 500% no-repeat;
-          mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent) center / 100% 500% no-repeat}
+  -webkit-mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent) center / 100% 500% no-repeat;
+          mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent) center / 100% 500% no-repeat}
 .icon-track{display:flex;align-items:center;gap:clamp(26px,4.6vw,56px);width:max-content;
   margin:0;padding:46px 22px;list-style:none;animation:about-marquee 40s linear infinite}
 .icon{flex:0 0 auto;width:clamp(54px,7vw,80px);height:clamp(54px,7vw,80px);
@@ -242,35 +245,32 @@ main{padding:var(--g) 0 72px}
   color:rgba(255,255,255,.94);margin:0 0 12px}
 .about-hero .bio a{color:#fff;text-underline-offset:2px}
 
-/* tablet + mobile: copy flows above; the media bleeds to the full panel width
-   with the person anchored to the bottom and the icons floating over his head */
+/* tablet + mobile: copy flows above the media. Everything stays inside the
+   stage padding (icons never touch the orange edge); the person still meets
+   the panel's bottom edge via a negative bottom margin only. */
 @media(max-width:960px){
-  .about-hero{margin:var(--g) 0 40px}
-  .about-hero .stage{--p:clamp(24px,5vw,38px);min-height:0;display:flex;
-    flex-direction:column;gap:8px;padding:var(--p)}
+  .about-hero .stage{--p:clamp(20px,4.5vw,36px);min-height:0;display:flex;
+    flex-direction:column;gap:8px}
   .about-hero .copy{max-width:none;order:1}
   .about-hero .bio{max-width:46ch}
-  /* media: the box matches the layer aspect exactly, so width:100% images
-     fill it with NO crop; person is anchored to the panel's bottom edge */
   .about-media{position:relative;inset:auto;order:2;
-    width:min(100%,560px);aspect-ratio:692/669;height:auto;
+    width:min(100%,540px);aspect-ratio:692/669;height:auto;
     margin:16px auto calc(-1*var(--p))}
   .l-back,.l-front,.l-cursor{left:0;right:0;width:100%;bottom:0;height:auto}
   .l-front{filter:drop-shadow(0 -6px 26px rgba(0,0,0,.18))}
   .l-icons{bottom:auto;top:13%}
   .icon{width:clamp(52px,12vw,70px);height:clamp(52px,12vw,70px);
     box-shadow:0 8px 18px rgba(0,0,0,.24)}
-  .icon-track{padding:40px 14px 30px}
+  .icon-track{padding:40px 12px 30px}
 }
 @media(max-width:560px){
-  .about-media{width:auto;margin:16px calc(-1*var(--p)) calc(-1*var(--p))}
+  .about-media{width:100%}
 }
 @media (prefers-reduced-motion:reduce){
   .icon-track{animation:none}
   .icon{animation:none}
 }
 
-.about-do{padding:8px 0 12px}
 .about-do .lbl{color:var(--mute);margin-bottom:16px}
 /* 1 col (mobile) -> 2x2 (tablet) -> 4-across (desktop) — explicit, no orphan cols */
 .do-grid{display:grid;gap:26px 32px;grid-template-columns:1fr}
@@ -282,10 +282,10 @@ main{padding:var(--g) 0 72px}
 .do-grid h3{font-weight:800;text-transform:uppercase;font-size:17px;letter-spacing:-.01em;margin-bottom:6px}
 .do-grid p{font-size:14px;line-height:1.6;color:var(--ink);max-width:42ch}
 
-.collab{margin:44px var(--g) 0}
-.collab .wrap{background:var(--mast);color:#fff;border-radius:var(--r) 0 var(--r) var(--r);
-  position:relative;overflow:hidden;padding:clamp(28px,5vw,56px);max-width:none}
-.collab .wrap:after{content:"";position:absolute;top:0;right:0;
+.collab{padding-top:clamp(24px,3.5vw,40px)}
+.collab-panel{background:var(--mast);color:#fff;border-radius:var(--r) 0 var(--r) var(--r);
+  position:relative;overflow:hidden;padding:clamp(28px,5vw,56px)}
+.collab-panel:after{content:"";position:absolute;top:0;right:0;
   width:var(--chamfer);height:var(--chamfer);background:var(--shell);
   transform:translate(50%,-50%) rotate(45deg)}
 .collab .lbl{color:var(--orange)}
@@ -297,7 +297,6 @@ main{padding:var(--g) 0 72px}
   border-radius:var(--r-btn);text-decoration:none;font-weight:700;font-size:12.5px;
   letter-spacing:.13em;text-transform:uppercase}
 .collab-mail{color:var(--mute);font-size:13px;letter-spacing:.02em}
-@media(max-width:560px){.collab{margin:36px 0 0}}
 
 /* ---------- page banner (dark panel, chamfer, image right) ---------- */
 .pagebanner{position:relative;isolation:isolate;background:var(--mast);color:#fff;

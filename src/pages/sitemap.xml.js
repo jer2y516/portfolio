@@ -7,8 +7,8 @@ export function GET() {
   const today = new Date().toISOString().slice(0, 10);
   const urls = [
     { loc: `${SITE}/`, priority: '1.0', changefreq: 'weekly' },
-    { loc: `${SITE}/catalog`, priority: '0.9', changefreq: 'weekly' },
     { loc: `${SITE}/guides/ikea-skadis`, priority: '0.8', changefreq: 'monthly' },
+    { loc: `${SITE}/about`, priority: '0.5', changefreq: 'monthly' },
     ...products.filter(isIndexable).map((p) => ({
       loc: `${SITE}/product/${p.slug}`,
       priority: '0.6',

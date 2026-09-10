@@ -67,8 +67,9 @@ const jsonLd = [
 ---
 <Base {title} {description} path="/about" activeNav="about" {jsonLd} showStores={false}>
   <main id="main" class="about">
-    <section class="about-hero">
+    <section class="about-sec">
       <div class="wrap">
+        <div class="about-hero">
         <div class="stage">
           <!-- 3 pre-aligned same-size layers + the icon marquee, stacked in one box -->
           <div class="about-media" aria-hidden="true">
@@ -114,10 +115,12 @@ const jsonLd = [
             </p>
           </div>
         </div>
+        </div>
       </div>
     </section>
 
-    <section class="about-do wrap">
+    <section class="about-sec about-do">
+      <div class="wrap">
       <p class="lbl">What I do</p>
       <div class="do-grid">
         <div>
@@ -145,20 +148,23 @@ const jsonLd = [
             If it needs designing, ask.</p>
         </div>
       </div>
+      </div>
     </section>
 
-    <section id="collab" class="collab">
+    <section id="collab" class="about-sec collab">
       <div class="wrap">
-        <p class="lbl">Work with me</p>
-        <h2>Design commissions, brand collaborations &amp; sponsorships</h2>
-        <p class="collab-lede">Product and print design, sponsored builds, or UI/UX
-          contract work — send a note with what you're making.</p>
-        <div class="collab-links">
-          <a class="b-cults" href={`mailto:${links.email}`}>Email</a>
-          <a class="b-thangs" href={links.instagram} target="_blank" rel="noopener">Instagram</a>
-          <a class="b-thangs" href={links.behance} target="_blank" rel="noopener">Behance</a>
+        <div class="collab-panel">
+          <p class="lbl">Work with me</p>
+          <h2>Design commissions, brand collaborations &amp; sponsorships</h2>
+          <p class="collab-lede">Product and print design, sponsored builds, or UI/UX
+            contract work — send a note with what you're making.</p>
+          <div class="collab-links">
+            <a class="b-cults" href={`mailto:${links.email}`}>Email</a>
+            <a class="b-thangs" href={links.instagram} target="_blank" rel="noopener">Instagram</a>
+            <a class="b-thangs" href={links.behance} target="_blank" rel="noopener">Behance</a>
+          </div>
+          <p class="collab-mail">{links.email}</p>
         </div>
-        <p class="collab-mail">{links.email}</p>
       </div>
     </section>
   </main>
