@@ -155,12 +155,17 @@ main{padding:var(--g) 0 72px}
 .b-thangs{background:var(--ink);color:#fff}
 .b-thangs:hover{background:#333}
 
-/* scroll-in entrance where the browser supports it (no JS, degrades cleanly) */
+/* 3D tilted slide-in as each card scrolls into view — no JS, degrades cleanly */
 @supports (animation-timeline:view()){
   @media(prefers-reduced-motion:no-preference){
-    .grid .card{animation:card-in linear both;animation-timeline:view();
-      animation-range:entry 0% cover 16%}
-    @keyframes card-in{from{opacity:0;transform:translateY(22px)}}
+    .grid{perspective:1400px}
+    .grid .card{transform-origin:50% 100%;animation:card-in linear both;
+      animation-timeline:view();animation-range:entry 0% cover 20%}
+    @keyframes card-in{
+      from{opacity:0;transform:translateY(56px) translateZ(-90px) rotateX(-16deg) rotateY(5deg)}
+      60%{opacity:1}
+      to{transform:none}
+    }
   }
 }
 
@@ -339,15 +344,29 @@ main{padding:var(--g) 0 72px}
 .pagebanner:after{content:"";position:absolute;top:0;right:0;z-index:3;
   width:var(--chamfer);height:var(--chamfer);background:var(--shell);
   transform:translate(50%,-50%) rotate(45deg);pointer-events:none}
-.pagebanner .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  object-position:right center;z-index:-2}
+.pagebanner .bg{position:absolute;inset:-4%;width:108%;height:108%;object-fit:cover;
+  object-position:right center;z-index:-2;will-change:translate}
+/* floating product photo — JS picks it at random and eases it toward the cursor
+   (desktop) or drifts it (touch). See guides/ikea-skadis.astro. */
+.pb-float{position:absolute;right:6%;top:50%;margin-top:-8%;
+  width:clamp(128px,17vw,232px);height:auto;aspect-ratio:1;object-fit:cover;z-index:2;
+  border-radius:22px;border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 26px 54px rgba(0,0,0,.45);opacity:0;transition:opacity .5s ease;
+  will-change:translate,rotate;pointer-events:none}
+.pb-float.ready{opacity:1}
+@media(max-width:720px){
+  .pb-float{right:16px;top:auto;bottom:16px;margin-top:0;
+    width:clamp(76px,22vw,104px);border-radius:16px;
+    box-shadow:0 14px 30px rgba(0,0,0,.5)}
+}
 .pagebanner .scrim{position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:linear-gradient(90deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.5) 42%,rgba(10,10,10,.06) 76%,transparent 100%)}
 .pagebanner h1{font-weight:800;text-transform:uppercase;letter-spacing:-.02em;
   line-height:.92;font-size:clamp(32px,6.5vw,72px);margin:0 0 14px;max-width:11ch}
 .pagebanner p{max-width:44ch;font-size:15px;line-height:1.55;color:#c9c9c9;margin:0}
 @media(max-width:720px){
-  .pagebanner{min-height:0}
+  .pagebanner{min-height:0;justify-content:flex-start;
+    padding-bottom:clamp(118px,34vw,156px)}
   .pagebanner .bg{object-position:right bottom;opacity:.5}
   .pagebanner .scrim{background:linear-gradient(180deg,rgba(10,10,10,.82) 28%,rgba(10,10,10,.32) 100%)}
   .pagebanner h1{max-width:none}
