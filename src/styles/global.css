@@ -62,7 +62,8 @@ a{color:inherit}
 .social svg{width:17px;height:17px}.social svg path{fill:#fff}
 
 /* hero */
-.hero{background:var(--orange);color:#fff;padding:clamp(20px,5vw,54px) 0 0;
+.hero{background:var(--orange);color:#fff;
+  padding:clamp(24px,5vw,54px) 0 clamp(20px,3.5vw,34px);
   border-radius:0 0 var(--r) var(--r)}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:end}
 @media(min-width:900px){.hero-grid{grid-template-columns:1fr auto}}
@@ -87,7 +88,7 @@ h1.big .out{-webkit-text-stroke:2px #fff;color:transparent;font-weight:700}
 /* filter strip */
 .strip{background:var(--shell);position:sticky;top:56px;z-index:50;
   box-shadow:0 1px 0 var(--line)}
-.strip .wrap{display:flex;align-items:center;gap:12px;min-height:60px}
+.strip .wrap{display:flex;align-items:center;gap:12px;min-height:64px;padding-block:10px}
 .strip .chips{display:flex;align-items:center;gap:8px;flex:1 1 auto;min-width:0;
   padding:11px 0;overflow-x:auto;scrollbar-width:none}
 .strip .chips::-webkit-scrollbar{display:none}
@@ -100,14 +101,17 @@ h1.big .out{-webkit-text-stroke:2px #fff;color:transparent;font-weight:700}
 .chip[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:#fff}
 .search{flex:0 0 auto;display:flex;align-items:center}
 .search input{font-family:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
-  border:1px solid var(--ink);border-radius:999px;padding:9px 16px;min-height:38px;
-  background:var(--panel);color:var(--ink);width:min(40vw,220px)}
+  border:1px solid var(--ink);border-radius:999px;padding:11px 20px;min-height:42px;
+  background:var(--panel);color:var(--ink);width:min(40vw,240px);
+  transition:border-color .2s ease,box-shadow .2s ease}
+.search input:focus-visible{outline:none;border-color:var(--orange);
+  box-shadow:0 0 0 3px rgba(255,74,0,.22)}
 /* mobile: search on its own full-width row, chips scroll below it */
 @media(max-width:759px){
-  .strip .wrap{flex-wrap:wrap;gap:8px;padding-bottom:10px}
+  .strip .wrap{flex-wrap:wrap;gap:10px;padding-block:12px 8px}
   .strip .search{order:-1;width:100%}
-  .strip .search input{width:100%}
-  .strip .chips{padding:6px 0 2px}
+  .strip .search input{width:100%;padding:12px 20px;min-height:44px}
+  .strip .chips{padding:4px 0 2px}
   .readout{display:none}
 }
 
@@ -116,7 +120,13 @@ main{padding:var(--g) 0 72px}
 .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(268px,1fr))}
 .card{background:var(--panel);color:var(--ink);position:relative;
   display:flex;flex-direction:column;
-  border-radius:var(--r) 0 var(--r) var(--r);overflow:hidden}
+  border-radius:var(--r) 0 var(--r) var(--r);overflow:hidden;
+  transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s ease}
+@media(hover:hover){
+  .card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(10,10,10,.12)}
+  .card:hover .shot img{transform:scale(1.045)}
+}
+.card:has(.card-main:focus-visible){transform:translateY(-5px);box-shadow:0 16px 34px rgba(10,10,10,.12)}
 /* pure 45° chamfer: an unrounded square rotated onto the top-right corner,
    painted in the page colour. No radius here — radius caused pinched joins. */
 .card:after{content:"";position:absolute;top:0;right:0;
@@ -124,7 +134,8 @@ main{padding:var(--g) 0 72px}
   transform:translate(50%,-50%) rotate(45deg);pointer-events:none;z-index:2}
 .card-main{text-decoration:none;color:inherit;display:block}
 .shot{position:relative;aspect-ratio:1;overflow:hidden;background:#F4F4F4}
-.shot img{width:100%;height:100%;object-fit:cover;transition:opacity .35s ease}
+.shot img{width:100%;height:100%;object-fit:cover;
+  transition:opacity .35s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
 .idx{position:absolute;top:16px;left:20px;color:var(--orange);
   font-weight:600;font-size:34px;line-height:1;letter-spacing:-.02em}
 .cbody{padding:20px 20px 24px}
@@ -138,11 +149,33 @@ main{padding:var(--g) 0 72px}
   border-radius:var(--r-btn);overflow:hidden}
 .acts a,.acts span{display:flex;align-items:center;justify-content:center;
   min-height:52px;text-decoration:none;font-size:12.5px;font-weight:600;
-  letter-spacing:.13em;text-transform:uppercase}
+  letter-spacing:.13em;text-transform:uppercase;transition:background .18s ease}
 .b-cults{background:var(--orange);color:#fff}
 .b-cults:hover{background:var(--press)}
 .b-thangs{background:var(--ink);color:#fff}
 .b-thangs:hover{background:#333}
+
+/* scroll-in entrance where the browser supports it (no JS, degrades cleanly) */
+@supports (animation-timeline:view()){
+  @media(prefers-reduced-motion:no-preference){
+    .grid .card{animation:card-in linear both;animation-timeline:view();
+      animation-range:entry 0% cover 16%}
+    @keyframes card-in{from{opacity:0;transform:translateY(22px)}}
+  }
+}
+
+/* mobile: two cards per row, tighter type */
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr 1fr;gap:10px}
+  .idx{font-size:24px;top:12px;left:13px}
+  .cbody{padding:13px 13px 16px}
+  .series{font-size:12px;margin-bottom:3px}
+  .name{font-size:15px;line-height:1.14;-webkit-line-clamp:3}
+  .acts{margin:auto 10px 12px}
+  .acts a,.acts span{min-height:42px;font-size:10.5px;letter-spacing:.08em}
+  .card{border-radius:22px 0 22px 22px}
+  .card:after{--chamfer:40px}
+}
 .b-off{background:#E2E2E2;color:#9A9A9A;cursor:not-allowed}
 .card[hidden]{display:none}
 
@@ -309,14 +342,14 @@ main{padding:var(--g) 0 72px}
 .pagebanner .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   object-position:right center;z-index:-2}
 .pagebanner .scrim{position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(90deg,var(--mast) 22%,rgba(10,10,10,.35) 62%,rgba(10,10,10,.05) 100%)}
+  background:linear-gradient(90deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.5) 42%,rgba(10,10,10,.06) 76%,transparent 100%)}
 .pagebanner h1{font-weight:800;text-transform:uppercase;letter-spacing:-.02em;
   line-height:.92;font-size:clamp(32px,6.5vw,72px);margin:0 0 14px;max-width:11ch}
 .pagebanner p{max-width:44ch;font-size:15px;line-height:1.55;color:#c9c9c9;margin:0}
 @media(max-width:720px){
   .pagebanner{min-height:0}
-  .pagebanner .bg{object-position:right bottom;opacity:.4}
-  .pagebanner .scrim{background:linear-gradient(180deg,var(--mast) 45%,rgba(10,10,10,.5) 100%)}
+  .pagebanner .bg{object-position:right bottom;opacity:.5}
+  .pagebanner .scrim{background:linear-gradient(180deg,rgba(10,10,10,.82) 28%,rgba(10,10,10,.32) 100%)}
   .pagebanner h1{max-width:none}
 }
 
