@@ -83,11 +83,14 @@ const nav = [
     </div>
   </footer>
 
-  <!-- Cursor trail on the catalogue banner (mirko-404 spec): a scattered
-       flat-lay on load; on the first pointer move print 1 takes the live cursor
-       and print n replays where it was 0.5s * (n-1) ago, so they string out
-       along the path that was actually drawn. Each one arrives on an
-       under-damped spring, so it leans past its mark and settles back.
+  <!-- Cursor stack on the catalogue banner (mirko-404 spec v2). Ten prints, a
+       scattered flat-lay on load. From the first pointer move every one of them
+       chases the SAME live cursor, but each on its own tween duration
+       (0.4s -> ~1.8s by index). Small moves keep the spread imperceptible, so
+       it reads as one photo; a big jump lets the fast boxes arrive while the
+       slow ones are still crossing, which is the diagonal bridge of photos that
+       then zips shut from the old end over ~2s. The duration spread IS the
+       effect — a single shared tween can only ever glide.
        Touch has no cursor — there the flat-lay keeps its spread and drifts. -->
   <script>
     document.querySelectorAll('[data-cursor-stack]').forEach((section) => {
@@ -111,22 +114,10 @@ const nav = [
       // cursor takes over; touch screens keep it centred and just drift it.
       const r0 = field.getBoundingClientRect();
       let tx = r0.width * (hover && r0.width >= 900 ? 0.68 : 0.5), ty = r0.height / 2;
-      // Box 0 rides the live pointer; box n replays where it was n * LAG ago,
-      // so the prints string out along the path the cursor actually drew.
-      const LAG = 0.5;
-      const state = boxes.map((el, i) => ({ el, lag: i * LAG, x: tx, y: ty, vx: 0, vy: 0 }));
-      let hist = [];   // {t, x, y}, oldest first — the path being replayed
-      const maxLag = state[state.length - 1].lag;
-
-      const sample = (want) => {
-        for (let i = hist.length - 1; i > 0; i--) {
-          if (hist[i - 1].t > want) continue;
-          const a = hist[i - 1], b = hist[i];
-          const f = b.t === a.t ? 0 : (want - a.t) / (b.t - a.t);
-          return { x: a.x + (b.x - a.x) * f, y: a.y + (b.y - a.y) * f };
-        }
-        return hist[0] || { x: tx, y: ty };
-      };
+      // per-box tween duration, increasing by index: box 0 settles in ~0.4s,
+      // box 9 in ~1.8s. Everything else about the effect falls out of this.
+      const BASE = 0.4, STEP = 0.16;
+      const state = boxes.map((el, i) => ({ el, dur: BASE + i * STEP, x: tx, y: ty }));
 
       const paint = () => {
         for (const s of state) s.el.style.translate = `${s.x.toFixed(1)}px ${s.y.toFixed(1)}px`;
@@ -174,28 +165,15 @@ const nav = [
         wander();
       }
 
-      // Under-damped spring: each print leans past its mark and settles back,
-      // which is the anticipation/follow-through that a plain lerp lacks.
-      const STIFF = 210, DAMP = 21;
       let last = performance.now();
       (function loop(now) {
-        const t = now / 1000;
-        let dt = Math.min((now - last) / 1000, 0.05); last = now;
-
-        hist.push({ t, x: tx, y: ty });
-        if (hist.length > 900) hist = hist.slice(-Math.ceil(maxLag * 90) - 60);
-
-        // fixed substeps keep the spring stable when a frame is late
-        const steps = Math.max(1, Math.ceil(dt / 0.0167));
-        const h = dt / steps;
+        const dt = Math.min((now - last) / 1000, 0.05); last = now;
+        // frame-rate independent decelerating ease, ~99.8% closed after s.dur —
+        // the per-box duration is what fans the stack out on a fast jump
         for (const s of state) {
-          const p = sample(t - s.lag);
-          for (let n = 0; n < steps; n++) {
-            s.vx += ((p.x - s.x) * STIFF - s.vx * DAMP) * h;
-            s.vy += ((p.y - s.y) * STIFF - s.vy * DAMP) * h;
-            s.x += s.vx * h;
-            s.y += s.vy * h;
-          }
+          const k = 1 - Math.pow(0.002, dt / s.dur);
+          s.x += (tx - s.x) * k;
+          s.y += (ty - s.y) * k;
         }
         paint();
         requestAnimationFrame(loop);
