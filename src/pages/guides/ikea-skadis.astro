@@ -6,12 +6,6 @@ import { SITE } from '../../lib/site.js';
 
 const skadis = sortedByDate(products.filter((p) => p.categories.includes('skadis')));
 
-// colour photos of the SKÅDIS designs — the banner picks one at random
-const bannerPool = skadis
-  .map((p) => (p.images.colour || p.images.plain || '').replace(/\.[^.]+$/, ''))
-  .filter(Boolean)
-  .map((stem) => `/img/${stem}-600.webp`);
-
 const title = `IKEA SKÅDIS 3D Print Accessories — ${skadis.length} designs | Jer{folio}`;
 const description = `${skadis.length} 3D-printable IKEA SKÅDIS pegboard accessories by Jerry Ho: trays, hooks, boxes, tool totes, charging mounts and toy displays. The core of the catalogue.`;
 
@@ -45,13 +39,12 @@ const jsonLd = [
 <Base {title} {description} path="/guides/ikea-skadis" activeNav="skadis" {jsonLd}>
   <main id="main" class="guide">
     <div class="wrap">
-      <section class="pagebanner" data-float data-pool={JSON.stringify(bannerPool)}>
+      <section class="pagebanner">
         <img class="bg" src="/img/banner-skadis-1600.webp"
           srcset="/img/banner-skadis-900.webp 900w, /img/banner-skadis-1600.webp 1600w"
           sizes="(min-width:1360px) 1360px, 100vw" alt="" aria-hidden="true"
           width="1429" height="473" fetchpriority="high" />
         <span class="scrim"></span>
-        <img class="pb-float" alt="" aria-hidden="true" width="260" height="260" />
         <h1>IKEA SKÅDIS Accessories</h1>
         <p>The SKÅDIS pegboard is the backbone of this catalogue — {skadis.length} of
           {products.length} designs mount to it. Trays, lidded boxes, tool totes, cable
@@ -66,50 +59,4 @@ const jsonLd = [
     </div>
   </main>
 
-  <script>
-    document.querySelectorAll('[data-float]').forEach((box) => {
-      const float = box.querySelector('.pb-float');
-      const bg = box.querySelector('.bg');
-      if (!float) return;
-      let pool = [];
-      try { pool = JSON.parse(box.dataset.pool || '[]'); } catch {}
-      if (pool.length) {
-        const src = pool[Math.floor(Math.random() * pool.length)];
-        float.src = src;
-        const pre = new Image(); pre.src = src;
-      }
-      float.classList.add('ready');
-
-      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-      let cx = 0, cy = 0, fx = 0, fy = 0, bx = 0, by = 0;
-      const hover = matchMedia('(hover: hover)').matches;
-      if (hover) {
-        box.addEventListener('pointermove', (e) => {
-          const r = box.getBoundingClientRect();
-          cx = (e.clientX - r.left) / r.width - 0.5;
-          cy = (e.clientY - r.top) / r.height - 0.5;
-        });
-        box.addEventListener('pointerleave', () => { cx = 0; cy = 0; });
-      } else {
-        let t = Math.random() * 500;
-        setInterval(() => {
-          t += 0.016;
-          cx = (Math.sin(t * 0.8) + Math.sin(t * 0.37) * 0.5) / 1.5;
-          cy = (Math.cos(t * 0.6) + Math.cos(t * 0.29) * 0.5) / 1.5;
-        }, 32);
-      }
-      const AF = hover ? 54 : 22, AFY = hover ? 40 : 16, AB = hover ? 22 : 10;
-      (function loop() {
-        fx += (cx * AF - fx) * 0.06;
-        fy += (cy * AFY - fy) * 0.06;
-        bx += (cx * -AB - bx) * 0.05;
-        by += (cy * -AB * 0.7 - by) * 0.05;
-        float.style.translate = `${fx.toFixed(1)}px ${fy.toFixed(1)}px`;
-        float.style.rotate = `${(fx * 0.06).toFixed(2)}deg`;
-        if (bg) bg.style.translate = `${bx.toFixed(1)}px ${by.toFixed(1)}px`;
-        requestAnimationFrame(loop);
-      })();
-    });
-  </script>
 </Base>

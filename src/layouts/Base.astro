@@ -83,6 +83,123 @@ const nav = [
     </div>
   </footer>
 
+  <!-- Cursor-glued photo stack on the catalogue banner (mirko-404 spec):
+       scattered flat-lay on load, collapses onto the pointer on first move and
+       trails it with an eased lag (~0.45s settle). Touch devices get a slow
+       wandering target instead of the pointer. -->
+  <script>
+    document.querySelectorAll('[data-cursor-stack]').forEach((section) => {
+      const stack = section.querySelector('.stack');
+      const boxes = [...section.querySelectorAll('.img-box')];
+      if (!boxes.length) return;
+
+      const bounds = () => {
+        const r = section.getBoundingClientRect();
+        const b = boxes[0].getBoundingClientRect();
+        return { r, padX: b.width * 0.42, padY: b.height * 0.42 };
+      };
+      const clamp = (n, lo, hi) => (n < lo ? lo : n > hi ? hi : n);
+
+      // rest state: the scattered flat-lay. On wide screens it sits right of
+      // centre so it never lands on the headline column before the pointer
+      // takes over; on narrow screens there is no column to dodge.
+      const r0 = section.getBoundingClientRect();
+      let tx = r0.width * (r0.width >= 900 ? 0.68 : 0.5), ty = r0.height / 2;
+      let cx = tx, cy = ty;
+      const paint = () => {
+        for (const b of boxes) b.style.translate = `${cx.toFixed(1)}px ${cy.toFixed(1)}px`;
+      };
+      paint();
+      if (stack) stack.classList.add('ready');
+
+      // reduced motion: leave the static flat-lay, no follow
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const hover = matchMedia('(hover: hover)').matches;
+      let engaged = false;
+
+      const engage = () => {
+        if (engaged) return;
+        engaged = true;
+        section.classList.add('engaged');   // drops the scatter offsets
+      };
+
+      if (hover) {
+        window.addEventListener('pointermove', (e) => {
+          const { r, padX, padY } = bounds();
+          if (!r.width) return;
+          tx = clamp(e.clientX - r.left, padX, r.width - padX);
+          ty = clamp(e.clientY - r.top, padY, r.height - padY);
+          engage();
+        }, { passive: true });
+      } else {
+        // touch: wander the target slowly around the banner
+        let t = Math.random() * 1000;
+        const wander = () => {
+          const { r, padX, padY } = bounds();
+          if (r.width) {
+            t += 0.012;
+            const nx = (Math.sin(t) + Math.sin(t * 0.43) * 0.6) / 1.6;
+            const ny = (Math.cos(t * 0.77) + Math.cos(t * 0.31) * 0.6) / 1.6;
+            tx = clamp(r.width / 2 + nx * (r.width / 2 - padX), padX, r.width - padX);
+            ty = clamp(r.height / 2 + ny * (r.height / 2 - padY), padY, r.height - padY);
+            engage();
+          }
+          setTimeout(wander, 32);
+        };
+        setTimeout(wander, 900);   // let the flat-lay read first
+      }
+
+      let last = performance.now();
+      (function loop(now) {
+        const dt = Math.min((now - last) / 1000, 0.05); last = now;
+        // frame-rate independent damping — ~0.45s to settle, decelerating
+        const k = 1 - Math.pow(0.002, dt / 0.45);
+        cx += (tx - cx) * k;
+        cy += (ty - cy) * k;
+        paint();
+        requestAnimationFrame(loop);
+      })(last);
+    });
+  </script>
+
+  <!-- product cards slide in as they scroll into view, staggered per row -->
+  <script>
+    (() => {
+      const cards = [...document.querySelectorAll('.grid .card')];
+      if (!cards.length) return;
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        cards.forEach((c) => c.classList.add('in'));
+        return;
+      }
+      document.documentElement.classList.add('card-anim');
+      let batch = [];
+      let flush = 0;
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          io.unobserve(e.target);
+          batch.push(e.target);
+        }
+        if (!batch.length) return;
+        clearTimeout(flush);
+        flush = setTimeout(() => {
+          batch.sort((a, b) => {
+            const ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
+            return ra.top - rb.top || ra.left - rb.left;
+          });
+          batch.forEach((el, i) => {
+            el.style.setProperty('--d', `${Math.min(i, 8) * 70}ms`);
+            el.classList.add('in');
+            el.addEventListener('animationend', () => el.classList.add('done'), { once: true });
+          });
+          batch = [];
+        }, 30);
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+      cards.forEach((c) => io.observe(c));
+    })();
+  </script>
+
   <script>
     document.querySelectorAll('.shot img').forEach(function (el, i) {
       var p = el.dataset.plain, c = el.dataset.colour;
