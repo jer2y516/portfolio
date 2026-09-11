@@ -83,24 +83,42 @@ h1.big .out{-webkit-text-stroke:2px #fff;color:transparent;font-weight:700}
 .hero[data-cursor-stack]{position:relative;overflow:hidden}
 .hero .stack{position:absolute;inset:0;z-index:0;pointer-events:none;
   opacity:0;transition:opacity .6s ease}
-.hero .stack.ready{opacity:.92}
-.img-box{position:absolute;top:0;left:0;
-  width:clamp(150px,26vw,300px);aspect-ratio:1;pointer-events:none;
+.hero .stack.ready{opacity:.94}
+.img-box{position:absolute;top:0;left:0;--fan:.5;--sc:1;
+  width:clamp(104px,15vw,190px);aspect-ratio:1;pointer-events:none;
   will-change:translate,transform;
-  filter:drop-shadow(0 18px 40px rgba(0,0,0,.22));
-  /* JS owns `translate` (the tracked point); the scatter lives on `transform`
-     so the two never fight. Individual props apply before transform. */
-  transform:translate(-50%,-50%) translate(var(--sx,0),var(--sy,0)) rotate(var(--sr,0deg));
+  filter:drop-shadow(0 14px 30px rgba(0,0,0,.3));
+  /* JS owns `translate` (each box's own tracked point); the scatter lives on
+     `transform` so the two never fight — individual props apply before it.
+     --sc scales the flat-lay spread to the viewport. */
+  transform:translate(-50%,-50%)
+    translate(calc(var(--sx,0%) * var(--sc)),calc(var(--sy,0%) * var(--scy,var(--sc))))
+    rotate(var(--sr,0deg));
   transition:transform .9s cubic-bezier(.2,.7,.2,1)}
-.img-box img{width:100%;height:100%;object-fit:cover;display:block}
-/* first pointer move: drop the scatter, every box stacks on the tracked point */
-.hero.engaged .img-box{transform:translate(-50%,-50%)}
+.img-box img{width:100%;height:100%;object-fit:cover;display:block;
+  border-radius:14px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45)}
+/* first pointer move: the flat-lay tightens but never fully collapses — the
+   photos keep a fanned offset so several stay readable at rest, and the
+   per-box damping in JS spreads them further while the pointer is moving. */
+.hero.engaged .img-box{
+  transform:translate(-50%,-50%)
+    translate(calc(var(--sx,0%) * var(--fan)),calc(var(--sy,0%) * var(--fan)))
+    rotate(var(--sr,0deg))}
 /* the copy always sits above the photos */
 .hero .wrap{position:relative;z-index:1}
+/* touch: the flat-lay never collapses, it just drifts — six small prints are
+   far more readable on a phone than one photo glued to an invisible cursor */
+@media(max-width:900px){ .img-box{--sc:.8} }
 @media(max-width:600px){
-  /* smaller and further back — the copy has to stay readable on a phone */
-  .img-box{width:clamp(120px,36vw,170px)}
-  .hero .stack.ready{opacity:.8}
+  /* the copy fills the whole hero on a phone, so the prints get their own band
+     below it rather than sitting behind the paragraph */
+  .hero{padding-bottom:clamp(136px,40vw,164px)}
+  .hero .stack{inset:auto 0 12px;height:clamp(116px,34vw,140px)}
+  .hero .stack.ready{opacity:1}
+  /* --scy flattens the strip vertically so nothing clips against the band */
+  .img-box{width:clamp(70px,21vw,90px);--sc:.72;--scy:.26;
+    filter:drop-shadow(0 8px 18px rgba(0,0,0,.3))}
+  .img-box img{border-radius:10px}
 }
 
 /* filter strip */
@@ -363,8 +381,11 @@ main{padding:var(--g) 0 72px}
 .pagebanner:after{content:"";position:absolute;top:0;right:0;z-index:3;
   width:var(--chamfer);height:var(--chamfer);background:var(--shell);
   transform:translate(50%,-50%) rotate(45deg);pointer-events:none}
-.pagebanner .bg{position:absolute;inset:-4%;width:108%;height:108%;object-fit:cover;
-  object-position:right center;z-index:-2;will-change:translate}
+/* full-bleed backdrop. max-width:100% from the reset clamps any width over
+   100%, so an oversized bleed would leave a bare strip on one edge — keep it
+   flush at 100%. */
+.pagebanner .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:center;z-index:-2}
 .pagebanner .scrim{position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:linear-gradient(90deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.5) 42%,rgba(10,10,10,.06) 76%,transparent 100%)}
 .pagebanner h1{font-weight:800;text-transform:uppercase;letter-spacing:-.02em;
@@ -372,8 +393,8 @@ main{padding:var(--g) 0 72px}
 .pagebanner p{max-width:44ch;font-size:15px;line-height:1.55;color:#c9c9c9;margin:0}
 @media(max-width:720px){
   .pagebanner{min-height:0;justify-content:flex-start;
-    padding-bottom:clamp(118px,34vw,156px)}
-  .pagebanner .bg{object-position:right bottom;opacity:.5}
+    padding-bottom:clamp(52px,16vw,88px)}
+  .pagebanner .bg{object-position:right bottom;opacity:.6}
   .pagebanner .scrim{background:linear-gradient(180deg,rgba(10,10,10,.82) 28%,rgba(10,10,10,.32) 100%)}
   .pagebanner h1{max-width:none}
 }
