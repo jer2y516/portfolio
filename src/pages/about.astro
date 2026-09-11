@@ -5,9 +5,11 @@ import { SITE } from '../lib/site.js';
 
 const skadisCount = products.filter((p) => p.categories.includes('skadis')).length;
 
-// Skill / tool icons for the floating marquee. Drop the real logos (SVG, ~1:1,
-// transparent or white ground) at public/about-icons/<file>; placeholders show
-// until then. Order is the visual order in the loop.
+// Skill / tool icons for the floating marquee — tools used to make the work.
+// Store and support marks (Buy Me a Coffee et al) belong in the store bar, not
+// here. Drop the real logos (SVG, ~1:1, transparent or white ground) at
+// public/about-icons/<file>; placeholders show until then. Order is the visual
+// order in the loop.
 const skillIcons = [
   { name: 'Figma', file: '01-figma.png' },
   { name: 'Adobe Creative Cloud', file: '02-adobe-cc.png' },
@@ -17,7 +19,6 @@ const skillIcons = [
   { name: 'Jira', file: '06-atlassian.png' },
   { name: 'Instagram', file: '07-instagram.png' },
   { name: 'Autodesk', file: '08-autodesk.png' },
-  { name: 'Buy Me a Coffee', file: '09-buymeacoffee.png' },
 ];
 
 const links = {
