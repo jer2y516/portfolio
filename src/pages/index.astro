@@ -9,8 +9,9 @@ const list = sortedByDate(products);
 const skadisCount = products.filter((p) => p.categories.includes('skadis')).length;
 const lampCount = products.filter((p) => p.categories.includes('lamps')).length;
 
-// Cursor-glued photo stack (see mirko-404 spec). Six boxes, each a random
-// product shot, scattered on load and collapsing onto the pointer on first move.
+// Cursor trail (see mirko-404 spec). Ten boxes, each a random product shot.
+// Box 1 rides the live pointer; every box after it replays where the pointer
+// was 0.5s earlier than the one before, so they string out along the path.
 const pool = list
   .map((p) => (p.images.colour || p.images.plain || '').replace(/\.[^.]+$/, ''))
   .filter(Boolean)
@@ -23,12 +24,16 @@ const pick = (n) => {
 // art-directed flat-lay: upper-right cascading to lower-left, slight rotations
 // Offsets are percentages of a box's own size, so the flat-lay scales with it.
 const scatter = [
-  { x: 172, y: -34, r: -7 },
-  { x: 104, y: 22, r: 5 },
-  { x: 34, y: -26, r: -3 },
-  { x: -36, y: 24, r: 9 },
-  { x: -108, y: -20, r: -5 },
-  { x: -178, y: 30, r: 4 },
+  { x: 196, y: -30, r: -8 },
+  { x: 152, y: 26, r: 4 },
+  { x: 112, y: -22, r: 7 },
+  { x: 64, y: 30, r: -5 },
+  { x: 22, y: -32, r: 3 },
+  { x: -26, y: 22, r: 9 },
+  { x: -70, y: -26, r: -4 },
+  { x: -118, y: 30, r: 6 },
+  { x: -158, y: -18, r: -7 },
+  { x: -202, y: 24, r: 5 },
 ];
 const stackImages = pick(scatter.length);
 
@@ -68,7 +73,7 @@ const jsonLd = [
   <section class="hero" data-cursor-stack>
     <div class="stack" aria-hidden="true">
       {stackImages.map((src, i) => (
-        <div class="img-box" style={`--sx:${scatter[i].x}%;--sy:${scatter[i].y}%;--sr:${scatter[i].r}deg;z-index:${scatter.length - i}`}>
+        <div class="img-box" style={`--sx:${scatter[i].x}%;--sy:${scatter[i].y}%;--sr:${scatter[i].r}deg;--fx:${i * 7}%;--fy:${(i % 2 ? 1 : -1) * i * 2.4}%;z-index:${scatter.length - i}`}>
           <img src={src} alt="" width="300" height="300" loading="eager" decoding="async" />
         </div>
       ))}

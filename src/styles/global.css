@@ -77,17 +77,16 @@ h1.big .out{-webkit-text-stroke:2px #fff;color:transparent;font-weight:700}
 .stats .n{display:block;font-weight:800;font-size:25px;line-height:1;margin-bottom:3px}
 .stats .lbl{opacity:.85}
 @media(max-width:600px){.stats div:nth-child(n+3){display:none}}
-/* cursor-glued photo stack (mirko-404 spec). Boxes start as a scattered
-   flat-lay behind the headline; on first pointer move they collapse onto the
-   cursor and trail it. Positioned dead-centre on their tracked point. */
+/* cursor trail (mirko-404 spec). Ten prints start as a scattered flat-lay
+   behind the headline; on first pointer move each one starts replaying the
+   cursor's path at its own delay. Positioned dead-centre on its tracked point. */
 .hero[data-cursor-stack]{position:relative;overflow:hidden}
 .hero .stack{position:absolute;inset:0;z-index:0;pointer-events:none;
   opacity:0;transition:opacity .6s ease}
 .hero .stack.ready{opacity:.94}
-.img-box{position:absolute;top:0;left:0;--fan:.5;--sc:1;
-  width:clamp(104px,15vw,190px);aspect-ratio:1;pointer-events:none;
-  will-change:translate,transform;
-  filter:drop-shadow(0 14px 30px rgba(0,0,0,.3));
+.img-box{position:absolute;top:0;left:0;--fan:1;--sc:1;
+  width:clamp(84px,12vw,150px);aspect-ratio:1;pointer-events:none;
+  will-change:translate;
   /* JS owns `translate` (each box's own tracked point); the scatter lives on
      `transform` so the two never fight — individual props apply before it.
      --sc scales the flat-lay spread to the viewport. */
@@ -95,20 +94,24 @@ h1.big .out{-webkit-text-stroke:2px #fff;color:transparent;font-weight:700}
     translate(calc(var(--sx,0%) * var(--sc)),calc(var(--sy,0%) * var(--scy,var(--sc))))
     rotate(var(--sr,0deg));
   transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+/* shadow lives on the img, not as a filter on the box — a drop-shadow filter
+   on ten elements is re-rasterised every frame of the trail. */
 .img-box img{width:100%;height:100%;object-fit:cover;display:block;
-  border-radius:14px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45)}
-/* first pointer move: the flat-lay tightens but never fully collapses — the
-   photos keep a fanned offset so several stay readable at rest, and the
-   per-box damping in JS spreads them further while the pointer is moving. */
+  border-radius:12px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.45),0 12px 26px rgba(0,0,0,.3)}
+/* First pointer move: the scatter is dropped for a small per-index fan (--fx
+   is 0 on the first print, so that one sits exactly on the cursor and the rest
+   splay out behind it). The trail itself does the separating while the cursor
+   moves; the fan only matters once it stops and everything has caught up. */
 .hero.engaged .img-box{
   transform:translate(-50%,-50%)
-    translate(calc(var(--sx,0%) * var(--fan)),calc(var(--sy,0%) * var(--fan)))
+    translate(calc(var(--fx,0%) * var(--fan)),calc(var(--fy,0%) * var(--fan)))
     rotate(var(--sr,0deg))}
 /* the copy always sits above the photos */
 .hero .wrap{position:relative;z-index:1}
-/* touch: the flat-lay never collapses, it just drifts — six small prints are
-   far more readable on a phone than one photo glued to an invisible cursor */
-@media(max-width:900px){ .img-box{--sc:.8} }
+/* touch: the flat-lay never collapses, it just drifts — ten small prints are
+   far more readable on a phone than a trail chasing an invisible cursor */
+@media(max-width:900px){ .img-box{--sc:.86} }
 @media(max-width:600px){
   /* the copy fills the whole hero on a phone, so the prints get their own band
      below it rather than sitting behind the paragraph */
@@ -116,9 +119,9 @@ h1.big .out{-webkit-text-stroke:2px #fff;color:transparent;font-weight:700}
   .hero .stack{inset:auto 0 12px;height:clamp(116px,34vw,140px)}
   .hero .stack.ready{opacity:1}
   /* --scy flattens the strip vertically so nothing clips against the band */
-  .img-box{width:clamp(70px,21vw,90px);--sc:.72;--scy:.26;
-    filter:drop-shadow(0 8px 18px rgba(0,0,0,.3))}
-  .img-box img{border-radius:10px}
+  .img-box{width:clamp(58px,17vw,78px);--sc:.84;--scy:.22}
+  .img-box img{border-radius:9px;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.45),0 7px 16px rgba(0,0,0,.3)}
 }
 
 /* filter strip */
